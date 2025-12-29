@@ -657,18 +657,6 @@ nav {
     background: white;
     color: var(--navy);
 }
-/* CTA Box (used inside pages/sections) */
-.cta-box {
-  background: #fef3c7;
-  border: 2px solid var(--gold);
-  border-radius: 14px;
-  padding: 24px;
-  text-align: center;
-  margin: 24px 0;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
 
 /* Utility Classes */
 .text-center { text-align: center; }
