@@ -21,6 +21,65 @@ document.addEventListener('DOMContentLoaded', function() {
             if (alert) alert.style.display = 'none';
         });
     }
+     // Veterans Form Handler
+    const veteransForm = document.getElementById('veteransForm');
+    if (veteransForm) {
+        veteransForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Veterans Application:', data);
+            alert('Thank you for your service! Your application has been submitted. We\'ll contact you within 24 hours to verify eligibility and schedule your free service.');
+            this.reset();
+        });
+    }
+    // Mobile Menu Toggle
+    const navContainer = document.querySelector('nav .nav-container');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navContainer && navLinks) {
+        // Create hamburger button
+        const hamburger = document.createElement('button');
+        hamburger.className = 'mobile-menu-btn';
+        hamburger.setAttribute('aria-label', 'Toggle Menu');
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-overlay';
+        
+        // Insert hamburger before nav links
+        navContainer.insertBefore(hamburger, navLinks);
+        document.body.appendChild(overlay);
+        
+        // Toggle menu function
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        // Hamburger click
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
+        
+        // Overlay click
+        overlay.addEventListener('click', function() {
+            toggleMenu();
+        });
+        
+        // Close menu when clicking a link
+        const menuLinks = navLinks.querySelectorAll('a');
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
     
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -31,46 +90,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-// Mobile Menu
-document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.querySelector('nav .nav-container');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (!navLinks) return;
-    
-    // Create hamburger button
-    const hamburger = document.createElement('button');
-    hamburger.className = 'mobile-menu-btn';
-    hamburger.innerHTML = '<span></span><span></span><span></span>';
-    
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'mobile-overlay';
-    document.body.appendChild(overlay);
-    
-    // Insert hamburger
-    nav.insertBefore(hamburger, navLinks);
-    
-    // Toggle menu
-    hamburger.onclick = function() {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        overlay.classList.toggle('active');
-    };
-    
-    // Close on overlay click
-    overlay.onclick = function() {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        overlay.classList.remove('active');
-    };
-    
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.onclick = function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-        };
-    });
-});
+
