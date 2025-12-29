@@ -853,12 +853,15 @@ html {
         top: 0;
         left: -100%;
         width: 280px;
-        height: 100vh;
+        height: 100dvh;
+        -webkit-overflow-scrolling: touch;
         background: white;
         flex-direction: column;
         padding: 80px 30px 30px;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         transition: left 0.3s ease;
+        overscroll-behavior: contain;
+        padding-bottom: 40px; 
         z-index: 1000;
         overflow-y: auto;
         margin: 0;
@@ -867,8 +870,8 @@ html {
     .nav-links.active {
         left: 0;
         display: flex;
+        pointer-events:auto;
     }
-    
     .nav-links li {
         margin: 0 0 20px 0;
         list-style: none;
