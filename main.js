@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
     // Mobile Menu Toggle
     const navContainer = document.querySelector('nav .nav-container');
     const navLinks = document.querySelector('.nav-links');
@@ -58,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             overlay.classList.toggle('active');
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        }
+      
+    }
         
         // Hamburger click
         hamburger.addEventListener('click', function(e) {
@@ -80,14 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     toggleMenu();
                 }
             });
-    
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
-    });
+    }
 });
-
+    
+    
