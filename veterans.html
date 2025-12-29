@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .veterans-hero { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: white; padding: 100px 20px; text-align: center; position: relative; overflow: hidden; }
-        .veterans-hero::before { content: '🇺🇸'; position: absolute; font-size: 400px; opacity: 0.05; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .veterans-hero::before { content: '🇺🇸'; position: absolute; font-size: 400px; opacity: 0.05; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
         .veterans-hero h1 { font-size: clamp(40px, 7vw, 64px); font-weight: 900; margin-bottom: 24px; position: relative; z-index: 1; }
         .veterans-hero .offer { font-size: clamp(20px, 4vw, 28px); font-weight: 700; margin-bottom: 32px; position: relative; z-index: 1; }
         .program-box { background: white; max-width: 900px; margin: -60px auto 80px; padding: 48px 40px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); position: relative; z-index: 10; }
@@ -43,7 +43,7 @@
         <h1>🇺🇸 Honoring Those Who Served</h1>
         <p class="offer">Veterans, Active Duty Military & Gold Star Families</p>
         <p style="font-size: 24px; font-weight: 600; margin-bottom: 32px;">Receive ONE FREE House Wash Per Year</p>
-        <a href="veterans-form.html" class="btn-cta-primary" style="font-size: 20px; padding: 20px 40px;">Apply for Free Service →</a>
+        <a href="veterans-form.html" class="btn-cta-primary" style="background: white; color: #1e3a8a; font-size: 20px; padding: 20px 40px; display: inline-block; position: relative; z-index: 100; cursor: pointer;">Apply for Free Service →</a>
     </div>
     
     <div class="program-box">
