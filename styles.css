@@ -790,6 +790,9 @@ html {
     padding: 8px;
     position: relative;
     z-index: 1001;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-menu-btn span {
