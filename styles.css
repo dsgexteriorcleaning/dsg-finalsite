@@ -320,6 +320,9 @@ nav {
 /* Bundles */
 .bundles-section {
     background: var(--light-gray);
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .bundles-grid {
@@ -327,6 +330,8 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 28px;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 10; /* Higher than pricing-note */
 }
 
 .bundle-card {
@@ -415,11 +420,15 @@ nav {
     border-radius: 12px;
     padding: 24px;
     text-align: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1; /* 
 }
 
 .pricing-note p {
     font-size: 15px;
     color: var(--dark);
+    margin: 0;
 }
 
 .pricing-note a {
