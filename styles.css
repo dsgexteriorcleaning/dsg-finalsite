@@ -542,6 +542,10 @@ nav {
 /* Service Area */
 .service-area-section {
     background: var(--light-gray);
+    padding: 80px 20px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0; /* Remove any negative margin */
 }
 
 .counties-grid {
@@ -587,6 +591,9 @@ nav {
     color: white;
     padding: 80px 20px;
     text-align: center;
+    position: relative; /* Changed from absolute or fixed */
+    z-index: 1; /* Keep it low so it doesn't overlap */
+    margin-top: 60px; /* Add spacing from previous section */
 }
 
 .final-cta h2 {
