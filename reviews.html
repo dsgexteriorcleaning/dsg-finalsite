@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 80px 20px; text-align: center; }
+        .reviews-grid-large { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; margin: 40px 0; }
+        .review-card-large { background: white; padding: 36px 32px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .review-card-large:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .review-stars { color: var(--gold); font-size: 24px; margin-bottom: 20px; letter-spacing: 3px; }
+        .review-text-large { font-size: 16px; line-height: 1.8; color: var(--gray); margin-bottom: 24px; font-style: italic; }
+        .review-author-large { margin-bottom: 12px; }
+        .review-author-large strong { display: block; font-size: 18px; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+        .review-author-large span { font-size: 14px; color: var(--gray); }
+        .review-service-large { font-size: 14px; color: var(--accent); font-weight: 600; background: #dbeafe; padding: 6px 12px; border-radius: 6px; display: inline-block; }
+        .review-date { font-size: 13px; color: var(--gray); margin-top: 12px; }
+        .placeholder-note { background: #fef3c7; border: 2px solid var(--gold); padding: 24px; border-radius: 12px; margin-bottom: 40px; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+            </ul>
+            <a href="quote.html" class="cta-btn">Get Free Quote</a>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Customer Reviews</h1>
+        <p>See what our Hudson Valley customers have to say</p>
+    </div>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="placeholder-note">
+                <p style="font-size: 15px; font-weight: 600; color: #92400e; margin-bottom: 8px;">📝 Note for Website Owner</p>
+                <p style="font-size: 14px; color: #92400e;"><em>These are placeholder reviews. Replace with actual customer testimonials as you receive them. Include customer's name, location, service received, and their feedback.</em></p>
+            </div>
+
+            <div class="reviews-grid-large">
+                <!-- Review 1 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"DSG Exterior Cleaning did an absolutely amazing job on our Bedford home. The house looks brand new! The team was professional, punctual, and the results exceeded our expectations. Our neighbors have been asking who we used. Highly recommend!"</p>
+                    <div class="review-author-large">
+                        <strong>Sarah M.</strong>
+                        <span>Bedford, NY</span>
+                    </div>
+                    <div class="review-service-large">House Washing + Roof Cleaning</div>
+                    <div class="review-date">December 2025</div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"Best exterior cleaning service we've used in our 15 years as homeowners. They cleaned our Mahopac lakefront property beautifully and were incredibly careful around our landscaping. The driveway looks like it was just paved. Will definitely use them again!"</p>
+                    <div class="review-author-large">
+                        <strong>John K.</strong>
+                        <span>Mahopac, NY</span>
+                    </div>
+                    <div class="review-service-large">Complete Exterior Bundle</div>
+                    <div class="review-date">November 2025</div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"We signed up for their annual Complete Home Care Plan and couldn't be happier. They handle everything automatically and the service is always top-notch. No more worrying about when gutters need cleaning or when the house needs washing. Worth every penny!"</p>
+                    <div class="review-author-large">
+                        <strong>Emily R.</strong>
+                        <span>Millbrook, NY</span>
+                    </div>
+                    <div class="review-service-large">Complete Home Care Plan</div>
+                    <div class="review-date">October 2025</div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"Professional from start to finish. They explained the entire process, protected all our plants and outdoor furniture, and the results were incredible. Our roof had those ugly black streaks for years - all gone! House looks 10 years younger."</p>
+                    <div class="review-author-large">
+                        <strong>Michael & Lisa T.</strong>
+                        <span>Cold Spring, NY</span>
+                    </div>
+                    <div class="review-service-large">Premium Reset Bundle</div>
+                    <div class="review-date">September 2025</div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"As a veteran, I really appreciate their Veterans Program. The free annual house wash is such a nice gesture. The team was respectful, professional, and did excellent work. It's clear they genuinely want to give back to those who served."</p>
+                    <div class="review-author-large">
+                        <strong>Robert D.</strong>
+                        <span>Fishkill, NY</span>
+                    </div>
+                    <div class="review-service-large">Veterans Program + Gutter Cleaning</div>
+                    <div class="review-date">August 2025</div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"We were selling our home and needed it to look perfect for showings. DSG came through beautifully - the Curb Appeal package made our house the best looking one on the block. We got multiple offers within a week. Can't thank them enough!"</p>
+                    <div class="review-author-large">
+                        <strong>Jennifer W.</strong>
+                        <span>Rhinebeck, NY</span>
+                    </div>
+                    <div class="review-service-large">Curb Appeal Package</div>
+                    <div class="review-date">July 2025</div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"Great experience from quote to completion. Pricing was fair and transparent, no hidden fees. They showed up exactly when they said they would and finished faster than expected. Our gutters were completely clogged - they cleared everything and even repaired a loose downspout at no extra charge."</p>
+                    <div class="review-author-large">
+                        <strong>David P.</strong>
+                        <span>Carmel, NY</span>
+                    </div>
+                    <div class="review-service-large">Gutter Cleaning</div>
+                    <div class="review-date">June 2025</div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"We have a large property with a lot of concrete - driveway, walkways, patio, pool deck. DSG cleaned it all and it looks brand new. The oil stains that have been there for years are completely gone. Amazing transformation!"</p>
+                    <div class="review-author-large">
+                        <strong>Thomas & Karen M.</strong>
+                        <span>Pound Ridge, NY</span>
+                    </div>
+                    <div class="review-service-large">Driveway & Flatwork Cleaning</div>
+                    <div class="review-date">May 2025</div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="review-card-large">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text-large">"I was skeptical about the window cleaning with their water-fed pole system, but WOW - my windows have never been this clean. No streaks, no spots, and they reached the second story without any ladders. Very impressive technology and results."</p>
+                    <div class="review-author-large">
+                        <strong>Patricia L.</strong>
+                        <span>Pleasant Valley, NY</span>
+                    </div>
+                    <div class="review-service-large">Window Cleaning</div>
+                    <div class="review-date">April 2025</div>
+                </div>
+            </div>
+
+            <div style="background: var(--light-gray); padding: 48px 40px; border-radius: 16px; text-align: center; margin-top: 60px;">
+                <h3 style="font-size: 32px; font-weight: 800; color: var(--navy); margin-bottom: 16px;">Ready to Experience Professional Care?</h3>
+                <p style="font-size: 18px; color: var(--gray); margin-bottom: 32px;">Join hundreds of satisfied Hudson Valley homeowners</p>
+                <a href="quote.html" class="btn-cta-primary">Get Your Free Quote Today →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="logo.png" alt="DSG Exterior Cleaning" class="footer-logo">
+                <p class="footer-tagline">Professional Care for Your Home</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="bundles.html">Bundles</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="veterans.html">Veterans</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+18455550123">(845) 555-0123</a></li>
+                    <li><a href="mailto:info@dsgcleaning.com">info@dsgcleaning.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 DSG Exterior Cleaning LLC</p></div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

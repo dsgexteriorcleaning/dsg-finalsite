@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterans Program Application - DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .veterans-hero { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: white; padding: 80px 20px; text-align: center; }
+        .veterans-hero h1 { font-size: clamp(36px, 6vw, 52px); font-weight: 900; margin-bottom: 16px; }
+        .form-container { max-width: 700px; margin: -40px auto 80px; background: white; padding: 40px 32px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); position: relative; z-index: 10; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: var(--navy); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #1e3a8a; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .required { color: #dc2626; }
+        .info-box { background: #dbeafe; border: 2px solid #1e3a8a; border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .info-box h3 { font-size: 16px; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; }
+        .info-box p { font-size: 14px; color: #1e3a8a; line-height: 1.6; margin: 4px 0; }
+        .warning-box { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .warning-box h3 { font-size: 16px; font-weight: 700; color: #92400e; margin-bottom: 8px; }
+        .warning-box p { font-size: 14px; color: #92400e; line-height: 1.6; }
+        @media (max-width: 767px) { .form-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+            </ul>
+            <a href="quote.html" class="cta-btn">Get Free Quote</a>
+        </div>
+    </nav>
+
+    <div class="veterans-hero">
+        <h1>🇺🇸 Veterans Program Application</h1>
+        <p>Claim Your Free Annual House Wash</p>
+    </div>
+
+    <div class="form-container">
+        <div class="info-box">
+            <h3>What You'll Receive:</h3>
+            <p>• One complete exterior house soft wash per year (up to 3,200 sq ft)</p>
+            <p>• Professional cleaning of all siding, trim, garage doors, and shutters</p>
+            <p>• Limit: One household per calendar year</p>
+        </div>
+
+        <form id="veteransForm">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 20px;">Applicant Information</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name <span class="required">*</span></label>
+                    <input type="text" name="firstName" required placeholder="John">
+                </div>
+                <div class="form-group">
+                    <label>Last Name <span class="required">*</span></label>
+                    <input type="text" name="lastName" required placeholder="Smith">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Military Status <span class="required">*</span></label>
+                <select name="militaryStatus" required>
+                    <option value="">Please select...</option>
+                    <option value="active-duty">Active Duty</option>
+                    <option value="veteran">Veteran (Honorably Discharged)</option>
+                    <option value="gold-star">Gold Star Family</option>
+                    <option value="national-guard">National Guard</option>
+                    <option value="reserve">Reserve</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Branch of Service <span class="required">*</span></label>
+                <select name="branch" required>
+                    <option value="">Please select...</option>
+                    <option value="army">Army</option>
+                    <option value="navy">Navy</option>
+                    <option value="air-force">Air Force</option>
+                    <option value="marines">Marines</option>
+                    <option value="coast-guard">Coast Guard</option>
+                    <option value="space-force">Space Force</option>
+                </select>
+            </div>
+
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--navy); margin: 32px 0 20px;">Property Information</h3>
+
+            <div class="form-group">
+                <label>Property Address <span class="required">*</span></label>
+                <input type="text" name="address" required placeholder="123 Main Street">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Town <span class="required">*</span></label>
+                    <input type="text" name="town" required placeholder="Bedford">
+                </div>
+                <div class="form-group">
+                    <label>Zip Code <span class="required">*</span></label>
+                    <input type="text" name="zip" required placeholder="10506">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Approximate Home Size <span class="required">*</span></label>
+                <select name="homeSize" required>
+                    <option value="">Select size...</option>
+                    <option value="small">Small (Under 1,800 sq ft)</option>
+                    <option value="medium">Medium (1,800-2,800 sq ft)</option>
+                    <option value="large">Large (2,800-3,200 sq ft)</option>
+                    <option value="xl">XL / Over 3,200 sq ft (may require co-pay)</option>
+                </select>
+            </div>
+
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--navy); margin: 32px 0 20px;">Contact Information</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Phone <span class="required">*</span></label>
+                    <input type="tel" name="phone" required placeholder="(845) 555-0123">
+                </div>
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="email" required placeholder="john@example.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Contact Method <span class="required">*</span></label>
+                <select name="contactMethod" required>
+                    <option value="">Please select...</option>
+                    <option value="phone">Phone</option>
+                    <option value="email">Email</option>
+                    <option value="either">Either</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Additional Notes (Optional)</label>
+                <textarea name="notes" rows="3" placeholder="Any special requests or information we should know..."></textarea>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Important Reminder:</h3>
+                <p><strong>Verification Required:</strong> You must present valid military ID, veteran ID card, or DD214 at time of service. Photo ID must match documentation.</p>
+                <p style="margin-top: 8px;"><strong>One Household Per Year:</strong> This address can only receive one free service per calendar year, regardless of who is claiming the benefit.</p>
+            </div>
+
+            <div class="form-group" style="margin-top: 24px;">
+                <label style="display: flex; align-items: start; gap: 10px; font-weight: normal; cursor: pointer;">
+                    <input type="checkbox" name="acknowledge" required style="width: auto; margin-top: 4px;">
+                    <span style="font-size: 14px;">I acknowledge that I must present valid military documentation at time of service and understand the one-household-per-year restriction. <span class="required">*</span></span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-cta-primary" style="width: 100%; margin-top: 24px; font-size: 18px; padding: 18px;">Submit Application →</button>
+        </form>
+
+        <div style="margin-top: 32px; padding: 20px; background: var(--light-gray); border-radius: 12px; text-align: center;">
+            <p style="font-size: 14px; color: var(--gray);"><strong>What Happens Next?</strong></p>
+            <p style="font-size: 14px; color: var(--gray); margin-top: 8px;">We'll review your application and contact you within 24 hours to verify eligibility and schedule your free service.</p>
+            <p style="font-size: 14px; color: var(--gray); margin-top: 12px;">Questions? Call us at <a href="tel:+18455550123" style="color: var(--accent); font-weight: 700;">(845) 555-0123</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="logo.png" alt="DSG Exterior Cleaning" class="footer-logo">
+                <p class="footer-tagline">Professional Care for Your Home</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+18455550123">(845) 555-0123</a></li>
+                    <li><a href="mailto:info@dsgcleaning.com">info@dsgcleaning.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 DSG Exterior Cleaning LLC</p></div>
+    </footer>
+
+    <script>
+        document.getElementById('veteransForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('Veterans Application:', data);
+            alert('Thank you for your service! Your application has been submitted. We\'ll contact you within 24 hours to verify eligibility and schedule your free service.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
