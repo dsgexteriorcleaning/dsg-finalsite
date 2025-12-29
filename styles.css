@@ -657,6 +657,18 @@ nav {
     background: white;
     color: var(--navy);
 }
+/* CTA Box (used inside pages/sections) */
+.cta-box {
+  background: #fef3c7;
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  margin: 24px 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
 
 /* Utility Classes */
 .text-center { text-align: center; }
@@ -766,6 +778,20 @@ footer {
         padding-left: 16px;    /* keeps text from feeling cramped */
         padding-right: 16px;
     }
+    @media (max-width: 767px) {
+  .cta-box .btn-cta-primary {
+    display: inline-block;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    line-height: 1.2;
+    white-space: normal;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 
     /* If the arrow is dropping alone, this keeps last word + arrow together */
     .btn-cta-primary {
