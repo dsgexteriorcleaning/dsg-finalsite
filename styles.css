@@ -839,7 +839,10 @@ html {
 /* Mobile - show hamburger and slide-out menu */
 @media (max-width: 767px) {
     .mobile-menu-btn {
-        display: block !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
     }
     
     .nav-links {
@@ -860,6 +863,7 @@ html {
     
     .nav-links.active {
         left: 0;
+        display: flex;
     }
     
     .nav-links li {
