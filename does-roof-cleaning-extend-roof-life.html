@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The science behind roof cleaning and how removing algae can add 5-7 years to your roof's lifespan. Learn what those black streaks really mean and why they're more than cosmetic.">
+    <meta name="keywords" content="roof cleaning, roof algae, extend roof life, black streaks on roof, roof maintenance, Hudson Valley">
+    <title>Does Roof Cleaning Really Extend Your Roof's Life? | DSG Exterior Cleaning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1e3a5f; --gold: #d4af37; --accent: #2563eb; --dark: #0f172a;
+            --gray: #475569; --light-gray: #f8fafc; --white: #ffffff;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 2px solid var(--gold); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 60px; width: auto; }
+        .nav-links { display: none; gap: 32px; list-style: none; }
+        .nav-links a { color: var(--navy); text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--gold); }
+        .cta-btn { background: var(--gold); color: var(--navy); padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(212,175,55,0.3); }
+        .cta-btn:hover { background: #c5a028; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(212,175,55,0.4); }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; position: relative; z-index: 1001; flex-direction: column; align-items: center; justify-content: center; }
+        .mobile-menu-btn span { display: block; width: 28px; height: 3px; background: var(--navy); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
+        .blog-hero { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(212,175,55,0.1)" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,90.7C960,96,1056,128,1152,133.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center no-repeat; background-size: cover; }
+        .blog-hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .blog-hero h1 { font-size: clamp(32px, 6vw, 48px); font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; }
+        .blog-meta { display: flex; justify-content: center; gap: 24px; margin-top: 24px; font-size: 14px; font-weight: 600; flex-wrap: wrap; }
+        .blog-meta-item { background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 20px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px; }
+        .breadcrumbs { max-width: 1300px; margin: 0 auto; padding: 20px 20px 0; font-size: 13px; }
+        .breadcrumbs a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--gold); }
+        .breadcrumbs span { color: var(--gray); margin: 0 8px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .blog-content { font-size: 17px; line-height: 1.8; color: var(--dark); }
+        .blog-content h2 { color: var(--navy); font-size: clamp(28px, 5vw, 38px); font-weight: 800; margin: 60px 0 24px; line-height: 1.3; }
+        .blog-content h3 { color: var(--navy); font-size: clamp(20px, 4vw, 26px); font-weight: 700; margin: 40px 0 16px; }
+        .blog-content p { margin-bottom: 20px; color: var(--gray); }
+        .blog-content ul, .blog-content ol { margin: 20px 0 20px 32px; color: var(--gray); }
+        .blog-content li { margin-bottom: 12px; }
+        .blog-content strong { color: var(--navy); font-weight: 700; }
+        .callout { background: var(--light-gray); border-left: 4px solid var(--accent); padding: 24px; margin: 32px 0; border-radius: 0 8px 8px 0; }
+        .callout-success { background: #ecfdf5; border-left-color: #10b981; }
+        .callout-warning { background: #fef3c7; border-left-color: var(--gold); }
+        .callout-danger { background: #fee2e2; border-left-color: #ef4444; }
+        .callout h4 { color: var(--navy); font-weight: 700; margin-bottom: 12px; font-size: 18px; }
+        .callout p { margin: 0; font-size: 15px; }
+        .featured-image { width: 100%; height: 400px; background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); border-radius: 12px; margin: 32px 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 32px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; }
+        .comparison-table th { background: var(--navy); color: white; padding: 16px; text-align: left; font-weight: 700; font-size: 15px; }
+        .comparison-table td { padding: 16px; border-bottom: 1px solid #e5e7eb; font-size: 15px; color: var(--gray); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: var(--light-gray); }
+        .cta-section { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 48px 32px; margin: 48px 0; border-radius: 16px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .cta-section h3 { font-size: clamp(24px, 5vw, 32px); font-weight: 800; margin-bottom: 16px; color: white; }
+        .cta-section p { font-size: 17px; margin-bottom: 28px; opacity: 1; color: rgba(255, 255, 255, 0.95); }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 16px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--gold); color: var(--navy); box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+        .btn-primary:hover { background: #c5a028; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.5); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: var(--navy); }
+        .checklist { background: var(--light-gray); padding: 32px; border-radius: 12px; margin: 32px 0; }
+        .checklist h4 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .checklist ul { list-style: none; margin: 0; padding: 0; }
+        .checklist li { padding: 12px 0 12px 36px; position: relative; color: var(--gray); font-size: 15px; }
+        .checklist li:before { content: "✓"; position: absolute; left: 0; color: #10b981; font-weight: bold; font-size: 20px; }
+        footer { background: var(--dark); color: white; padding: 60px 20px 30px; }
+        .footer-content { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-logo { height: 80px; margin-bottom: 16px; }
+        .footer-tagline { font-size: 16px; font-weight: 600; color: var(--gold); margin-bottom: 8px; }
+        .footer-description { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+        .footer-section h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--gold); }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 10px; }
+        .footer-section ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .footer-section ul li a:hover { color: var(--gold); }
+        .footer-section p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 8px; }
+        .footer-bottom { max-width: 1300px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 13px; color: rgba(255,255,255,0.6); }
+        @media (min-width: 768px) {
+            .nav-links { display: flex !important; position: static; height: auto; width: auto; flex-direction: row; gap: 32px; padding: 0; box-shadow: none; overflow: visible; }
+            .mobile-menu-btn { display: none !important; }
+        }
+        @media (max-width: 767px) {
+            .mobile-menu-btn { display: flex !important; }
+            .nav-container { flex-wrap: nowrap; gap: 12px; }
+            .nav-links { position: fixed; top: 0; left: -100%; width: 280px; height: 100dvh; background: white; flex-direction: column; padding: 80px 30px 30px; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); transition: left 0.3s ease; overflow-y: auto; z-index: 1000; }
+            .nav-links.active { left: 0; display: flex; }
+            .nav-links li { margin: 0 0 20px 0; list-style: none; }
+            .cta-btn { font-size: 14px; padding: 10px 20px; }
+            .blog-hero { padding: 60px 20px 40px; }
+            .blog-hero h1 { font-size: 28px; }
+            .blog-content { font-size: 16px; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; max-width: 420px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <a href="quote.html" class="cta-btn">Get Free Quote</a>
+        </div>
+    </nav>
+
+    <div class="breadcrumbs">
+        <a href="index.html">Home</a><span>›</span>
+        <a href="blog.html">Blog</a><span>›</span>
+        <span>Does Roof Cleaning Really Extend Your Roof's Life?</span>
+    </div>
+
+    <section class="blog-hero">
+        <div class="blog-hero-content">
+            <h1>Does Roof Cleaning Really Extend Your Roof's Life?</h1>
+            <div class="blog-meta">
+                <div class="blog-meta-item"><span>📅</span><span>December 29, 2025</span></div>
+                <div class="blog-meta-item"><span>⏱️</span><span>9 min read</span></div>
+                <div class="blog-meta-item"><span>👤</span><span>Matt Dalembert</span></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <article class="blog-content">
+            <div class="featured-image">[Featured Image: Before/After Roof Cleaning]</div>
+
+            <p><strong>You've probably noticed them:</strong> dark black or green streaks running down your asphalt shingle roof. Maybe a neighbor mentioned them, or you spotted them while raking leaves. Your first thought might be, "That's ugly, but it's just cosmetic, right?"</p>
+
+            <p><strong>Wrong.</strong> Those black streaks aren't just an eyesore—they're slowly destroying your roof. And the financial impact is staggering.</p>
+
+            <p>According to roofing industry studies, <strong>algae and moss growth can reduce your roof's lifespan by 25-40%</strong>. That means a roof that should last 25 years might fail at 15-18 years, costing you <strong>$8,000-$15,000+ in premature replacement.</strong></p>
+
+            <p>But here's the good news: <strong>professional roof cleaning can add 5-7 years to your roof's life</strong>, paying for itself many times over. Let's dive into the science behind those streaks and why roof cleaning is one of the best investments you can make in your home.</p>
+
+            <h2>What Are Those Black Streaks on Your Roof?</h2>
+
+            <h3>Meet Gloeocapsa Magma: The Roof-Destroying Algae</h3>
+
+            <p>Those dark streaks staining your roof aren't dirt or pollution—they're a living organism called <strong>Gloeocapsa magma</strong>, a type of blue-green algae (cyanobacteria).</p>
+
+            <p><strong>How it spreads:</strong></p>
+            <ul>
+                <li>Airborne spores land on your roof (carried by wind, birds, and animals)</li>
+                <li>The algae feeds on the limestone filler in asphalt shingles</li>
+                <li>As it grows, it creates a dark protective coating to shield itself from UV rays</li>
+                <li>This dark coating is what you see as black streaks</li>
+                <li>The algae retains moisture, creating ideal conditions for more growth</li>
+            </ul>
+
+            <p><strong>Why it's so common in the Hudson Valley:</strong> Our humid climate with warm summers and regular rainfall creates perfect conditions for algae growth. Studies show that <strong>over 80% of homes in the Northeast</strong> have some degree of roof algae staining.</p>
+
+            <h3>The Difference Between Algae, Moss, and Lichen</h3>
+
+            <p>Not all roof growth is the same. Understanding the difference helps you address the right problem:</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Appearance</th>
+                        <th>Damage Level</th>
+                        <th>Growth Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Algae (Gloeocapsa magma)</strong></td>
+                        <td>Dark black/green streaks, flat against shingles</td>
+                        <td>MODERATE - Retains moisture, accelerates deterioration</td>
+                        <td>Starts on north/shaded slopes, spreads across roof</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Moss</strong></td>
+                        <td>Thick green carpet, 3D growth, spongy texture</td>
+                        <td>HIGH - Lifts shingles, traps water, causes rot</td>
+                        <td>Grows in heavy shade, especially under trees</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lichen</strong></td>
+                        <td>Crusty patches, gray/green/orange, firmly attached</td>
+                        <td>HIGH - Roots penetrate shingles, very difficult to remove</td>
+                        <td>Slow-growing, prefers exposed sunny areas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>How Algae Actually Damages Your Roof</h2>
+
+            <p>Here's the science behind why those "cosmetic" stains are actually structural problems:</p>
+
+            <h3>1. Heat Absorption & Accelerated Aging</h3>
+
+            <p><strong>The Dark Surface Problem:</strong> Algae creates a dark coating that absorbs significantly more heat than clean shingles.</p>
+
+            <p><strong>Research findings:</strong></p>
+            <ul>
+                <li>Clean white/light shingles reflect 20-30% of sunlight</li>
+                <li>Algae-covered shingles reflect only 5-10% (absorbing 90-95%!)</li>
+                <li>This increases roof surface temperatures by <strong>10-25°F</strong></li>
+                <li>Higher temps accelerate asphalt oxidation and granule loss</li>
+            </ul>
+
+            <p><strong>Result:</strong> Your shingles age faster, becoming brittle and losing their protective granules years earlier than they should.</p>
+
+            <h3>2. Moisture Retention & Freeze-Thaw Damage</h3>
+
+            <p><strong>The Moisture Trap:</strong> Algae holds water against your shingles like a sponge.</p>
+
+            <p><strong>Why this matters:</strong></p>
+            <ul>
+                <li>Constant moisture prevents proper drying, keeping shingles perpetually damp</li>
+                <li>In Hudson Valley winters, this trapped moisture freezes and expands</li>
+                <li>Repeated freeze-thaw cycles crack and separate shingle layers</li>
+                <li>Water seeps under shingles, damaging underlayment and roof deck</li>
+            </ul>
+
+            <div class="callout callout-danger">
+                <h4>⚠️ The Freeze-Thaw Multiplier Effect</h4>
+                <p>The Hudson Valley experiences 30-40 freeze-thaw cycles per winter. Each cycle expands trapped moisture by 9%, creating micro-cracks in shingles. Over 5-10 winters, this cumulative damage shortens roof life by 5-10 years.</p>
+            </div>
+
+            <h3>3. Chemical Decomposition</h3>
+
+            <p><strong>The Eating Process:</strong> Gloeocapsa magma literally consumes your shingles.</p>
+
+            <p>The algae feeds on limestone filler (calcium carbonate) used in asphalt shingle manufacturing. As it metabolizes this material:</p>
+            <ul>
+                <li>Shingle integrity weakens</li>
+                <li>Protective granules loosen and wash away</li>
+                <li>The asphalt layer becomes exposed to UV damage</li>
+                <li>Shingles become brittle and prone to cracking</li>
+            </ul>
+
+            <h3>4. Granule Loss Acceleration</h3>
+
+            <p><strong>Why granules matter:</strong> Those tiny ceramic-coated rock granules on shingles serve critical functions:</p>
+            <ul>
+                <li>Protect asphalt from UV radiation</li>
+                <li>Provide fire resistance</li>
+                <li>Give shingles their color and aesthetic appeal</li>
+                <li>Shield underlying materials from weather</li>
+            </ul>
+
+            <p><strong>Algae accelerates granule loss</strong> through chemical breakdown and moisture damage. Once significant granule loss occurs, the underlying asphalt deteriorates rapidly.</p>
+
+            <h3>5. Warranty Implications</h3>
+
+            <p>Many homeowners don't realize: <strong>most shingle warranties are void if algae/moss damage is documented.</strong></p>
+
+            <p>Manufacturers consider organic growth a maintenance issue. If your roof fails prematurely due to algae damage, you're paying for replacement out-of-pocket—typically $8,000-$15,000.</p>
+
+            <h2>The Financial Case for Roof Cleaning</h2>
+
+            <p>Let's break down the numbers to show why roof cleaning is an investment, not an expense.</p>
+
+            <h3>Cost Comparison: Cleaning vs. Early Replacement</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Cost</th>
+                        <th>Roof Lifespan</th>
+                        <th>Total 25-Year Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>No Cleaning (Algae grows unchecked)</strong></td>
+                        <td>$0 maintenance</td>
+                        <td>15-18 years</td>
+                        <td>$20,000-$30,000 (2 roof replacements)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regular Cleaning (Every 3-5 years)</strong></td>
+                        <td>$400-600 per cleaning</td>
+                        <td>25+ years</td>
+                        <td>$12,000-$16,000 (1 roof + cleanings)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Savings with Cleaning</strong></td>
+                        <td>—</td>
+                        <td>+7-10 years</td>
+                        <td><strong>$8,000-$14,000 SAVED</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Return on Investment:</strong> Spending $2,000-3,000 on roof cleaning over 25 years saves you $8,000-$14,000 in premature replacement costs. <strong>That's a 400-700% ROI.</strong></p>
+
+            <h3>The Energy Efficiency Angle</h3>
+
+            <p>Remember how algae-darkened roofs absorb more heat? This doesn't just damage shingles—it increases your cooling costs.</p>
+
+            <p><strong>Studies show:</strong></p>
+            <ul>
+                <li>Algae-stained roofs can raise attic temperatures by 10-20°F</li>
+                <li>This forces your AC to work harder, increasing energy bills by 10-20% during summer</li>
+                <li>For an average Hudson Valley home, that's $150-300 extra per year in cooling costs</li>
+            </ul>
+
+            <p><strong>Cleaning your roof once can save $150-300 annually in energy costs</strong>—another financial benefit beyond lifespan extension.</p>
+
+            <h2>When Should You Clean Your Roof?</h2>
+
+            <h3>Visible Signs It's Time</h3>
+
+            <div class="checklist">
+                <h4>Clean Your Roof If You See:</h4>
+                <ul>
+                    <li><strong>Black or dark green streaks</strong> on shingles (algae)</li>
+                    <li><strong>Thick green moss growth</strong> (especially in shade)</li>
+                    <li><strong>Crusty gray/orange patches</strong> (lichen)</li>
+                    <li><strong>Loss of granules</strong> (bare spots showing black asphalt)</li>
+                    <li><strong>Roof discoloration</strong> that wasn't there when roof was new</li>
+                    <li><strong>Growth concentrated on north-facing slopes</strong> (less sun exposure)</li>
+                </ul>
+            </div>
+
+            <h3>Preventive Cleaning Schedule</h3>
+
+            <p><strong>Recommended frequency:</strong></p>
+            <ul>
+                <li><strong>First cleaning:</strong> As soon as you notice any algae streaks (don't wait)</li>
+                <li><strong>Ongoing maintenance:</strong> Every 3-5 years in Hudson Valley climate</li>
+                <li><strong>High-risk properties:</strong> Every 2-3 years if you have heavy tree coverage or have had moss issues</li>
+            </ul>
+
+            <h3>Best Time of Year for Roof Cleaning</h3>
+
+            <p><strong>Optimal season: Late spring (May) or early fall (September-October)</strong></p>
+
+            <p><strong>Why:</strong></p>
+            <ul>
+                <li>Moderate temperatures (55-75°F) for optimal chemical effectiveness</li>
+                <li>Lower risk of extreme weather interfering with cleaning</li>
+                <li>Spring: Removes winter accumulation before summer growth season</li>
+                <li>Fall: Cleans before winter freeze-thaw cycles begin</li>
+            </ul>
+
+            <h2>Roof Cleaning Methods: What Works (and What Doesn't)</h2>
+
+            <h3>The WRONG Way: Pressure Washing</h3>
+
+            <div class="callout callout-danger">
+                <h4>❌ Never Pressure Wash Your Roof</h4>
+                <p>High-pressure washing is the #1 cause of premature roof failure from cleaning. Pressure strips protective granules, damages shingle seals, and forces water under shingles. Many roofers report that 30-40% of "premature roof failures" they see are from improper pressure washing.</p>
+            </div>
+
+            <h3>The RIGHT Way: Soft Washing</h3>
+
+            <p><strong>What is soft washing?</strong> Low-pressure chemical application that kills algae, moss, and lichen without damaging shingles.</p>
+
+            <p><strong>The process:</strong></p>
+            <ul>
+                <li><strong>Step 1:</strong> Apply specialized roof cleaning solution (typically sodium hypochlorite-based) at low pressure</li>
+                <li><strong>Step 2:</strong> Solution sits for 15-20 minutes, killing organic growth at the root</li>
+                <li><strong>Step 3:</strong> Gentle rinse with low-pressure water (or in many cases, allow rain to naturally rinse)</li>
+                <li><strong>Step 4:</strong> Dead algae washes away over next few weeks with rainfall</li>
+            </ul>
+
+            <p><strong>Why soft washing is superior:</strong></p>
+            <ul>
+                <li>Kills algae/moss at cellular level (not just surface cleaning)</li>
+                <li>Prevents regrowth for 3-5 years vs. 6-12 months with pressure washing</li>
+                <li>No granule loss or shingle damage</li>
+                <li>Safe for all roof types (asphalt, architectural, dimensional shingles)</li>
+            </ul>
+
+            <h3>DIY vs. Professional: What You Need to Know</h3>
+
+            <p><strong>DIY roof cleaning risks:</strong></p>
+            <ul>
+                <li><strong>Safety:</strong> Falls from roofs are a leading cause of homeowner injuries</li>
+                <li><strong>Damage:</strong> Wrong chemicals or pressure can void your roof warranty</li>
+                <li><strong>Incomplete removal:</strong> Surface cleaning without killing roots = regrowth in months</li>
+                <li><strong>Liability:</strong> Injury on your own roof may not be covered by homeowner's insurance</li>
+            </ul>
+
+            <p><strong>Professional advantages:</strong></p>
+            <ul>
+                <li>Proper safety equipment and training</li>
+                <li>Correct chemical ratios that kill growth without damaging shingles</li>
+                <li>Low-pressure equipment designed for delicate surfaces</li>
+                <li>Inspection for underlying damage or needed repairs</li>
+                <li>Insured and bonded (if they damage something, they fix it)</li>
+            </ul>
+
+            <div class="callout callout-warning">
+                <h4>💡 Pro Tip: Verify Roof Cleaning Methods</h4>
+                <p>When hiring a roof cleaner, ask specifically: "Do you use soft washing or pressure washing?" If they say "pressure washing" or "power washing," move on to the next company. Only hire professionals who use soft wash methods for roofs.</p>
+            </div>
+
+            <h2>What to Expect: The Roof Cleaning Process</h2>
+
+            <p><strong>Typical timeline for professional roof cleaning:</strong></p>
+
+            <p><strong>Day of Service (2-3 hours):</strong></p>
+            <ul>
+                <li>Inspection and assessment of roof condition</li>
+                <li>Plant and landscaping protection (pre-wetting, covering if needed)</li>
+                <li>Chemical application via soft wash system</li>
+                <li>Dwell time (15-20 minutes) while solution works</li>
+                <li>Gentle rinse (or explanation that rain will naturally rinse)</li>
+                <li>Final inspection and cleanup</li>
+            </ul>
+
+            <p><strong>After Service:</strong></p>
+            <ul>
+                <li>Immediate results: Dead algae/moss begins lightening within 24 hours</li>
+                <li>Full results: Complete stain removal within 2-4 weeks as rain washes away dead growth</li>
+                <li>Long-term protection: Roof stays clean for 3-5 years</li>
+            </ul>
+
+            <h2>Maintaining Your Clean Roof</h2>
+
+            <h3>Prevention Strategies</h3>
+
+            <p><strong>1. Trim Overhanging Branches</strong></p>
+            <p>Keep tree branches at least 6-10 feet from roof. This reduces shade (algae thrives in shade) and prevents debris accumulation.</p>
+
+            <p><strong>2. Install Zinc or Copper Strips</strong></p>
+            <p>Metal strips installed at roof ridge release ions that inhibit algae growth. Effective but not foolproof—still clean periodically.</p>
+
+            <p><strong>3. Ensure Proper Attic Ventilation</strong></p>
+            <p>Good ventilation reduces moisture buildup, making your roof less hospitable to organic growth.</p>
+
+            <p><strong>4. Clean Gutters Regularly</strong></p>
+            <p>Clogged gutters create standing water and overflow that promote algae growth on lower roof sections.</p>
+
+            <p><strong>5. Schedule Regular Inspections</strong></p>
+            <p>Annual roof inspections catch growth early, allowing for cleaning before significant damage occurs.</p>
+
+            <div class="cta-section">
+                <h3>Protect Your Roof Investment Today</h3>
+                <p>Don't let algae cut your roof's lifespan short. DSG Exterior Cleaning uses safe, effective soft washing methods to restore your roof and add years to its life.</p>
+                <div class="cta-buttons">
+                    <a href="quote.html" class="btn btn-primary">Get Free Roof Cleaning Quote</a>
+                    <a href="tel:845-555-0123" class="btn btn-secondary">Call (845) 555-0123</a>
+                </div>
+                <p style="margin-top: 24px; font-size: 14px; opacity: 0.9;">Serving Westchester, Putnam & Dutchess Counties | Licensed & Insured</p>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Will roof cleaning damage my shingles?</h3>
+            <p>Professional soft washing will NOT damage shingles. It's specifically designed for delicate surfaces. However, pressure washing WILL damage shingles by stripping granules and breaking seals. Always verify your contractor uses soft wash methods.</p>
+
+            <h3>How long does a roof cleaning last?</h3>
+            <p>Professional soft washing typically provides 3-5 years of protection. Results last longer on roofs with less shade and proper attic ventilation.</p>
+
+            <h3>Can I just paint over the stains?</h3>
+            <p>No. Painting over algae doesn't kill it—it continues growing under the paint, causing more damage. Plus, most roof coatings void manufacturer warranties. Always remove growth before considering any coating.</p>
+
+            <h3>Will cleaning my roof void the warranty?</h3>
+            <p>No, if done correctly. Soft washing with appropriate chemicals (typically sodium hypochlorite at proper concentrations) is approved by most manufacturers. Pressure washing or harsh chemicals may void warranties. Always hire professionals who understand warranty requirements.</p>
+
+            <h3>Is roof cleaning safe for plants?</h3>
+            <p>Yes, when done properly. Professional cleaners pre-wet plants, use plant-safe surfactants, and thoroughly rinse vegetation. The diluted solution used for cleaning breaks down quickly and won't harm landscaping when proper protocols are followed.</p>
+
+            <h3>My roof is only 5 years old. Can it already have algae?</h3>
+            <p>Absolutely. Algae can appear within 1-3 years of a new roof installation, especially in humid climates like the Hudson Valley. Age doesn't prevent algae—moisture and shade do. Clean early to prevent long-term damage.</p>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
+                <p class="footer-tagline">Professional Care for Your Home</p>
+                <p class="footer-description">Serving Westchester, Putnam, and Dutchess Counties with expert exterior cleaning services.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="bundles.html">Bundles</a></li>
+                    <li><a href="plans.html">Plans</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="quote.html">Get Quote</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="veterans.html">Veterans</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📞 (845) 555-0123</p>
+                <p>📧 <a href="mailto:info@dsgexterior.com" style="color: rgba(255,255,255,0.7);">info@dsgexterior.com</a></p>
+                <p>📍 Hopewell Junction, NY</p>
+                <p>Mon-Fri: 8am-6pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
