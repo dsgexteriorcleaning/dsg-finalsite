@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - DSG Exterior Cleaning</title>
+    <title>Exterior Cleaning Services | DSG Exterior Cleaning</title>
+
+    <!-- SEO -->
+    <meta name="description" content="DSG Exterior Cleaning provides professional house soft washing, roof soft washing, gutter cleaning, driveway & flatwork cleaning, plus deck/patio and fence washing across Dutchess, Putnam, and Westchester County. Fully insured. Free quotes.">
+    <link rel="canonical" href="https://dsgclean.com/services" />
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Local SEO schema -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"LocalBusiness",
+      "name":"DSG Exterior Cleaning",
+      "url":"https://dsgclean.com",
+      "telephone":"+1-845-208-9557",
+      "areaServed":["Dutchess County, NY","Putnam County, NY","Westchester County, NY"],
+      "address":{"@type":"PostalAddress","addressLocality":"Hopewell Junction","addressRegion":"NY","addressCountry":"US"}
+    }
+    </script>
+
     <style>
         .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 80px 20px; text-align: center; }
         .page-hero h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 900; margin-bottom: 16px; }
+
+        /* Added: quick jump links (no design disruption) */
+        .jump-links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
         .service-detail { background: white; padding: 50px 32px; margin: 40px 0; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         .service-detail h2 { font-size: 36px; font-weight: 800; color: var(--navy); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
         .service-detail h3 { font-size: 24px; font-weight: 700; color: var(--navy); margin: 32px 0 16px; }
@@ -20,9 +43,10 @@
         .price-note p { color: #92400e; font-size: 15px; margin: 0; }
         .cta-box { background: var(--navy); color: white; padding: 32px; border-radius: 12px; text-align: center; margin: 32px 0; }
         .cta-box h3 { font-size: 28px; font-weight: 800; margin-bottom: 12px; color: #ffffff; }
-        .cta-box p { color: rgba(255,255,255,0.9);   /* ADD THIS */ }
+        .cta-box p { color: rgba(255,255,255,0.9); }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -46,35 +70,55 @@
     <div class="page-hero">
         <h1>Our Services</h1>
         <p>Professional exterior cleaning for every part of your property</p>
+
+        <!-- Added jump links -->
+        <div class="jump-links">
+            <a href="#house-soft-wash" class="btn-cta-secondary">House Soft Wash</a>
+            <a href="#roof-soft-wash" class="btn-cta-secondary">Roof Soft Wash</a>
+            <a href="#gutter-cleaning" class="btn-cta-secondary">Gutter Cleaning</a>
+            <a href="#flatwork" class="btn-cta-secondary">Driveway & Flatwork</a>
+            <a href="#deck-patio-fence" class="btn-cta-secondary">Deck • Patio • Fence</a>
+            <a href="#home-care-plans" class="btn-cta-secondary">Home Care Plans</a>
+            <a href="#faq" class="btn-cta-secondary">FAQs</a>
+        </div>
     </div>
 
     <section class="section">
         <div class="section-container">
             <div class="price-note">
                 <strong>Custom Pricing for Every Property</strong>
-                <p>Every home is unique. Pricing varies by property size, location (Dutchess, Putnam, or Westchester), condition, and specific needs. <a href="quote.html" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Get your personalized quote now →</a></p>
+                <p>
+                    Every home is unique. Pricing varies by property size, county (Dutchess, Putnam, or Westchester), condition, and service needs.
+                    <a href="quote.html" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Get your personalized quote now →</a>
+                </p>
             </div>
 
-            <div class="service-detail">
+            <!-- HOUSE -->
+            <div class="service-detail" id="house-soft-wash">
                 <h2>🏠 House Soft Wash</h2>
-                <p>Our professional soft wash system uses low-pressure, high-volume water combined with eco-friendly cleaning solutions to safely remove dirt, mildew, algae, and organic stains from your home's exterior. Unlike high-pressure washing that can damage siding, our gentle approach protects your investment while delivering superior results.</p>
-                
+                <p>Our professional soft wash system uses low-pressure, high-volume water combined with proven cleaning solutions to safely remove dirt, mildew, algae, and organic stains from your home's exterior. Unlike high-pressure washing that can damage siding, our gentle approach protects your investment while delivering superior results.</p>
+
                 <h3>What We Clean:</h3>
                 <ul>
-                    <li>All types of siding: vinyl, fiber cement, wood, composite, stucco, and brick</li>
-                    <li>Trim, soffits, and fascia boards</li>
-                    <li>Garage doors and exterior shutters</li>
-                    <li>Foundation walls and decorative elements</li>
-                    <li>Light mold and mildew treatment</li>
+                    <li>Vinyl, fiber cement, wood, composite, stucco, brick, and more</li>
+                    <li>Trim, soffits, fascia, shutters, garage doors</li>
+                    <li>Foundation walls and exterior accents</li>
                 </ul>
 
                 <h3>Our Process:</h3>
                 <ul>
                     <li>Pre-treatment of heavily stained areas</li>
-                    <li>Application of professional-grade cleaning solution</li>
+                    <li>Application of professional cleaning solution</li>
                     <li>Gentle low-pressure rinse</li>
-                    <li>Complete landscape protection throughout service</li>
-                    <li>Post-service inspection to ensure satisfaction</li>
+                    <li>Landscape protection throughout service</li>
+                    <li>Post-service inspection</li>
+                </ul>
+
+                <h3>Local Service Pages:</h3>
+                <ul>
+                    <li><a href="house-washing-dutchess-county.html">House Washing in Dutchess County</a></li>
+                    <li><a href="house-washing-putnam-county.html">House Washing in Putnam County</a></li>
+                    <li><a href="house-washing-westchester-county.html">House Washing in Westchester County</a></li>
                 </ul>
 
                 <div class="cta-box">
@@ -84,114 +128,87 @@
                 </div>
             </div>
 
-            <div class="service-detail">
+            <!-- ROOF -->
+            <div class="service-detail" id="roof-soft-wash">
                 <h2>🏔️ Roof Soft Wash</h2>
-                <p>Professional roof cleaning extends your roof's lifespan by 5-7 years and dramatically improves curb appeal. Our gentle soft wash method removes black algae streaks (gloeocapsa magma), lichen, and moss without the damaging effects of high-pressure washing. Ground-based application means we never walk on your roof, eliminating risk of damage.</p>
+                <p>Professional roof cleaning can improve curb appeal and help prevent organic growth from breaking down shingles over time. Our soft wash method targets black algae streaks, lichen, and moss without the damaging effects of high-pressure washing. We apply treatment from the ground whenever possible to reduce risk.</p>
 
                 <h3>Benefits of Roof Cleaning:</h3>
                 <ul>
-                    <li>Extends roof life by 5-7 years (saves thousands on premature replacement)</li>
-                    <li>Removes harmful organisms that deteriorate shingles</li>
-                    <li>Dramatically improves home appearance and value</li>
-                    <li>Safe for all asphalt shingle types</li>
-                    <li>Visible results within 1-2 weeks as treatment continues working</li>
+                    <li>Removes black streaks and organic discoloration</li>
+                    <li>Helps slow future organic growth with proper maintenance</li>
+                    <li>Improves home appearance and perceived value</li>
+                    <li>Safe method for asphalt shingles when done correctly</li>
                 </ul>
 
                 <h3>Our Safe Process:</h3>
                 <ul>
-                    <li>Ground-based application - no walking on roof</li>
-                    <li>Professional-grade soft wash chemicals</li>
-                    <li>Complete landscape and plant protection</li>
-                    <li>Safe for all landscaping and outdoor furniture</li>
-                    <li>Guaranteed results or we return at no charge</li>
+                    <li>Ground-based application when possible</li>
+                    <li>Professional soft wash treatment (low pressure)</li>
+                    <li>Landscape and plant protection</li>
+                    <li>Results may continue to improve over time after treatment</li>
+                </ul>
+
+                <h3>Local Service Pages:</h3>
+                <ul>
+                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning in Dutchess County</a></li>
+                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning in Putnam County</a></li>
+                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning in Westchester County</a></li>
                 </ul>
 
                 <div class="cta-box">
-                    <h3>Restore Your Roof's Appearance</h3>
+                    <h3>Restore Your Roof’s Appearance</h3>
                     <p style="margin-bottom: 20px;">Pricing varies by roof size, pitch, and complexity</p>
                     <a href="quote.html" class="btn-cta-primary">Request Custom Quote →</a>
                 </div>
             </div>
 
-            <div class="service-detail">
+            <!-- GUTTERS -->
+            <div class="service-detail" id="gutter-cleaning">
                 <h2>💧 Gutter Cleaning</h2>
-                <p>Regular gutter cleaning prevents water damage, foundation issues, and costly repairs. Our thorough service includes complete debris removal, downspout flushing, and basic inspection. Ground-based cleaning when possible for safety, with professional equipment for all scenarios.</p>
+                <p>Regular gutter cleaning helps prevent overflow, water intrusion, and costly damage. Our service includes debris removal, downspout flow verification, and cleanup so your property is left neat.</p>
 
                 <h3>What's Included:</h3>
                 <ul>
-                    <li>Complete removal of all leaves, debris, and sediment</li>
-                    <li>Downspout flushing to ensure proper drainage</li>
-                    <li>Basic inspection for damage or issues</li>
+                    <li>Debris removal from gutters</li>
+                    <li>Downspout flow check (and flush when needed/possible)</li>
+                    <li>Basic visual inspection for common issues</li>
                     <li>Debris haul-away (no mess left behind)</li>
-                    <li>Optional: Gutter brightening (exterior cleaning)</li>
+                    <li>Optional add-on: Gutter face brightening / stripe reduction</li>
                 </ul>
 
-                <h3>Why Regular Gutter Cleaning Matters:</h3>
+                <h3>Local Service Pages:</h3>
                 <ul>
-                    <li>Prevents foundation damage from overflow</li>
-                    <li>Stops basement flooding and water intrusion</li>
-                    <li>Eliminates ice dam formation in winter</li>
-                    <li>Prevents fascia and soffit rot</li>
-                    <li>Removes pest nesting areas</li>
+                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning in Dutchess County</a></li>
+                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning in Putnam County</a></li>
+                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning in Westchester County</a></li>
                 </ul>
 
                 <div class="cta-box">
                     <h3>Protect Your Investment</h3>
-                    <p style="margin-bottom: 20px;">Custom quote based on your home's gutter system</p>
+                    <p style="margin-bottom: 20px;">Custom quote based on your home’s gutter system</p>
                     <a href="quote.html" class="btn-cta-primary">Get Free Quote →</a>
                 </div>
             </div>
 
-            <div class="service-detail">
-                <h2>✨ Window Cleaning (Exterior)</h2>
-                <p>Crystal-clear windows using professional water-fed pole technology. Our system reaches second-story windows safely from the ground, using purified water that dries spot-free without streaks. No ladders, no risk, just beautifully clean windows.</p>
-
-                <h3>Our Advanced System:</h3>
-                <ul>
-                    <li>Water-fed pole technology reaches up to 40 feet</li>
-                    <li>Purified water system for streak-free, spot-free drying</li>
-                    <li>Safe ground-based operation (no ladders required)</li>
-                    <li>Screens cleaned in place (no removal needed)</li>
-                    <li>Available: Interior window cleaning (additional service)</li>
-                </ul>
-
-                <h3>Why Our System is Superior:</h3>
-                <ul>
-                    <li>Safer than traditional ladder methods</li>
-                    <li>Faster service (no setup/breakdown time)</li>
-                    <li>Pure water = longer-lasting cleanliness</li>
-                    <li>Reaches difficult second-story windows easily</li>
-                    <li>No chemicals or soaps required</li>
-                </ul>
-
-                <div class="cta-box">
-                    <h3>See Clearly Again</h3>
-                    <p style="margin-bottom: 20px;">Pricing based on window count and home accessibility</p>
-                    <a href="quote.html" class="btn-cta-primary">Request Quote →</a>
-                </div>
-            </div>
-
-            <div class="service-detail">
+            <!-- FLATWORK -->
+            <div class="service-detail" id="flatwork">
                 <h2>🚗 Driveway & Flatwork Cleaning</h2>
-                <p>High-pressure cleaning transforms driveways, walkways, patios, and decks by removing years of built-up grime, oil stains, tire marks, and organic growth. Professional equipment and techniques deliver results DIY methods can't match.</p>
+                <p>Professional surface cleaning transforms driveways, walkways, patios, and other flatwork by removing built-up grime, organic growth, and general staining. We adjust methods based on material type for safe, consistent results.</p>
 
                 <h3>Surfaces We Clean:</h3>
                 <ul>
-                    <li>Concrete driveways and garage floors</li>
-                    <li>Asphalt driveways and parking areas</li>
+                    <li>Concrete driveways, walkways, steps</li>
+                    <li>Asphalt driveways (when appropriate)</li>
                     <li>Paver patios and walkways</li>
                     <li>Pool decks and surrounding areas</li>
-                    <li>Wooden decks and composite decking</li>
-                    <li>Outdoor steps and stairs</li>
                 </ul>
 
                 <h3>What We Remove:</h3>
                 <ul>
-                    <li>Oil and grease stains</li>
-                    <li>Tire marks and rubber deposits</li>
-                    <li>Mold, mildew, and algae</li>
-                    <li>Rust stains</li>
+                    <li>Mold, mildew, algae</li>
                     <li>Dirt and general grime buildup</li>
+                    <li>Many common organic stains (results vary)</li>
                 </ul>
 
                 <div class="cta-box">
@@ -201,31 +218,81 @@
                 </div>
             </div>
 
-            <div class="service-detail">
+            <!-- DECK / PATIO / FENCE -->
+            <div class="service-detail" id="deck-patio-fence">
+                <h2>🪵 Deck, Patio & Fence Washing</h2>
+                <p>Decks, patios, and fencing collect organic growth and grime over time—especially in shaded Hudson Valley areas. We clean wood, composite, vinyl, and masonry surfaces using the right method for the material to avoid damage and restore curb appeal.</p>
+
+                <h3>We Commonly Clean:</h3>
+                <ul>
+                    <li>Wood & composite decks</li>
+                    <li>Patios (concrete, pavers, stone)</li>
+                    <li>Vinyl and wood fencing</li>
+                </ul>
+
+                <h3>What to Expect:</h3>
+                <ul>
+                    <li>Surface-appropriate methods (not one-size-fits-all pressure)</li>
+                    <li>Improved appearance and reduced organic buildup</li>
+                    <li>Some deep stains may not fully remove (results vary)</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Bring Back Your Backyard</h3>
+                    <p style="margin-bottom: 20px;">We’ll quote based on size, material, and condition</p>
+                    <a href="quote.html" class="btn-cta-primary">Request Quote →</a>
+                </div>
+            </div>
+
+            <!-- PLANS -->
+            <div class="service-detail" id="home-care-plans">
                 <h2>📅 Home Care Plans</h2>
-                <p>Never worry about exterior maintenance again. Our annual subscription plans include automatic scheduling, priority service, and locked pricing. Perfect for busy homeowners who want professional care without the hassle of remembering when service is due.</p>
+                <p>Never worry about exterior maintenance again. Our annual plans include proactive scheduling, priority service windows, and consistent upkeep for homeowners who want a clean property without the hassle.</p>
 
                 <h3>Plan Benefits:</h3>
                 <ul>
-                    <li>Automatic scheduling - we contact you when service is due</li>
+                    <li>Automatic scheduling reminders</li>
                     <li>Priority scheduling during peak seasons</li>
-                    <li>Locked pricing for 24-36 months (no surprise increases)</li>
                     <li>Discounts on additional services</li>
-                    <li>Never forget gutter cleaning or annual maintenance</li>
-                    <li>Flexible payment options (monthly or annual)</li>
+                    <li>Seasonal maintenance without guesswork</li>
+                    <li>Flexible payment options</li>
                 </ul>
 
                 <div class="cta-box">
                     <h3>Explore Home Care Plans</h3>
-                    <p style="margin-bottom: 20px;">Three tiers available - find the perfect fit for your home</p>
+                    <p style="margin-bottom: 20px;">Three tiers available — find the perfect fit</p>
                     <a href="plans.html" class="btn-cta-primary">View All Plans →</a>
                 </div>
             </div>
 
-            <div class="price-note">
-                <strong>Why We Don't Publish Pricing Online</strong>
-                <p>Every property is unique with different sizes, conditions, and accessibility. We provide accurate, personalized quotes based on your specific needs - not one-size-fits-all pricing. This ensures you get fair pricing and we can deliver the results you expect. <a href="quote.html" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Get your custom quote in minutes →</a></p>
+            <!-- FAQ -->
+            <div class="service-detail" id="faq">
+                <h2>❓ Service FAQs</h2>
+
+                <h3>What’s the difference between pressure washing and soft washing?</h3>
+                <p>Soft washing uses low pressure with a cleaning solution to treat organic growth on siding and roofs. Pressure washing is best for hard surfaces like concrete. We choose the method that fits the material.</p>
+
+                <h3>Do you require a deposit?</h3>
+                <p>Yes. A deposit is required to secure your appointment. The remaining balance is due upon completion unless otherwise agreed.</p>
+
+                <h3>Will all stains come out?</h3>
+                <p>Results vary depending on surface condition and stain type. Some stains like rust, oil, or deep discoloration may not fully remove.</p>
+
+                <h3>How soon can I get an estimate?</h3>
+                <p>Submit a quote request and we’ll follow up within 24 hours.</p>
+
+                <div class="cta-box">
+                    <h3>Ready to Get Started?</h3>
+                    <p style="margin-bottom: 20px;">Fast quotes. Clear communication. Professional results.</p>
+                    <a href="quote.html" class="btn-cta-primary">Get Your Free Quote →</a>
+                </div>
             </div>
+
+            <div class="price-note">
+                <strong>Why We Don’t Publish Pricing Online</strong>
+                <p>Every property is different—size, condition, access, and materials all matter. We provide accurate quotes based on your needs so you get fair pricing and professional results. <a href="quote.html" style="color: var(--accent); font-weight: 700; text-decoration: underline;">Get your custom quote in minutes →</a></p>
+            </div>
+
         </div>
     </section>
 
@@ -240,7 +307,7 @@
         </div>
     </section>
 
-     <footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
@@ -268,7 +335,7 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <ul>
-                    <li><a href="tel:+1‪8452089557‬">‪(845) 208-9557‬</a></li>
+                    <li><a href="tel:+18452089557">(845) 208-9557</a></li>
                     <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
                     <li>Hopewell Junction, NY</li>
                     <li>Mon-Fri: 8am-6pm</li>
@@ -277,9 +344,10 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
-                <p class="footer-tagline">Professional Care for Your Home</p>
-            </div>
-            </footer>
-<script src="main.js" defer></script>
+            <p class="footer-tagline">Professional Care for Your Home</p>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
 </body>
 </html>
