@@ -120,4 +120,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-    
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.querySelector(".nav-dropdown");
+  const toggle = document.querySelector(".nav-dropdown .dropdown-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const overlay = document.querySelector(".mobile-overlay");
+
+  if (!dropdown || !toggle) return;
+
+  const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
+
+  const closeDropdown = () => {
+    dropdown.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  // MOBILE: Tap Services to expand/collapse dropdown (do NOT close the whole menu)
+  toggle.addEventListener("click", (e) => {
+    if (!isMobile()) return;          // desktop uses hover
+    e.preventDefault();               // don't navigate to services.html
+    e.stopPropagation();              // don't trigger “close menu” handlers
+
+    dropdown.classList.toggle("open");
+    toggle.setAttribute(
+      "aria-expanded",
+      dropdown.classList.contains("open") ? "true" : "false"
+    );
+  });
+
+  // Prevent taps inside dropdown from closing the hamburger menu
+  const menuPanel = dropdown.querySelector(".dropdown-menu");
+  if (menuPanel) {
+    menuPanel.addEventListener("click", (e) => {
+      if (!isMobile()) return;
+      e.stopPropagation();
+    });
+  }
+
+  // OPTIONAL: Close dropdown if user taps outside the nav panel (mobile)
+  document.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+    if (!dropdown.contains(e.target)) closeDropdown();
+  });
+
+  // OPTIONAL: When a dropdown link is tapped, keep expected behavior:
+  // close dropdown AND close the hamburger menu (feels natural)
+  dropdown.querySelectorAll(".dropdown-menu a").forEach((a) => {
+    a.addEventListener("click", () => {
+      if (!isMobile()) return;
+      closeDropdown();
+
+      // close the slide-out menu if your hamburger uses these classes
+      if (navLinks) navLinks.classList.remove("active");
+      if (mobileBtn) mobileBtn.classList.remove("active");
+      if (overlay) overlay.classList.remove("active");
+    });
+  });
+});   
