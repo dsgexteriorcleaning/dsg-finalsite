@@ -85,9 +85,10 @@ nav {
 }
 
 /* ============================================
-   NAV DROPDOWN (Services) - Edge-safe behavior
-   - Desktop opens on hover only (prevents “stuck open”)
-   - Mobile opens only when .open is applied by JS
+   NAV DROPDOWN (Services) - FIXED for Edge
+   - No “gap” between button and menu (prevents flicker)
+   - No focus-within stickiness on desktop
+   - Mobile opens only with .open
    ============================================ */
 
 .nav-dropdown { position: relative; }
@@ -98,16 +99,11 @@ nav {
   opacity: 0.9;
 }
 
-/* Optional: slightly tighter so it matches your nav look */
-.nav-dropdown .dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-}
-
+/* Menu panel */
 .nav-dropdown .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;              /* IMPORTANT: no gap */
   left: 0;
   min-width: 320px;
   max-height: 70vh;
@@ -116,22 +112,31 @@ nav {
   border-radius: 12px;
   box-shadow: 0 18px 50px rgba(0,0,0,0.18);
   padding: 10px;
-  z-index: 2000; /* Above nav */
+  z-index: 2000;
   border: 1px solid rgba(0,0,0,0.06);
+  margin-top: 10px;       /* Visual spacing */
 }
 
-/* Desktop: open on hover ONLY (prevents Edge focus “sticky open”) */
+/* IMPORTANT: hover-bridge so the 10px visual spacing doesn't break hover */
+@media (min-width: 768px) {
+  .nav-dropdown .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;           /* covers the “visual gap” */
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+}
+
+/* Desktop: open ONLY on hover (prevents Edge sticky focus) */
 @media (min-width: 768px) {
   .nav-dropdown:hover .dropdown-menu {
     display: block;
   }
-  /* Keyboard accessibility without focus-within stickiness */
-  .nav-dropdown .dropdown-toggle:focus + .dropdown-menu {
-    display: block;
-  }
 }
 
-/* Dropdown link styling */
+/* Dropdown links */
 .nav-dropdown .dropdown-menu li a {
   display: block;
   padding: 10px 12px;
@@ -163,7 +168,7 @@ nav {
   margin: 8px 8px;
 }
 
-/* MOBILE: dropdown becomes inline inside the slide-out menu */
+/* Mobile: dropdown inline inside slide-out menu */
 @media (max-width: 767px) {
   .nav-dropdown .dropdown-menu {
     position: static;
@@ -172,9 +177,9 @@ nav {
     padding: 6px 0 0;
     max-height: none;
     min-width: 0;
+    margin-top: 0;
   }
 
-  /* Default hidden, toggled by JS */
   .nav-dropdown .dropdown-menu { display: none !important; }
   .nav-dropdown.open .dropdown-menu { display: block !important; }
 
