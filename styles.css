@@ -12,11 +12,16 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    /* Updated: emoji-safe font fallback for Edge/Windows */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif,
+                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: var(--dark);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
+
+/* Ensure headings inherit the emoji-safe stack too */
+h1, h2, h3, h4, h5, h6 { font-family: inherit; }
 
 /* Navigation */
 nav {
@@ -78,9 +83,11 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(212,175,55,0.4);
 }
+
 /* ============================================
-   NAV DROPDOWN (Services)
-   Paste directly under .cta-btn:hover
+   NAV DROPDOWN (Services) - Edge-safe behavior
+   - Desktop opens on hover only (prevents “stuck open”)
+   - Mobile opens only when .open is applied by JS
    ============================================ */
 
 .nav-dropdown { position: relative; }
@@ -89,6 +96,12 @@ nav {
   font-size: 12px;
   margin-left: 6px;
   opacity: 0.9;
+}
+
+/* Optional: slightly tighter so it matches your nav look */
+.nav-dropdown .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-dropdown .dropdown-menu {
@@ -107,10 +120,15 @@ nav {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Show on hover/focus (desktop) */
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-  display: block;
+/* Desktop: open on hover ONLY (prevents Edge focus “sticky open”) */
+@media (min-width: 768px) {
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  /* Keyboard accessibility without focus-within stickiness */
+  .nav-dropdown .dropdown-toggle:focus + .dropdown-menu {
+    display: block;
+  }
 }
 
 /* Dropdown link styling */
@@ -157,14 +175,15 @@ nav {
   }
 
   /* Default hidden, toggled by JS */
-  .nav-dropdown .dropdown-menu { display: none; }
-  .nav-dropdown.open .dropdown-menu { display: block; }
+  .nav-dropdown .dropdown-menu { display: none !important; }
+  .nav-dropdown.open .dropdown-menu { display: block !important; }
 
   .nav-dropdown .dropdown-menu li a {
     padding: 10px 0;
     border-radius: 0;
   }
 }
+
 /* Hero */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%);
@@ -853,20 +872,18 @@ footer {
         padding-left: 16px;    /* keeps text from feeling cramped */
         padding-right: 16px;
     }
-    
-  .cta-box .btn-cta-primary {
-    display: inline-block;
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    line-height: 1.2;
-    white-space: normal;
-    box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 
-
+    .cta-box .btn-cta-primary {
+        display: inline-block;
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        line-height: 1.2;
+        white-space: normal;
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 
     /* If the arrow is dropping alone, this keeps last word + arrow together */
     .btn-cta-primary {
@@ -938,23 +955,24 @@ footer {
         display: none !important;
     }
 }
+
 /* Desktop - show full nav links */
 @media (min-width: 768px) {
-  .nav-links {
-    display: flex !important;
-    position: static;
-    height: auto;
-    width: auto;
-    flex-direction: row;
-    gap: 32px;
-    padding: 0;
-    box-shadow: none;
-    overflow: visible;
-  }
+    .nav-links {
+        display: flex !important;
+        position: static;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        gap: 32px;
+        padding: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
 
-  .mobile-overlay {
-    display: none !important;
-  }
+    .mobile-overlay {
+        display: none !important;
+    }
 }
 
 /* Mobile - show hamburger and slide-out menu */
@@ -965,10 +983,12 @@ footer {
         justify-content: center;
         z-index: 1001;
     }
+
     .nav-container {
-    flex-wrap: nowrap;
-    gap: 12px;
+        flex-wrap: nowrap;
+        gap: 12px;
     }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -982,29 +1002,30 @@ footer {
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         transition: left 0.3s ease;
         overscroll-behavior: contain;
-        padding-bottom: 40px; 
+        padding-bottom: 40px;
         z-index: 1000;
         overflow-y: auto;
         margin: 0;
     }
-    
+
     .nav-links.active {
         left: 0;
         display: flex;
-        pointer-events:auto;
+        pointer-events: auto;
     }
+
     .nav-links li {
         margin: 0 0 20px 0;
         list-style: none;
     }
-    
+
     .nav-links li a {
         font-size: 18px;
         padding: 12px 0;
         display: block;
         color: #1e3a5f;
     }
-    
+
     .cta-btn {
         font-size: 14px;
         padding: 10px 20px;
