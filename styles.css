@@ -191,7 +191,14 @@ nav {
 
 /* Hero */
 .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%);
+    /* HERO IMAGE + your existing navy overlay (keeps your style) */
+    background:
+        linear-gradient(rgba(30,58,95,0.82), rgba(45,90,123,0.82)),
+        url('pexels-caitlin-whealy-3517316-5652626.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     color: white;
     padding: 80px 20px;
     text-align: center;
