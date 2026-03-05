@@ -95,5 +95,29 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', closeMenu);
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.querySelector(".nav-dropdown");
+  const toggle = document.querySelector(".nav-dropdown .dropdown-toggle");
 
+  if (!dropdown || !toggle) return;
+
+  // Toggle dropdown on mobile tap
+  toggle.addEventListener("click", (e) => {
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    if (!isMobile) return; // Desktop uses hover
+    e.preventDefault();
+    dropdown.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", dropdown.classList.contains("open") ? "true" : "false");
+  });
+
+  // Close dropdown when clicking outside (mobile)
+  document.addEventListener("click", (e) => {
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    if (!isMobile) return;
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+});
     
