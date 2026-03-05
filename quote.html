@@ -9,7 +9,14 @@
     <style>
         .quote-hero { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 60px 20px; text-align: center; }
         .quote-hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 900; margin-bottom: 16px; }
+
+        /* Added trust bar (keeps same aesthetic) */
+        .trust-bar { margin-top: 14px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; font-weight: 600; opacity: .95; }
+        .trust-bar span { white-space: nowrap; }
+
         .quote-container { max-width: 700px; margin: -40px auto 80px; background: white; padding: 40px 32px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); position: relative; z-index: 10; }
+
+        /* Keep these - they help your page consistency even though Jobber controls its own form styles */
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: var(--navy); }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; font-family: inherit; }
@@ -18,6 +25,10 @@
         .county-alert { background: #fef3c7; border: 2px solid var(--gold); border-radius: 8px; padding: 14px; margin: 16px 0; font-size: 13px; font-weight: 600; color: #92400e; display: none; }
         .required { color: #dc2626; }
         @media (max-width: 767px) { .form-row { grid-template-columns: 1fr; } }
+
+        /* Optional: tighten spacing around embedded form so it feels native in your container */
+        .jobber-embed-wrap { width: 100%; }
+        .jobber-embed-wrap > div { width: 100%; }
     </style>
 </head>
 <body>
@@ -42,132 +53,30 @@
 
     <div class="quote-hero">
         <h1>Get Your Free Quote</h1>
-        <p>Tell us about your property and we'll provide a personalized quote within 2 hours</p>
+        <p>Tell us about your property and we’ll send a personalized quote within 24 hours.</p>
+
+        <div class="trust-bar">
+            <span>✔ Fully Insured</span>
+            <span>✔ Professional Soft Washing</span>
+            <span>✔ Westchester • Putnam • Dutchess</span>
+        </div>
     </div>
 
     <div class="quote-container">
-        <form id="quoteForm">
-            <div class="form-group">
-                <label>Service Needed <span class="required">*</span></label>
-                <select name="service" required>
-                    <option value="">Select service...</option>
-                    <option value="house-wash">House Soft Wash</option>
-                    <option value="roof-wash">Roof Soft Wash</option>
-                    <option value="gutter-clean">Gutter Cleaning</option>
-                    <option value="window-clean">Window Cleaning (Exterior)</option>
-                    <option value="flatwork">Driveway & Flatwork Cleaning</option>
-                    <option value="bundle-essentials">Home Essentials Bundle</option>
-                    <option value="bundle-curb">Curb Appeal Bundle</option>
-                    <option value="bundle-full">Full Exterior Bundle</option>
-                    <option value="bundle-premium">Premium Reset Bundle</option>
-                    <option value="plan-essential">Essential Home Care Plan</option>
-                    <option value="plan-complete">Complete Home Care Plan</option>
-                    <option value="plan-estate">Estate / Premium Care Plan</option>
-                </select>
-            </div>
+        <!-- Jobber embedded work request form (keeps your layout the same) -->
+        <div class="jobber-embed-wrap">
+            <div id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2247735"></div>
 
-            <div class="form-group">
-                <label>Property Location <span class="required">*</span></label>
-                <select id="location" name="location" required>
-                    <option value="">Select town...</option>
-                    <optgroup label="Westchester County">
-                        <option value="bedford-westchester">Bedford</option>
-                        <option value="pound-ridge-westchester">Pound Ridge</option>
-                        <option value="armonk-westchester">Armonk</option>
-                        <option value="chappaqua-westchester">Chappaqua</option>
-                        <option value="katonah-westchester">Katonah</option>
-                        <option value="lewisboro-westchester">Lewisboro</option>
-                        <option value="mount-kisco-westchester">Mount Kisco</option>
-                        <option value="irvington-westchester">Irvington</option>
-                        <option value="dobbs-ferry-westchester">Dobbs Ferry</option>
-                        <option value="tarrytown-westchester">Tarrytown</option>
-                    </optgroup>
-                    <optgroup label="Putnam County">
-                        <option value="mahopac-putnam">Mahopac</option>
-                        <option value="carmel-putnam">Carmel</option>
-                        <option value="brewster-putnam">Brewster</option>
-                        <option value="cold-spring-putnam">Cold Spring</option>
-                        <option value="garrison-putnam">Garrison</option>
-                        <option value="kent-putnam">Kent</option>
-                        <option value="patterson-putnam">Patterson</option>
-                        <option value="putnam-valley-putnam">Putnam Valley</option>
-                    </optgroup>
-                    <optgroup label="Dutchess County">
-                        <option value="millbrook-dutchess">Millbrook</option>
-                        <option value="rhinebeck-dutchess">Rhinebeck</option>
-                        <option value="red-hook-dutchess">Red Hook</option>
-                        <option value="pleasant-valley-dutchess">Pleasant Valley</option>
-                        <option value="hopewell-dutchess">Hopewell Junction</option>
-                        <option value="fishkill-dutchess">Fishkill</option>
-                        <option value="beacon-dutchess">Beacon</option>
-                        <option value="hyde-park-dutchess">Hyde Park</option>
-                        <option value="poughkeepsie-dutchess">Poughkeepsie</option>
-                    </optgroup>
-                </select>
-            </div>
-
-            <div class="county-alert" id="countyAlert"></div>
-
-            <div class="form-group">
-                <label>Home Size <span class="required">*</span></label>
-                <select name="homeSize" required>
-                    <option value="">Select size...</option>
-                    <option value="small">Small (Under 1,800 sq ft)</option>
-                    <option value="medium">Medium (1,800-2,800 sq ft)</option>
-                    <option value="large">Large (2,800-3,800 sq ft)</option>
-                    <option value="xl">XL / Complex (3,800+ sq ft)</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Full Name <span class="required">*</span></label>
-                    <input type="text" name="name" required placeholder="John Smith">
-                </div>
-                <div class="form-group">
-                    <label>Phone <span class="required">*</span></label>
-                    <input type="tel" name="phone" required placeholder="(845) 555-0123">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Email <span class="required">*</span></label>
-                <input type="email" name="email" required placeholder="john@example.com">
-            </div>
-
-            <div class="form-group">
-                <label>Property Address <span class="required">*</span></label>
-                <input type="text" name="address" required placeholder="123 Main Street">
-            </div>
-
-            <div class="form-group">
-                <label>How did you hear about us? <span class="required">*</span></label>
-                <select name="referralSource" required>
-                    <option value="">Please select...</option>
-                    <option value="google-search">Google Search</option>
-                    <option value="google-maps">Google Maps</option>
-                    <option value="facebook">Facebook</option>
-                    <option value="nextdoor">Nextdoor</option>
-                    <option value="yard-sign">Yard Sign in Neighborhood</option>
-                    <option value="door-hanger">Door Hanger</option>
-                    <option value="friend-referral">Friend or Neighbor Referral</option>
-                    <option value="saw-truck">Saw Your Truck Working</option>
-                    <option value="veterans-program">Veterans Program</option>
-                    <option value="real-estate">Real Estate Agent</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Additional Notes (Optional)</label>
-                <textarea name="notes" rows="4" placeholder="Any specific concerns or requests..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-cta-primary" style="width: 100%; margin-top: 8px;">Submit Quote Request →</button>
-        </form>
+            <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+            <script
+                src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+                clienthub_id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2247735"
+                form_url="https://clienthub.getjobber.com/client_hubs/d5735447-27b5-428c-ac2e-5c83a2fdd2b0/public/work_request/embedded_work_request_form?form_id=2247735">
+            </script>
+        </div>
     </div>
 
-     <footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
@@ -204,9 +113,10 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
-                <p class="footer-tagline">Professional Care for Your Home</p>
-            </div>
-            </footer>
-<script src="main.js" defer></script>
+            <p class="footer-tagline">Professional Care for Your Home</p>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
 </body>
 </html>
