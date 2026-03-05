@@ -194,7 +194,7 @@ nav {
     /* HERO IMAGE + your existing navy overlay (keeps your style) */
     background:
         linear-gradient(rgba(30,58,95,0.82), rgba(45,90,123,0.82)),
-        url('pexels-caitlin-whealy-3517316-5652626.jpg');
+        url('hero-house-washing.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
