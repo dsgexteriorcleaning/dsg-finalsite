@@ -78,6 +78,93 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(212,175,55,0.4);
 }
+/* ============================================
+   NAV DROPDOWN (Services)
+   Paste directly under .cta-btn:hover
+   ============================================ */
+
+.nav-dropdown { position: relative; }
+
+.nav-dropdown .dropdown-caret {
+  font-size: 12px;
+  margin-left: 6px;
+  opacity: 0.9;
+}
+
+.nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 320px;
+  max-height: 70vh;
+  overflow: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+  padding: 10px;
+  z-index: 2000; /* Above nav */
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Show on hover/focus (desktop) */
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown link styling */
+.nav-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.nav-dropdown .dropdown-menu li a:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--navy);
+}
+
+/* Titles + divider */
+.nav-dropdown .dropdown-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  padding: 10px 12px 6px;
+}
+
+.nav-dropdown .dropdown-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 8px 8px;
+}
+
+/* MOBILE: dropdown becomes inline inside the slide-out menu */
+@media (max-width: 767px) {
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 6px 0 0;
+    max-height: none;
+    min-width: 0;
+  }
+
+  /* Default hidden, toggled by JS */
+  .nav-dropdown .dropdown-menu { display: none; }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+
+  .nav-dropdown .dropdown-menu li a {
+    padding: 10px 0;
+    border-radius: 0;
+  }
+}
 /* Hero */
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%);
@@ -766,7 +853,7 @@ footer {
         padding-left: 16px;    /* keeps text from feeling cramped */
         padding-right: 16px;
     }
-    @media (max-width: 767px) {
+    
   .cta-box .btn-cta-primary {
     display: inline-block;
     width: 100%;
@@ -778,7 +865,7 @@ footer {
     padding-left: 16px;
     padding-right: 16px;
   }
-}
+
 
 
     /* If the arrow is dropping alone, this keeps last word + arrow together */
@@ -881,7 +968,7 @@ footer {
     .nav-container {
     flex-wrap: nowrap;
     gap: 12px;
-    
+    }
     .nav-links {
         position: fixed;
         top: 0;
