@@ -178,3 +178,74 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });   
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+  const overlay = document.querySelector("#mobileOverlay");
+
+  const dropdown = document.querySelector(".nav-dropdown");
+  const dropdownToggle = document.querySelector(".nav-dropdown .dropdown-toggle");
+
+  const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
+
+  function openMenu() {
+    navLinks?.classList.add("active");
+    mobileBtn?.classList.add("active");
+    overlay?.classList.add("active");
+    mobileBtn?.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    navLinks?.classList.remove("active");
+    mobileBtn?.classList.remove("active");
+    overlay?.classList.remove("active");
+    mobileBtn?.setAttribute("aria-expanded", "false");
+    dropdown?.classList.remove("open");
+    dropdownToggle?.setAttribute("aria-expanded", "false");
+  }
+
+  // Hamburger open/close
+  mobileBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (navLinks?.classList.contains("active")) closeMenu();
+    else openMenu();
+  });
+
+  overlay?.addEventListener("click", closeMenu);
+
+  // ✅ Mobile dropdown toggle (Services)
+  dropdownToggle?.addEventListener("click", (e) => {
+    if (!isMobile()) return;          // desktop uses hover
+    e.preventDefault();               // don't navigate to services.html
+    e.stopPropagation();              // IMPORTANT: don't trigger close handlers
+
+    dropdown.classList.toggle("open");
+    dropdownToggle.setAttribute(
+      "aria-expanded",
+      dropdown.classList.contains("open") ? "true" : "false"
+    );
+  });
+
+  // ✅ Close the hamburger ONLY when clicking a normal link
+  navLinks?.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    // If user tapped the Services toggle, do nothing (handled above)
+    if (a.classList.contains("dropdown-toggle")) {
+      e.preventDefault();
+      return;
+    }
+
+    // Otherwise close menu on navigation
+    closeMenu();
+  });
+
+  // Tap outside closes (optional)
+  document.addEventListener("click", () => {
+    if (!isMobile()) return;
+    if (navLinks?.classList.contains("active")) closeMenu();
+  });
+});
