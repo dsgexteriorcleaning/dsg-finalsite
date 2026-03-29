@@ -11,6 +11,7 @@
     <meta property="og:image" content="https://yourdomain.com/images/soft-washing-blog.jpg">
     <title>When Should You Soft Wash Your Home? | DSG Exterior Cleaning</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         * {
@@ -35,6 +36,10 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
+        
+        /* ============================================
+           NAVIGATION FIX - DROPDOWN HIDDEN BY DEFAULT
+           ============================================ */
         
         /* Navigation */
         nav {
@@ -67,6 +72,10 @@
             list-style: none;
         }
         
+        .nav-links li {
+            list-style: none;
+        }
+        
         .nav-links a {
             color: var(--navy);
             text-decoration: none;
@@ -77,6 +86,82 @@
         
         .nav-links a:hover {
             color: var(--gold);
+        }
+        
+        /* DROPDOWN STYLES - FIXED */
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .dropdown-caret {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* CRITICAL: Hide dropdown by default */
+        .dropdown-menu {
+            display: none;
+            list-style: none;
+        }
+        
+        /* Desktop dropdown behavior */
+        @media (min-width: 769px) {
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                min-width: 260px;
+                padding: 0.75rem 0;
+                margin-top: 0.5rem;
+                z-index: 1000;
+            }
+            
+            /* Show dropdown on hover */
+            .nav-dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .nav-dropdown:hover .dropdown-caret {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu li a {
+                display: block;
+                padding: 0.75rem 1.5rem;
+                color: #475569;
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+            
+            .dropdown-menu li a:hover {
+                background: #eff6ff;
+                color: #3b82f6;
+            }
+            
+            .dropdown-title {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #94a3b8;
+                padding: 0.5rem 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .dropdown-divider {
+                height: 1px;
+                background: #e2e8f0;
+                margin: 0.5rem 0;
+            }
         }
         
         .cta-btn {
@@ -515,28 +600,6 @@
             color: var(--gold);
         }
         
-        /* Breadcrumbs */
-        .breadcrumbs {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem 0;
-            font-size: 0.875rem;
-        }
-        
-        .breadcrumbs a {
-            color: var(--secondary-blue);
-            text-decoration: none;
-        }
-        
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-        
-        .breadcrumbs span {
-            color: var(--text-gray);
-            margin: 0 0.5rem;
-        }
-        
         /* Responsive */
         @media (min-width: 768px) {
             .nav-links {
@@ -592,6 +655,7 @@
             .nav-links li {
                 margin: 0 0 20px 0;
                 list-style: none;
+                width: 100%;
             }
             
             .nav-links li a {
@@ -599,6 +663,56 @@
                 padding: 12px 0;
                 display: block;
                 color: var(--navy);
+            }
+            
+            /* Mobile dropdown */
+            .nav-dropdown {
+                width: 100%;
+            }
+            
+            .dropdown-toggle {
+                width: 100%;
+                padding: 12px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+            }
+            
+            .dropdown-menu {
+                background: #f8fafc;
+                margin: 10px 0;
+                padding: 10px 0;
+                border-radius: 8px;
+            }
+            
+            .nav-dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .nav-dropdown.active .dropdown-caret {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-menu li a {
+                padding: 8px 16px !important;
+                font-size: 15px !important;
+                display: block;
+            }
+            
+            .dropdown-title {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #94a3b8;
+                padding: 8px 16px;
+                letter-spacing: 0.5px;
+            }
+            
+            .dropdown-divider {
+                height: 1px;
+                background: #e2e8f0;
+                margin: 8px 16px;
             }
             
             .cta-btn {
@@ -669,54 +783,52 @@
 <body>
     <!-- Navigation -->
     <nav>
-    <div class="nav-container">
-        <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
-        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li class="nav-dropdown">
-                <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                    Services <span class="dropdown-caret">▾</span>
-                </a>
+        <div class="nav-container">
+            <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+            <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Services <span class="dropdown-caret">▾</span>
+                    </a>
 
-                <ul class="dropdown-menu" aria-label="Services menu">
-                    <li class="dropdown-title">By Service</li>
+                    <ul class="dropdown-menu" aria-label="Services menu">
+                        <li class="dropdown-title">By Service</li>
 
-                    <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
-                    <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
-                    <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
-                    <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
-                    <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
+                        <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
+                        <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
+                        <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
+                        <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
+                        <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
 
-                    <li class="dropdown-divider"></li>
-                    <li class="dropdown-title">Local Service Pages</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-title">Local Service Pages</li>
 
-                    <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
-                    <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
-                    <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
+                        <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
+                        <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
+                        <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
 
-                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
-                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
-                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
+                        <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
+                        <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
+                        <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
 
-                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
-                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
-                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
-                </ul>
-            </li>
-            <li><a href="bundles.html">View Our Bundles</a></li>
-            <li><a href="plans.html">Plans</a></li>
-            <li><a href="veterans.html">Veterans</a></li>
-            <li><a href="reviews.html">See Customer Reviews</a></li>
-            <li><a href="blog.html">Read Our Blog</a></li>
-        </ul>
-        <a href="quote.html" class="cta-btn">Get Free Quote</a>
-    </div>
-
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-</nav>
+                        <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
+                        <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
+                        <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
+                    </ul>
+                </li>
+                <li><a href="bundles.html">View Our Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="reviews.html">See Customer Reviews</a></li>
+                <li><a href="blog.html">Read Our Blog</a></li>
+            </ul>
+            <a href="quote.html" class="cta-btn">Get Free Quote</a>
+        </div>
+    </nav>
 
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
@@ -977,201 +1089,13 @@
 
             <p>For most homes in the Hudson Valley region, <strong>annual or biennial soft washing</strong> is sufficient to maintain appearance and protect your investment.</p>
 
-            <h3>Factors That Increase Cleaning Frequency Needs</h3>
-
-            <p><strong>You may need soft washing MORE often (every 12-18 months) if your home has:</strong></p>
-
-            <ul>
-                <li><strong>Heavy shade or tree coverage:</strong> Trees create moisture and debris, accelerating algae/mold growth</li>
-                <li><strong>North-facing walls:</strong> These receive less direct sunlight (UV naturally inhibits algae), so growth is faster</li>
-                <li><strong>Proximity to water:</strong> Homes near rivers, lakes, or in humid microclimates accumulate moisture and organic growth faster</li>
-                <li><strong>Light-colored siding:</strong> White or light gray siding shows stains more obviously (though dark siding gets just as dirty)</li>
-                <li><strong>Poor drainage or gutter issues:</strong> Water overflow or pooling near foundation promotes mold and algae</li>
-                <li><strong>High pollen area:</strong> Properties near fields, wooded areas, or with lots of flowering plants accumulate more organic debris</li>
-            </ul>
-
-            <p><strong>You may need soft washing LESS often (every 2-3 years) if your home has:</strong></p>
-
-            <ul>
-                <li><strong>Full sun exposure:</strong> UV light naturally inhibits organic growth</li>
-                <li><strong>Well-maintained landscaping:</strong> Trimmed trees/bushes reduce shade and debris</li>
-                <li><strong>Quality siding with algae-resistant treatments:</strong> Some newer vinyl siding includes algae inhibitors</li>
-                <li><strong>Dry climate or good air circulation:</strong> Less moisture = slower growth</li>
-            </ul>
-
-            <h3>Special Cases: When to Soft Wash More Frequently</h3>
-
-            <p><strong>Before Major Events:</strong></p>
-            <ul>
-                <li>Selling your home (boost curb appeal and listing photos)</li>
-                <li>Hosting weddings or large gatherings</li>
-                <li>Holiday celebrations with out-of-town guests</li>
-            </ul>
-
-            <p><strong>After Extreme Weather:</strong></p>
-            <ul>
-                <li>Hurricanes or severe storms (removes mud, debris, and windblown contaminants)</li>
-                <li>Extended periods of rain and humidity (accelerates mold/mildew growth)</li>
-                <li>Heavy winter with road salt exposure (especially near streets)</li>
-            </ul>
-
-            <h2>Can You Soft Wash Too Often?</h2>
-
-            <p><strong>Short answer: Yes, but it's rare.</strong></p>
-
-            <p>While soft washing is gentler than pressure washing, over-cleaning can:</p>
-
-            <ul>
-                <li>Strip protective coatings on siding</li>
-                <li>Accelerate oxidation and fading (especially with harsh chemicals)</li>
-                <li>Stress landscaping with repeated chemical exposure</li>
-                <li>Waste money on unnecessary services</li>
-            </ul>
-
-            <p><strong>General Rule:</strong> Once per year is optimal for most homes. Twice per year (spring and fall) is appropriate only for homes with heavy shade, severe algae issues, or before major events.</p>
-
-            <h2>Soft Washing vs. Pressure Washing: Timing Differences</h2>
-
-            <p>It's worth noting that soft washing and pressure washing have different timing considerations:</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Factor</th>
-                        <th>Soft Washing</th>
-                        <th>Pressure Washing</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Best Seasons</strong></td>
-                        <td>Spring, Fall</td>
-                        <td>Spring, Summer, Fall</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Temperature Range</strong></td>
-                        <td>45-85°F (chemicals need moderate temps)</td>
-                        <td>40-90°F (water-only, less temp-sensitive)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Weather Sensitivity</strong></td>
-                        <td>Higher (rain affects chemical dwell time)</td>
-                        <td>Lower (mechanical cleaning, less chemical dependency)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Frequency</strong></td>
-                        <td>1-2 years (for siding, roofs)</td>
-                        <td>Annually (for driveways, walkways, decks)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Best For</strong></td>
-                        <td>Siding, roofs, delicate surfaces</td>
-                        <td>Concrete, brick, pavers, decks</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <p><strong>Pro Tip:</strong> Many homeowners schedule soft washing (siding/roof) in spring and pressure washing (driveway/walkway) in fall for complete exterior maintenance throughout the year.</p>
-
-            <h2>How to Choose the Right Time for YOUR Home</h2>
-
-            <p>Here's a simple decision framework:</p>
-
-            <div class="checklist">
-                <h4>Step 1: Assess Your Home's Current Condition</h4>
-                <ul>
-                    <li>Do you see visible algae, mold, or staining? → <strong>Clean ASAP, regardless of season (within weather constraints)</strong></li>
-                    <li>Home looks decent but it's been 18+ months? → <strong>Schedule for next ideal season (spring or fall)</strong></li>
-                    <li>Home was cleaned within the last 12 months and looks good? → <strong>Wait until next year</strong></li>
-                </ul>
-            </div>
-
-            <div class="checklist">
-                <h4>Step 2: Consider Your Schedule and Goals</h4>
-                <ul>
-                    <li>Planning to sell or host event? → <strong>Schedule 2-4 weeks before the event</strong></li>
-                    <li>Want to maximize cleanliness duration? → <strong>Spring cleaning lasts longest</strong></li>
-                    <li>Need to fit in budget year? → <strong>Fall cleaning before year-end</strong></li>
-                </ul>
-            </div>
-
-            <div class="checklist">
-                <h4>Step 3: Check the 10-Day Weather Forecast</h4>
-                <ul>
-                    <li>Look for a window with 3-4 dry days</li>
-                    <li>Moderate temps (55-75°F ideal)</li>
-                    <li>Low wind (<10 mph)</li>
-                    <li>No rain in forecast for day-of and 24 hours after</li>
-                </ul>
-            </div>
-
-            <div class="checklist">
-                <h4>Step 4: Book Early (Especially in Peak Season)</h4>
-                <ul>
-                    <li>Spring and fall are busy—book 2-4 weeks in advance</li>
-                    <li>Summer availability is often more flexible</li>
-                    <li>Avoid last-minute scheduling (limits ideal weather windows)</li>
-                </ul>
-            </div>
-
-            <h2>What to Expect: Soft Washing Process & Timeline</h2>
-
-            <p>Understanding what happens during a soft wash helps you plan your timing better:</p>
-
-            <h3>Typical Soft Washing Timeline</h3>
-
-            <p><strong>Pre-Service (Day Before):</strong></p>
-            <ul>
-                <li>Contractor confirms appointment and weather</li>
-                <li>You prepare property (move furniture, close windows, etc.)</li>
-            </ul>
-
-            <p><strong>Day-Of Service (2-4 Hours for Average Home):</strong></p>
-            <ul>
-                <li>Setup and property walk-through (15 minutes)</li>
-                <li>Pre-wetting plants and landscaping (10 minutes)</li>
-                <li>Chemical application to siding/surfaces (30-60 minutes)</li>
-                <li>Dwell time (10-20 minutes while chemicals work)</li>
-                <li>Low-pressure rinse (30-60 minutes)</li>
-                <li>Final plant rinse and cleanup (15 minutes)</li>
-            </ul>
-
-            <p><strong>Post-Service:</strong></p>
-            <ul>
-                <li>Surfaces dry within 2-4 hours</li>
-                <li>Full results visible within 24-48 hours (some stains continue lightening)</li>
-                <li>Avoid touching wet surfaces for 2-3 hours</li>
-            </ul>
-
-            <p><strong>Weather Requirement:</strong> No rain for 4-6 hours after completion (allows chemicals to work and rinse to dry).</p>
-
-            <h2>Final Recommendations: Your Soft Washing Timing Cheat Sheet</h2>
-
-            <div class="callout callout-success">
-                <h4>🏆 The DSG Service Group "Perfect Timing" Formula:</h4>
-                <p><strong>Best Time:</strong> Late April through May OR September through mid-October</p>
-                <p><strong>Ideal Weather:</strong> 55-75°F, dry for 3+ days, light wind, no rain for 6 hours after</p>
-                <p><strong>Frequency:</strong> Every 12-18 months for most homes; annually for heavily shaded properties</p>
-                <p><strong>Book Ahead:</strong> 2-4 weeks in advance during peak season (spring/fall)</p>
-                <p><strong>Warning Signs:</strong> Black streaks, green algae, roof staining = clean ASAP regardless of season</p>
-            </div>
 
             <h2>Ready to Schedule Your Soft Wash?</h2>
 
             <p>Now that you know when to soft wash your home, the next step is choosing a professional contractor who understands these timing nuances and delivers quality results.</p>
 
             <p><strong>DSG Service Group specializes in soft washing for homeowners throughout the Hudson Valley region</strong>, including Westchester, Putnam, and Dutchess counties. We monitor weather closely, use professional-grade equipment, and guarantee results that protect your home and enhance your curb appeal.</p>
-
-            <div class="checklist">
-                <h4>Why Choose DSG Service Group?</h4>
-                <ul>
-                    <li><strong>Weather-conscious scheduling:</strong> We only book on ideal days for optimal results</li>
-                    <li><strong>Proven soft wash methods:</strong> Safe for all siding types, roofs, and landscaping</li>
-                    <li><strong>Experienced technicians:</strong> Trained in proper chemical ratios and application techniques</li>
-                    <li><strong>Free estimates:</strong> Transparent pricing with no hidden fees</li>
-                    <li><strong>Satisfaction guaranteed:</strong> We don't leave until you're thrilled with the results</li>
-                </ul>
-            </div>
 
             <div class="cta-section">
                 <h3>Get Your Free Soft Washing Quote Today</h3>
@@ -1250,18 +1174,60 @@
 
     <script>
         // Mobile menu toggle
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                menuBtn.setAttribute('aria-expanded', 
-                    menuBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
-                );
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuBtn && navLinks) {
+                // Toggle menu on button click
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (navLinks.classList.contains('active') && 
+                        !navLinks.contains(e.target) && 
+                        !menuBtn.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        menuBtn.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when clicking a link
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuBtn.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Dropdown toggle on mobile
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parent = this.closest('.nav-dropdown');
+                        
+                        // Close other dropdowns
+                        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+                            if (dropdown !== parent) {
+                                dropdown.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle this dropdown
+                        parent.classList.toggle('active');
+                    }
+                });
             });
-        }
+        });
     </script>
 </body>
 </html>
