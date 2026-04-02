@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DSG Exterior Cleaning provides professional restaurant and food service exterior cleaning across Dutchess, Putnam, and Westchester Counties. Dumpster pad degreasing, entrance washing, building exterior, monthly contracts.">
+    <meta name="keywords" content="restaurant exterior cleaning Hudson Valley, dumpster pad cleaning Dutchess County, commercial pressure washing restaurant Westchester, food service exterior maintenance Putnam">
+    <title>Restaurant & Food Service Exterior Cleaning | DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rest-red: #7B2D00;
+            --rest-red-light: #FCE4D6;
+            --rest-orange: #C05528;
+        }
+        .page-hero {
+            background: linear-gradient(135deg, #1B3A6B 0%, #7B2D00 100%);
+            color: white;
+            padding: 70px 20px 80px;
+            text-align: center;
+        }
+        .page-hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 { font-size: clamp(30px, 5vw, 50px); font-weight: 900; margin-bottom: 18px; line-height: 1.15; }
+        .page-hero p { font-size: 18px; opacity: 0.9; max-width: 620px; margin: 0 auto 28px; line-height: 1.6; }
+        .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-ctas a { padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .btn-primary-hero { background: #D4AF37; color: #1B3A6B; }
+        .btn-secondary-hero { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.5); color: white; }
+        .trust-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+        .trust-pills span { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+        .content-section { padding: 70px 20px; }
+        .content-section.alt { background: #f8fafc; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: #1B3A6B; margin-bottom: 12px; }
+        .section-header p { font-size: 17px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+
+        /* Problem section */
+        .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .problem-card {
+            background: var(--rest-red-light);
+            border-left: 4px solid var(--rest-red);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 22px;
+        }
+        .problem-card h4 { font-size: 15px; font-weight: 700; color: var(--rest-red); margin-bottom: 6px; }
+        .problem-card p { font-size: 14px; color: #374151; line-height: 1.6; margin: 0; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .svc-card {
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            padding: 28px;
+            border-top: 4px solid var(--rest-red);
+        }
+        .svc-card .icon { font-size: 28px; margin-bottom: 14px; }
+        .svc-card h3 { font-size: 18px; font-weight: 700; color: #1B3A6B; margin-bottom: 10px; }
+        .svc-card p { font-size: 15px; color: #6b7280; line-height: 1.7; margin-bottom: 14px; }
+        .svc-card ul { list-style: none; padding: 0; margin: 0; }
+        .svc-card ul li { font-size: 14px; color: #374151; padding: 4px 0; }
+        .svc-card ul li::before { content: "→ "; color: var(--rest-red); font-weight: 700; }
+
+        /* Dumpster pad highlight */
+        .dumpster-highlight {
+            background: #1B3A6B;
+            color: white;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .dumpster-highlight h3 { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
+        .dumpster-highlight p { font-size: 16px; opacity: 0.88; line-height: 1.7; max-width: 600px; margin: 0 auto 28px; }
+        .dumpster-highlight .pricing-pill {
+            display: inline-block;
+            background: #D4AF37;
+            color: #1B3A6B;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .dumpster-highlight a {
+            display: inline-block;
+            background: white;
+            color: #1B3A6B;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        /* Timing section */
+        .timing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .timing-card {
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            padding: 28px 20px;
+            border: 1px solid #e5e7eb;
+        }
+        .timing-card .time { font-size: 22px; font-weight: 900; color: #1B3A6B; margin-bottom: 6px; }
+        .timing-card h4 { font-size: 15px; font-weight: 700; color: #374151; margin-bottom: 8px; }
+        .timing-card p { font-size: 13px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+        /* Contract box */
+        .contract-box {
+            background: var(--rest-red-light);
+            border: 2px solid var(--rest-red);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contract-box h3 { font-size: 24px; font-weight: 800; color: #1B3A6B; margin-bottom: 12px; }
+        .contract-box p { font-size: 15px; color: #374151; line-height: 1.7; max-width: 580px; margin: 0 auto 24px; }
+        .contract-options { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+        .contract-option {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px 24px;
+            text-align: center;
+            min-width: 150px;
+        }
+        .contract-option .freq { font-size: 16px; font-weight: 800; color: #1B3A6B; margin-bottom: 4px; }
+        .contract-option .save { font-size: 12px; color: var(--rest-red); font-weight: 700; }
+        .contract-box a { display: inline-block; background: #1B3A6B; color: white; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #1B3A6B 0%, #7B2D00 100%); color: white; padding: 70px 20px; text-align: center; }
+        .final-cta h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 14px; }
+        .final-cta p { font-size: 17px; opacity: 0.88; max-width: 560px; margin: 0 auto 32px; }
+        .final-cta .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .cta-buttons a { padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .btn-cta-primary { background: #D4AF37; color: #1B3A6B; }
+        .btn-cta-secondary { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; }
+        .final-perks { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 28px; font-size: 14px; opacity: 0.88; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Services menu">
+                    <li class="dropdown-title">By Service</li>
+                    <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
+                    <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
+                    <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
+                    <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
+                    <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Local Service Pages</li>
+                    <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
+                    <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
+                    <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
+                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
+                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
+                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
+                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
+                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
+                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="commercial.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Commercial <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Commercial menu">
+                    <li><a href="commercial.html">Commercial Services</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Who We Serve</li>
+                    <li><a href="commercial-property-managers.html">Property Managers & HOAs</a></li>
+                    <li><a href="commercial-restaurants.html">Restaurants & Food Service</a></li>
+                    <li><a href="commercial-retail-office.html">Retail & Office Buildings</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a href="commercial-quote.html">Get Commercial Quote →</a></li>
+                </ul>
+            </li>
+            <li><a href="bundles.html">View Our Bundles</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="veterans.html">Veterans</a></li>
+            <li><a href="reviews.html">See Customer Reviews</a></li>
+            <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+        <a href="quote.html" class="cta-btn">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="badge">&#127869; Restaurants & Food Service</div>
+    <h1>Exterior Cleaning for<br>Restaurants & Food Service</h1>
+    <p>Monthly contracts, health-code-ready dumpster pad degreasing, and same-day scheduling for Hudson Valley restaurants, cafes, and hospitality businesses.</p>
+    <div class="hero-ctas">
+        <a href="commercial-quote.html" class="btn-primary-hero">Request Restaurant Quote</a>
+        <a href="tel:845-208-9557" class="btn-secondary-hero">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="trust-pills">
+        <span>&#10004; Licensed & Insured</span>
+        <span>&#10004; Early Morning Scheduling</span>
+        <span>&#10004; Monthly Contracts</span>
+        <span>&#10004; Dumpster Pad Specialists</span>
+        <span>&#10004; Health Code Compliant</span>
+    </div>
+</section>
+
+<!-- Problems restaurants face -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Exterior Problems Restaurants Can't Ignore</h2>
+            <p>A dirty entrance costs you customers. A grimy dumpster pad costs you health code points. Here's what we see at restaurants across the Hudson Valley every week.</p>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <h4>Grease-Stained Entrance & Sidewalk</h4>
+                <p>High foot traffic plus kitchen ventilation creates sticky buildup on your entrance and sidewalk that regular mopping can't touch. First impressions matter.</p>
+            </div>
+            <div class="problem-card">
+                <h4>Dumpster Pad Grease & Odor</h4>
+                <p>Accumulated grease and food waste on dumpster pads attract pests, create odor, and are a direct health code concern during inspections.</p>
+            </div>
+            <div class="problem-card">
+                <h4>Algae & Staining on Building Exterior</h4>
+                <p>The north side of your building accumulates algae and mold over Hudson Valley winters. Customers see it on the way in — and it affects your image before they even walk through the door.</p>
+            </div>
+            <div class="problem-card">
+                <h4>Outdoor Dining Area Buildup</h4>
+                <p>Patio and outdoor seating surfaces collect organic growth, gum, food residue, and general grime that pressure washing removes completely.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services for Restaurants</h2>
+            <p>Everything from the dumpster pad to the roofline — handled on a schedule that works around your hours.</p>
+        </div>
+        <div class="services-grid">
+            <div class="svc-card">
+                <div class="icon">&#9851;</div>
+                <h3>Dumpster Pad Degreasing</h3>
+                <p>Our most requested restaurant service. We apply commercial degreaser, scrub the pad, and pressure wash all grease, food residue, and organic buildup.</p>
+                <ul>
+                    <li>Commercial-grade degreaser application</li>
+                    <li>Full enclosure cleaning including walls</li>
+                    <li>Drain area cleared and rinsed</li>
+                    <li>Health-code ready result</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="icon">&#128682;</div>
+                <h3>Entrance & Sidewalk Cleaning</h3>
+                <p>Pressure wash your entire entrance area, sidewalk, and front facade. Removes grease, gum, organic staining, and general buildup.</p>
+                <ul>
+                    <li>Storefront facade soft wash</li>
+                    <li>Sidewalk pressure wash</li>
+                    <li>Entrance and door surround</li>
+                    <li>Step and ramp cleaning</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="icon">&#127968;</div>
+                <h3>Building Exterior Soft Wash</h3>
+                <p>Full soft wash of your building exterior — removes algae, mold, and staining from siding, trim, and foundation face.</p>
+                <ul>
+                    <li>All siding types and materials</li>
+                    <li>Trim, soffits, fascia</li>
+                    <li>Foundation face and base</li>
+                    <li>Awning and canopy surrounds</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="icon">&#127860;</div>
+                <h3>Outdoor Dining Area</h3>
+                <p>Pressure wash your patio, outdoor seating surfaces, and surrounding concrete or pavers. Ready for the season and looking its best.</p>
+                <ul>
+                    <li>Concrete and paver patios</li>
+                    <li>Wood and composite deck areas</li>
+                    <li>Surrounding walkways</li>
+                    <li>Pre-season and post-season options</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="icon">&#128663;</div>
+                <h3>Parking Lot & Drive-Thru</h3>
+                <p>Pressure wash drive-through lanes, parking areas, and curb lines. Removes oil, gum, food residue, and general grime buildup.</p>
+                <ul>
+                    <li>Drive-through apron and lane</li>
+                    <li>Parking lot surface</li>
+                    <li>Curb line and island cleaning</li>
+                    <li>Menu board area</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="icon">&#127810;</div>
+                <h3>Gutter Cleaning</h3>
+                <p>Full debris removal and downspout flush. Prevents water damage to building and overflows onto your entrance area.</p>
+                <ul>
+                    <li>Full gutter debris removal</li>
+                    <li>Downspout flush and check</li>
+                    <li>Bi-annual scheduling available</li>
+                    <li>Visual damage inspection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dumpster pad highlight -->
+<section class="content-section">
+    <div class="container">
+        <div class="dumpster-highlight">
+            <h3>&#9851; The Dumpster Pad — Your Biggest Exterior Liability</h3>
+            <p>For restaurants, the dumpster pad is the one area that directly affects health code compliance. Grease buildup, pest attraction, and odor all trace back to an unmaintained pad. A monthly cleaning removes the risk, the smell, and the health code concern — for less than most restaurants spend on one case of napkins.</p>
+            <div class="pricing-pill">Starting at $149/visit · Monthly contracts available</div>
+            <br>
+            <a href="commercial-quote.html">Get a Dumpster Pad Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- Timing -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>We Work Around Your Hours</h2>
+            <p>Restaurants can't shut down for exterior cleaning. We schedule around you.</p>
+        </div>
+        <div class="timing-grid">
+            <div class="timing-card">
+                <div class="time">6–9am</div>
+                <h4>Before You Open</h4>
+                <p>Most popular window. We're done before your first customers arrive. Entrance and sidewalk look spotless for the morning rush.</p>
+            </div>
+            <div class="timing-card">
+                <div class="time">2–4pm</div>
+                <h4>Between Services</h4>
+                <p>After lunch, before dinner. Minimal foot traffic. Ideal for dumpster pad and rear of building work.</p>
+            </div>
+            <div class="timing-card">
+                <div class="time">After Close</div>
+                <h4>Evening Availability</h4>
+                <p>After 9pm or later for businesses open through the evening. We work after your last customer leaves.</p>
+            </div>
+            <div class="timing-card">
+                <div class="time">Weekend</div>
+                <h4>Saturday Mornings</h4>
+                <p>For restaurants closed Monday or with slower Sunday mornings. Full building exterior and flatwork on your quietest day.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contract section -->
+<section class="content-section">
+    <div class="container">
+        <div class="contract-box">
+            <h3>Monthly Maintenance Contracts</h3>
+            <p>Stop chasing vendors and scheduling one-off cleanings. A monthly contract means your entrance, sidewalk, and dumpster pad are handled automatically — same schedule every month, locked pricing all year.</p>
+            <div class="contract-options">
+                <div class="contract-option">
+                    <div class="freq">Monthly</div>
+                    <div class="save">Save 20%</div>
+                </div>
+                <div class="contract-option">
+                    <div class="freq">Quarterly</div>
+                    <div class="save">Save 15%</div>
+                </div>
+                <div class="contract-option">
+                    <div class="freq">Annual</div>
+                    <div class="save">Save 25%</div>
+                </div>
+            </div>
+            <a href="commercial-quote.html">Get Contract Pricing</a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <h2>Ready to Keep Your Restaurant Exterior Clean?</h2>
+    <p>Monthly contracts starting at $299. Schedule around your hours. First impression cleaned before your first customer of the day.</p>
+    <div class="cta-buttons">
+        <a href="commercial-quote.html" class="btn-cta-primary">Get Restaurant Quote</a>
+        <a href="tel:845-208-9557" class="btn-cta-secondary">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="final-perks">
+        <span>&#10003; Licensed & Insured</span>
+        <span>&#10003; Early Morning Scheduling</span>
+        <span>&#10003; Dumpster Pad Specialists</span>
+        <span>&#10003; Dutchess · Putnam · Westchester</span>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
+            <p class="footer-tagline">Professional Care for Your Home</p>
+            <p class="footer-description">Serving Westchester, Putnam, and Dutchess Counties with expert exterior cleaning services.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="services.html">Residential Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="quote.html">Get Quote</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+18452089557">(845) 208-9557</a></li>
+                <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
+                <li>Hopewell Junction, NY</li>
+                <li>Mon–Fri: 8:30am–7pm</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
