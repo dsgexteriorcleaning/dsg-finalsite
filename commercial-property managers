@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DSG Exterior Cleaning provides professional exterior maintenance for property managers and HOAs across Dutchess, Putnam, and Westchester Counties. COI same day, recurring contracts, multi-property discounts.">
+    <meta name="keywords" content="property manager exterior cleaning Hudson Valley, HOA pressure washing Dutchess County, commercial building washing property management, exterior cleaning contract Westchester Putnam">
+    <title>Commercial Cleaning for Property Managers & HOAs | DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pm-green: #1F5C2E;
+            --pm-green-light: #E2EFDA;
+            --pm-green-mid: #2E7D42;
+        }
+        .page-hero {
+            background: linear-gradient(135deg, #1B3A6B 0%, #1F5C2E 100%);
+            color: white;
+            padding: 70px 20px 80px;
+            text-align: center;
+        }
+        .page-hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 { font-size: clamp(30px, 5vw, 50px); font-weight: 900; margin-bottom: 18px; line-height: 1.15; }
+        .page-hero p { font-size: 18px; opacity: 0.9; max-width: 620px; margin: 0 auto 28px; line-height: 1.6; }
+        .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-ctas a {
+            padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 16px;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary-hero { background: #D4AF37; color: #1B3A6B; }
+        .btn-secondary-hero { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.5); color: white; }
+        .trust-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+        .trust-pills span { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+        .content-section { padding: 70px 20px; }
+        .content-section.alt { background: #f8fafc; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: #1B3A6B; margin-bottom: 12px; }
+        .section-header p { font-size: 17px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+
+        /* Why PM choose DSG */
+        .reasons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .reason-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 28px;
+            border-top: 4px solid var(--pm-green);
+        }
+        .reason-card .icon { font-size: 28px; margin-bottom: 14px; }
+        .reason-card h3 { font-size: 18px; font-weight: 700; color: #1B3A6B; margin-bottom: 10px; }
+        .reason-card p { font-size: 15px; color: #6b7280; line-height: 1.7; }
+
+        /* Services for PM */
+        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .svc-item {
+            display: flex;
+            gap: 16px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            align-items: flex-start;
+        }
+        .svc-item .svc-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+        .svc-item h4 { font-size: 16px; font-weight: 700; color: #1B3A6B; margin-bottom: 6px; }
+        .svc-item p { font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+        /* Contract tiers */
+        .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+        .tier-card {
+            border-radius: 16px;
+            padding: 32px 28px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            background: white;
+            position: relative;
+        }
+        .tier-card.featured { border-color: var(--pm-green); background: var(--pm-green-light); }
+        .tier-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--pm-green); color: white; padding: 4px 16px;
+            border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.06em; white-space: nowrap;
+        }
+        .tier-card h3 { font-size: 20px; font-weight: 800; color: #1B3A6B; margin-bottom: 8px; }
+        .tier-card .tier-save { font-size: 13px; color: var(--pm-green); font-weight: 700; margin-bottom: 16px; }
+        .tier-card ul { text-align: left; list-style: none; padding: 0; margin: 0 0 24px; }
+        .tier-card ul li { font-size: 14px; color: #374151; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .tier-card ul li::before { content: "✓ "; color: var(--pm-green); font-weight: 700; }
+        .tier-card a { display: block; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; background: #1B3A6B; color: white; }
+        .tier-card.featured a { background: var(--pm-green); }
+
+        /* COI / Process */
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .step {
+            text-align: center;
+            padding: 28px 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+        .step-num {
+            width: 44px; height: 44px; background: #1B3A6B; color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: 900; margin: 0 auto 14px;
+        }
+        .step h4 { font-size: 16px; font-weight: 700; color: #1B3A6B; margin-bottom: 8px; }
+        .step p { font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+        /* COI callout */
+        .coi-box {
+            background: #1B3A6B;
+            color: white;
+            border-radius: 16px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .coi-box h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+        .coi-box p { font-size: 15px; opacity: 0.88; line-height: 1.6; margin: 0; }
+        .coi-box a { display: inline-block; background: #D4AF37; color: #1B3A6B; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
+        @media (max-width: 600px) { .coi-box { grid-template-columns: 1fr; text-align: center; } }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #1B3A6B 0%, #1F5C2E 100%); color: white; padding: 70px 20px; text-align: center; }
+        .final-cta h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 14px; }
+        .final-cta p { font-size: 17px; opacity: 0.88; max-width: 560px; margin: 0 auto 32px; }
+        .final-cta .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .cta-buttons a { padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .btn-cta-primary { background: #D4AF37; color: #1B3A6B; }
+        .btn-cta-secondary { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; }
+        .final-perks { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 28px; font-size: 14px; opacity: 0.88; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Services menu">
+                    <li class="dropdown-title">By Service</li>
+                    <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
+                    <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
+                    <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
+                    <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
+                    <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Local Service Pages</li>
+                    <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
+                    <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
+                    <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
+                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
+                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
+                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
+                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
+                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
+                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="commercial.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Commercial <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Commercial menu">
+                    <li><a href="commercial.html">Commercial Services</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Who We Serve</li>
+                    <li><a href="commercial-property-managers.html">Property Managers & HOAs</a></li>
+                    <li><a href="commercial-restaurants.html">Restaurants & Food Service</a></li>
+                    <li><a href="commercial-retail-office.html">Retail & Office Buildings</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a href="commercial-quote.html">Get Commercial Quote →</a></li>
+                </ul>
+            </li>
+            <li><a href="bundles.html">View Our Bundles</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="veterans.html">Veterans</a></li>
+            <li><a href="reviews.html">See Customer Reviews</a></li>
+            <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+        <a href="quote.html" class="cta-btn">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="badge">&#127970; Property Managers & HOAs</div>
+    <h1>Exterior Cleaning Built for<br>Property Managers</h1>
+    <p>Recurring contracts, same-day COI, multi-property pricing, and one point of contact for everything. We make exterior maintenance the easiest item on your vendor list.</p>
+    <div class="hero-ctas">
+        <a href="commercial-quote.html" class="btn-primary-hero">Request Commercial Quote</a>
+        <a href="tel:845-208-9557" class="btn-secondary-hero">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="trust-pills">
+        <span>&#10004; $1M Liability Coverage</span>
+        <span>&#10004; COI Same Day</span>
+        <span>&#10004; Multi-Property Discounts</span>
+        <span>&#10004; Recurring Contracts</span>
+        <span>&#10004; W-2 Technicians</span>
+    </div>
+</section>
+
+<!-- Why PM choose DSG -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Property Managers Choose DSG</h2>
+            <p>We understand what property managers actually need — and it's not just a clean building.</p>
+        </div>
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="icon">&#128203;</div>
+                <h3>COI Ready in 24 Hours</h3>
+                <p>We provide Certificate of Insurance same day for any property in our service area. $1M general liability, commercial auto, and workers comp — all in one document, sent directly to your office.</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">&#128260;</div>
+                <h3>Recurring Contracts with Locked Pricing</h3>
+                <p>Monthly, quarterly, or annual contracts with pricing locked for the full term. You know exactly what you're paying, schedule in advance, and never have to chase quotes again.</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">&#127970;</div>
+                <h3>Multi-Property Discounts</h3>
+                <p>Managing more than one property? We offer volume discounts starting at 10% for 2+ properties and up to 25% for portfolio contracts. One invoice, one vendor, multiple properties handled.</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">&#128247;</div>
+                <h3>Before & After Documentation</h3>
+                <p>Every job comes with before and after photos, digital completion report, and invoice — all sent the same day the work is done. Ready for your property records or owner reporting.</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">&#9201;</div>
+                <h3>Flexible Scheduling</h3>
+                <p>Early morning, weekend, and off-hours appointments available to minimize disruption to tenants and building operations. We work around your schedule, not ours.</p>
+            </div>
+            <div class="reason-card">
+                <div class="icon">&#128222;</div>
+                <h3>One Point of Contact</h3>
+                <p>You deal with Matthieu directly — the owner. No call centers, no dispatchers, no runaround. Text or call and you get a response within the hour during business hours.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services for Managed Properties</h2>
+            <p>Everything your properties need — exterior soft wash, flatwork, gutters, and more.</p>
+        </div>
+        <div class="services-list">
+            <div class="svc-item">
+                <div class="svc-icon">&#127968;</div>
+                <div>
+                    <h4>Building Exterior Soft Wash</h4>
+                    <p>Full soft wash of siding, trim, soffits, and foundation face. Removes algae, mold, and staining without high-pressure damage to the building envelope.</p>
+                </div>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#128663;</div>
+                <div>
+                    <h4>Parking Lot & Sidewalk Cleaning</h4>
+                    <p>Pressure wash all pedestrian surfaces, drive lanes, and parking areas. Removes oil, organic buildup, and general grime throughout the property.</p>
+                </div>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#127810;</div>
+                <div>
+                    <h4>Gutter Cleaning</h4>
+                    <p>Full debris removal and downspout flush. Visual inspection for damage or separation included. Bi-annual scheduling available — spring and fall.</p>
+                </div>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#9851;</div>
+                <div>
+                    <h4>Dumpster Pad Cleaning</h4>
+                    <p>Pressure wash and degrease dumpster enclosure areas. Reduces odor, pest attraction, and health code risk for multi-unit properties.</p>
+                </div>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#127968;</div>
+                <div>
+                    <h4>Roof Soft Wash</h4>
+                    <p>Remove algae streaks, lichen, and moss from commercial and multi-unit roofs. Soft wash only — no high-pressure damage to shingles or flat roof membranes.</p>
+                </div>
+            </div>
+            <div class="svc-item">
+                <div class="svc-icon">&#128682;</div>
+                <div>
+                    <h4>Entrance & Common Area Cleaning</h4>
+                    <p>Breezeways, building entrances, stairwells, and amenity areas. First impression cleaning that tenants notice and appreciate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contract tiers -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contract Options</h2>
+            <p>Choose the frequency that fits your properties. All contracts include locked pricing and priority scheduling.</p>
+        </div>
+        <div class="tiers-grid">
+            <div class="tier-card">
+                <h3>Quarterly</h3>
+                <div class="tier-save">Save 15% vs one-time</div>
+                <ul>
+                    <li>4 visits per year</li>
+                    <li>Building exterior each visit</li>
+                    <li>Flatwork each visit</li>
+                    <li>Priority scheduling</li>
+                    <li>Locked annual pricing</li>
+                </ul>
+                <a href="commercial-quote.html">Get Quote</a>
+            </div>
+            <div class="tier-card featured">
+                <div class="tier-badge">Most Popular</div>
+                <h3>Monthly</h3>
+                <div class="tier-save">Save 20% vs one-time</div>
+                <ul>
+                    <li>12 visits per year</li>
+                    <li>Entrance & sidewalk monthly</li>
+                    <li>Dumpster pad included</li>
+                    <li>Priority emergency service</li>
+                    <li>Single monthly invoice</li>
+                </ul>
+                <a href="commercial-quote.html">Get Quote</a>
+            </div>
+            <div class="tier-card">
+                <h3>Annual Portfolio</h3>
+                <div class="tier-save">Save up to 25%</div>
+                <ul>
+                    <li>All properties covered</li>
+                    <li>Custom service schedule</li>
+                    <li>One annual invoice</li>
+                    <li>Dedicated account contact</li>
+                    <li>Best pricing available</li>
+                </ul>
+                <a href="commercial-quote.html">Get Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>From first contact to recurring service — here's what to expect.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Submit a Request</h4>
+                <p>Fill out our commercial quote form or call us directly. Tell us about your properties and what services you need.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Property Assessment</h4>
+                <p>We send a technician to document your properties and photograph all areas. You receive a detailed written quote within 24 hours.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>Approve & Schedule</h4>
+                <p>Approve the quote online, we set your contract schedule, and you're done. We handle everything from there.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Ongoing Service</h4>
+                <p>We show up on schedule, complete the work, send you photos and an invoice same day. You never have to chase us.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COI callout -->
+<section class="content-section">
+    <div class="container">
+        <div class="coi-box">
+            <div>
+                <h3>&#128203; Need a COI Before You Can Hire?</h3>
+                <p>We understand property management requires vendors with proper documentation. We provide Certificate of Insurance same day — $1M general liability, commercial auto, and workers compensation — addressed to your management company or property owner as required.</p>
+            </div>
+            <a href="commercial-quote.html">Request COI + Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <h2>Ready to Simplify Your Exterior Maintenance?</h2>
+    <p>One vendor, recurring contracts, locked pricing, and a local owner you can actually reach. Let's talk about your properties.</p>
+    <div class="cta-buttons">
+        <a href="commercial-quote.html" class="btn-cta-primary">Get Commercial Quote</a>
+        <a href="tel:845-208-9557" class="btn-cta-secondary">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="final-perks">
+        <span>&#10003; $1M Liability Insurance</span>
+        <span>&#10003; COI Same Day</span>
+        <span>&#10003; Multi-Property Discounts</span>
+        <span>&#10003; Dutchess · Putnam · Westchester</span>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
+            <p class="footer-tagline">Professional Care for Your Home</p>
+            <p class="footer-description">Serving Westchester, Putnam, and Dutchess Counties with expert exterior cleaning services.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="services.html">Residential Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="quote.html">Get Quote</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+18452089557">(845) 208-9557</a></li>
+                <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
+                <li>Hopewell Junction, NY</li>
+                <li>Mon–Fri: 8:30am–7pm</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
