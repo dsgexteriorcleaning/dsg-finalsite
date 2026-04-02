@@ -107,7 +107,8 @@ nav {
   left: 0;
   min-width: 320px;
   max-height: 70vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: visible;
   background: white;
   border-radius: 12px;
   box-shadow: 0 18px 50px rgba(0,0,0,0.18);
@@ -126,11 +127,17 @@ nav {
     left: 0;
     right: 0;
     height: 10px;
+    background: transparent;
   }
 }
 
 /* Desktop: open ONLY on hover (prevents Edge sticky focus) */
 @media (min-width: 768px) {
+      .nav-dropdown .dropdown-menu {
+    display: none;
+    transition: opacity 0.1s ease;
+    transition-delay: 0.08s;
+  }
   .nav-dropdown:hover .dropdown-menu {
     display: block;
   }
