@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DSG Exterior Cleaning provides professional exterior cleaning for retail stores, office buildings, medical facilities, and auto dealerships across Dutchess, Putnam, and Westchester Counties.">
+    <meta name="keywords" content="retail building exterior cleaning Hudson Valley, office building pressure washing Dutchess County, commercial storefront cleaning Westchester, auto dealership exterior cleaning Putnam">
+    <title>Retail & Office Building Exterior Cleaning | DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --retail-blue: #2E75B6;
+            --retail-blue-light: #DEEAF1;
+            --retail-navy: #1B3A6B;
+        }
+        .page-hero {
+            background: linear-gradient(135deg, #1B3A6B 0%, #2E75B6 100%);
+            color: white;
+            padding: 70px 20px 80px;
+            text-align: center;
+        }
+        .page-hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 { font-size: clamp(30px, 5vw, 50px); font-weight: 900; margin-bottom: 18px; line-height: 1.15; }
+        .page-hero p { font-size: 18px; opacity: 0.9; max-width: 620px; margin: 0 auto 28px; line-height: 1.6; }
+        .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-ctas a { padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .btn-primary-hero { background: #D4AF37; color: #1B3A6B; }
+        .btn-secondary-hero { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.5); color: white; }
+        .trust-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+        .trust-pills span { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+        .content-section { padding: 70px 20px; }
+        .content-section.alt { background: #f8fafc; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: var(--retail-navy); margin-bottom: 12px; }
+        .section-header p { font-size: 17px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+
+        /* Business types */
+        .biz-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .biz-type {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 24px;
+            border-top: 4px solid var(--retail-blue);
+        }
+        .biz-type .icon { font-size: 28px; margin-bottom: 12px; }
+        .biz-type h3 { font-size: 17px; font-weight: 700; color: var(--retail-navy); margin-bottom: 10px; }
+        .biz-type ul { list-style: none; padding: 0; margin: 0; }
+        .biz-type ul li { font-size: 14px; color: #6b7280; padding: 4px 0; line-height: 1.5; }
+        .biz-type ul li::before { content: "· "; color: var(--retail-blue); font-weight: 700; }
+
+        /* Services */
+        .services-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .svc-row {
+            display: flex;
+            gap: 18px;
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            border: 1px solid #e5e7eb;
+            align-items: flex-start;
+        }
+        .svc-row .svc-icon { font-size: 28px; flex-shrink: 0; }
+        .svc-row h4 { font-size: 16px; font-weight: 700; color: var(--retail-navy); margin-bottom: 8px; }
+        .svc-row p { font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+        /* Curb appeal section */
+        .curb-appeal {
+            background: var(--retail-navy);
+            color: white;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .curb-appeal h3 { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
+        .curb-appeal p { font-size: 16px; opacity: 0.88; line-height: 1.7; max-width: 620px; margin: 0 auto 28px; }
+        .stat-row { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+        .stat { text-align: center; }
+        .stat .num { font-size: 36px; font-weight: 900; color: #D4AF37; }
+        .stat .label { font-size: 13px; opacity: 0.8; max-width: 120px; }
+        .curb-appeal a { display: inline-block; background: #D4AF37; color: var(--retail-navy); padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; }
+
+        /* Dealership callout */
+        .dealership-box {
+            background: var(--retail-blue-light);
+            border: 2px solid var(--retail-blue);
+            border-radius: 16px;
+            padding: 36px 40px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: center;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .dealership-box h3 { font-size: 22px; font-weight: 800; color: var(--retail-navy); margin-bottom: 10px; }
+        .dealership-box p { font-size: 15px; color: #374151; line-height: 1.7; margin: 0; }
+        .dealership-box a { display: inline-block; background: var(--retail-navy); color: white; padding: 14px 24px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
+        @media (max-width: 600px) { .dealership-box { grid-template-columns: 1fr; text-align: center; } }
+
+        /* Quarterly contract */
+        .contract-strip {
+            background: linear-gradient(135deg, var(--retail-navy) 0%, var(--retail-blue) 100%);
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            color: white;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .contract-strip h3 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+        .contract-strip p { font-size: 16px; opacity: 0.88; max-width: 580px; margin: 0 auto 28px; line-height: 1.7; }
+        .contract-perks { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+        .contract-perks span { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .contract-strip a { display: inline-block; background: #D4AF37; color: var(--retail-navy); padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, #1B3A6B 0%, #2E75B6 100%); color: white; padding: 70px 20px; text-align: center; }
+        .final-cta h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 14px; }
+        .final-cta p { font-size: 17px; opacity: 0.88; max-width: 560px; margin: 0 auto 32px; }
+        .final-cta .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .cta-buttons a { padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; }
+        .btn-cta-primary { background: #D4AF37; color: #1B3A6B; }
+        .btn-cta-secondary { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: white; }
+        .final-perks { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 28px; font-size: 14px; opacity: 0.88; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Services menu">
+                    <li class="dropdown-title">By Service</li>
+                    <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
+                    <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
+                    <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
+                    <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
+                    <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Local Service Pages</li>
+                    <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
+                    <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
+                    <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
+                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
+                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
+                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
+                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
+                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
+                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="commercial.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Commercial <span class="dropdown-caret">▾</span></a>
+                <ul class="dropdown-menu" aria-label="Commercial menu">
+                    <li><a href="commercial.html">Commercial Services</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Who We Serve</li>
+                    <li><a href="commercial-property-managers.html">Property Managers & HOAs</a></li>
+                    <li><a href="commercial-restaurants.html">Restaurants & Food Service</a></li>
+                    <li><a href="commercial-retail-office.html">Retail & Office Buildings</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a href="commercial-quote.html">Get Commercial Quote →</a></li>
+                </ul>
+            </li>
+            <li><a href="bundles.html">View Our Bundles</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="veterans.html">Veterans</a></li>
+            <li><a href="reviews.html">See Customer Reviews</a></li>
+            <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+        <a href="quote.html" class="cta-btn">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="badge">&#127978; Retail & Office Buildings</div>
+    <h1>Exterior Cleaning for Retail<br>& Office Buildings</h1>
+    <p>Storefronts, office complexes, medical facilities, and auto dealerships across the Hudson Valley. Professional results, quarterly contracts, and a clean building that reflects your brand.</p>
+    <div class="hero-ctas">
+        <a href="commercial-quote.html" class="btn-primary-hero">Request a Commercial Quote</a>
+        <a href="tel:845-208-9557" class="btn-secondary-hero">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="trust-pills">
+        <span>&#10004; Licensed & Insured</span>
+        <span>&#10004; $1M Liability Coverage</span>
+        <span>&#10004; COI Same Day</span>
+        <span>&#10004; Quarterly Contracts</span>
+        <span>&#10004; Soft Wash Only</span>
+    </div>
+</section>
+
+<!-- Business types -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Business Types We Serve</h2>
+            <p>From single storefronts to large office complexes — we work with all retail and professional commercial properties.</p>
+        </div>
+        <div class="biz-types">
+            <div class="biz-type">
+                <div class="icon">&#127978;</div>
+                <h3>Retail & Storefronts</h3>
+                <ul>
+                    <li>Retail strip plazas</li>
+                    <li>Individual storefronts</li>
+                    <li>Shopping center tenants</li>
+                    <li>Boutiques and specialty shops</li>
+                    <li>Salons and spas</li>
+                </ul>
+            </div>
+            <div class="biz-type">
+                <div class="icon">&#127970;</div>
+                <h3>Office Buildings</h3>
+                <ul>
+                    <li>Professional office complexes</li>
+                    <li>Corporate headquarters</li>
+                    <li>Business parks</li>
+                    <li>Co-working spaces</li>
+                    <li>Government facilities</li>
+                </ul>
+            </div>
+            <div class="biz-type">
+                <div class="icon">&#129657;</div>
+                <h3>Medical & Dental</h3>
+                <ul>
+                    <li>Medical office buildings</li>
+                    <li>Dental offices</li>
+                    <li>Urgent care centers</li>
+                    <li>Specialist practices</li>
+                    <li>Medical plazas</li>
+                </ul>
+            </div>
+            <div class="biz-type">
+                <div class="icon">&#128663;</div>
+                <h3>Auto Dealerships</h3>
+                <ul>
+                    <li>New and used car dealerships</li>
+                    <li>Showroom exterior washing</li>
+                    <li>Service bay apron cleaning</li>
+                    <li>Lot entrance and apron</li>
+                    <li>Quarterly contracts available</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services for Retail & Office</h2>
+            <p>Everything your building needs to present a professional image to clients, customers, and employees.</p>
+        </div>
+        <div class="services-2col">
+            <div class="svc-row">
+                <div class="svc-icon">&#127968;</div>
+                <div>
+                    <h4>Building Exterior Soft Wash</h4>
+                    <p>Full soft wash of siding, brick, stucco, EIFS, and all cladding types. Removes algae, mold, oxidation, and environmental staining — no high-pressure damage.</p>
+                </div>
+            </div>
+            <div class="svc-row">
+                <div class="svc-icon">&#128682;</div>
+                <div>
+                    <h4>Storefront & Entrance Cleaning</h4>
+                    <p>Pressure wash the entrance, door surround, signage face, window frames, and exterior threshold. First impression cleaning for customer-facing businesses.</p>
+                </div>
+            </div>
+            <div class="svc-row">
+                <div class="svc-icon">&#128663;</div>
+                <div>
+                    <h4>Parking Lot & Sidewalk</h4>
+                    <p>Surface clean all pedestrian areas, parking surfaces, drive lanes, and curb lines. Removes oil, gum, organic buildup, and tire marks.</p>
+                </div>
+            </div>
+            <div class="svc-row">
+                <div class="svc-icon">&#127810;</div>
+                <div>
+                    <h4>Gutter Cleaning</h4>
+                    <p>Full debris removal and downspout flush. Prevents water damage and overflow onto your building facade and entrance.</p>
+                </div>
+            </div>
+            <div class="svc-row">
+                <div class="svc-icon">&#127968;</div>
+                <div>
+                    <h4>Roof Soft Wash</h4>
+                    <p>Remove algae streaks, lichen, and moss from commercial roofs. Improves building appearance and slows organic material deterioration of roofing.</p>
+                </div>
+            </div>
+            <div class="svc-row">
+                <div class="svc-icon">&#128295;</div>
+                <div>
+                    <h4>Service Bay & Loading Areas</h4>
+                    <p>For dealerships and businesses with service bays or loading docks — pressure wash aprons, ramps, and service area surfaces including oil and grease removal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Curb appeal section -->
+<section class="content-section">
+    <div class="container">
+        <div class="curb-appeal">
+            <h3>Your Building Exterior Is Your Brand</h3>
+            <p>For retail and office businesses, your building is the first thing customers and clients see. Algae on the siding, stained sidewalks, and a dirty entrance signal neglect before anyone walks through the door. A clean building communicates professionalism, attention to detail, and care — the same qualities your business stands for.</p>
+            <div class="stat-row">
+                <div class="stat">
+                    <div class="num">95%</div>
+                    <div class="label">of customers judge a business by its exterior before entering</div>
+                </div>
+                <div class="stat">
+                    <div class="num">2–3x</div>
+                    <div class="label">longer results with soft wash vs. standard pressure washing</div>
+                </div>
+                <div class="stat">
+                    <div class="num">24hrs</div>
+                    <div class="label">turnaround on COI for property managers and building owners</div>
+                </div>
+            </div>
+            <a href="commercial-quote.html">Get a Free Assessment</a>
+        </div>
+    </div>
+</section>
+
+<!-- Dealership callout -->
+<section class="content-section alt">
+    <div class="container">
+        <div class="dealership-box">
+            <div>
+                <h3>&#128663; Auto Dealerships — Image Is Everything</h3>
+                <p>Dealerships on high-traffic routes like Route 9 in Wappingers and Fishkill know their curb appeal drives walk-ins. A clean showroom exterior, spotless service bay apron, and fresh entrance all communicate professionalism to every driver passing by. We offer quarterly contracts designed specifically for dealership properties — building exterior, lot, and service areas on a locked schedule.</p>
+            </div>
+            <a href="commercial-quote.html">Dealership Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- Quarterly contract -->
+<section class="content-section">
+    <div class="container">
+        <div class="contract-strip">
+            <h3>Quarterly Maintenance Contracts</h3>
+            <p>The most popular contract for retail and office buildings. Four visits per year keeps your building looking its best through every season — spring buildup, summer heat, fall leaves, and post-winter grime all handled automatically.</p>
+            <div class="contract-perks">
+                <span>&#10003; 4 scheduled visits per year</span>
+                <span>&#10003; 15% off vs one-time pricing</span>
+                <span>&#10003; Priority scheduling</span>
+                <span>&#10003; Locked annual pricing</span>
+                <span>&#10003; Before & after photos every visit</span>
+            </div>
+            <a href="commercial-quote.html">Get Quarterly Contract Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <h2>Ready to Make Your Building Stand Out?</h2>
+    <p>Free assessment, same-day quote, quarterly contracts available. Serving retail and office properties across Dutchess, Putnam, and Westchester.</p>
+    <div class="cta-buttons">
+        <a href="commercial-quote.html" class="btn-cta-primary">Get Commercial Quote</a>
+        <a href="tel:845-208-9557" class="btn-cta-secondary">&#128222; (845) 208-9557</a>
+    </div>
+    <div class="final-perks">
+        <span>&#10003; $1M Liability Insurance</span>
+        <span>&#10003; Soft Wash Only — No Damage</span>
+        <span>&#10003; Quarterly Contracts</span>
+        <span>&#10003; Dutchess · Putnam · Westchester</span>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
+            <p class="footer-tagline">Professional Care for Your Home</p>
+            <p class="footer-description">Serving Westchester, Putnam, and Dutchess Counties with expert exterior cleaning services.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="services.html">Residential Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="quote.html">Get Quote</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+18452089557">(845) 208-9557</a></li>
+                <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
+                <li>Hopewell Junction, NY</li>
+                <li>Mon–Fri: 8:30am–7pm</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
