@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a free commercial exterior cleaning quote from DSG Exterior Cleaning. Serving businesses, property managers, and multi-unit properties across Dutchess, Putnam, and Westchester Counties.">
+    <meta name="keywords" content="commercial exterior cleaning quote, business pressure washing quote, property management cleaning Hudson Valley, commercial soft wash quote">
+    <title>Commercial Quote Request - DSG Exterior Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .quote-hero {
+            background: linear-gradient(135deg, #1B3A6B 0%, #1F5C2E 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .quote-hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 900; margin-bottom: 16px; }
+        .quote-hero p { font-size: 18px; opacity: 0.92; max-width: 600px; margin: 0 auto; }
+
+        .trust-bar {
+            margin-top: 20px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-weight: 600;
+            opacity: .95;
+        }
+        .trust-bar span { white-space: nowrap; }
+
+        .commercial-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .quote-container {
+            max-width: 700px;
+            margin: -40px auto 80px;
+            background: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+        }
+
+        .what-happens-next {
+            background: #f0f7f4;
+            border-left: 4px solid #1F5C2E;
+            border-radius: 0 10px 10px 0;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+        .what-happens-next h3 {
+            color: #1F5C2E;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .what-happens-next ol {
+            margin: 0;
+            padding-left: 20px;
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .services-quick-ref {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .services-quick-ref .svc-pill {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #1B3A6B;
+            font-weight: 500;
+        }
+        @media (max-width: 480px) {
+            .services-quick-ref { grid-template-columns: 1fr; }
+        }
+
+        .divider-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .divider-label span {
+            font-size: 13px;
+            font-weight: 700;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+        }
+        .divider-label::before,
+        .divider-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .alt-contact {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .alt-contact p { color: #6b7280; font-size: 15px; margin-bottom: 14px; }
+        .alt-contact a.call-btn {
+            display: inline-block;
+            background: #1B3A6B;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .alt-contact .hours {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .jobber-embed-wrap { width: 100%; }
+        .jobber-embed-wrap > div { width: 100%; }
+
+        @media (max-width: 767px) {
+            .quote-container { margin: -20px 16px 60px; padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-dropdown">
+                <a href="services.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    Services <span class="dropdown-caret">▾</span>
+                </a>
+                <ul class="dropdown-menu" aria-label="Services menu">
+                    <li class="dropdown-title">By Service</li>
+                    <li><a href="services.html#house-soft-wash">House Soft Wash</a></li>
+                    <li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>
+                    <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
+                    <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
+                    <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-title">Local Service Pages</li>
+                    <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
+                    <li><a href="house-washing-putnam-county.html">House Washing — Putnam</a></li>
+                    <li><a href="house-washing-westchester-county.html">House Washing — Westchester</a></li>
+                    <li><a href="roof-cleaning-dutchess-county.html">Roof Cleaning — Dutchess</a></li>
+                    <li><a href="roof-cleaning-putnam-county.html">Roof Cleaning — Putnam</a></li>
+                    <li><a href="roof-cleaning-westchester-county.html">Roof Cleaning — Westchester</a></li>
+                    <li><a href="gutter-cleaning-dutchess-county.html">Gutter Cleaning — Dutchess</a></li>
+                    <li><a href="gutter-cleaning-putnam-county.html">Gutter Cleaning — Putnam</a></li>
+                    <li><a href="gutter-cleaning-westchester-county.html">Gutter Cleaning — Westchester</a></li>
+                </ul>
+            </li>
+            <li><a href="bundles.html">View Our Bundles</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="veterans.html">Veterans</a></li>
+            <li><a href="reviews.html">See Customer Reviews</a></li>
+            <li><a href="blog.html">Read Our Blog</a></li>
+        </ul>
+        <a href="quote.html" class="cta-btn">Get Free Quote</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+</nav>
+
+<!-- Hero -->
+<div class="quote-hero">
+    <div class="commercial-badge">&#127970; Commercial Services</div>
+    <h1>Request a Commercial Quote</h1>
+    <p>Tell us about your property and we'll follow up within 24 hours with a detailed, itemized quote.</p>
+    <div class="trust-bar">
+        <span>&#10004; Licensed &amp; Insured</span>
+        <span>&#10004; $1M Liability Coverage</span>
+        <span>&#10004; COI Available Same Day</span>
+        <span>&#10004; Dutchess &bull; Putnam &bull; Westchester</span>
+    </div>
+</div>
+
+<!-- Quote Container -->
+<div class="quote-container">
+
+    <!-- What happens next -->
+    <div class="what-happens-next">
+        <h3>&#128338; What happens after you submit</h3>
+        <ol>
+            <li>We review your request and may send a technician to photograph the property</li>
+            <li>You receive a detailed written quote within 24 hours via email</li>
+            <li>Approve online, schedule your service, and we handle the rest</li>
+        </ol>
+    </div>
+
+    <!-- Services we cover -->
+    <p style="font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;">Services available for commercial properties</p>
+    <div class="services-quick-ref">
+        <div class="svc-pill">&#127970; Building Exterior Soft Wash</div>
+        <div class="svc-pill">&#128682; Storefront &amp; Entrance Cleaning</div>
+        <div class="svc-pill">&#128663; Parking Lot &amp; Sidewalk Washing</div>
+        <div class="svc-pill">&#9851; Dumpster Pad Cleaning</div>
+        <div class="svc-pill">&#127810; Gutter Cleaning</div>
+        <div class="svc-pill">&#127968; Roof Soft Wash</div>
+        <div class="svc-pill">&#128295; Loading Dock &amp; Service Bay</div>
+        <div class="svc-pill">&#128260; Recurring Maintenance Contracts</div>
+    </div>
+
+    <!-- Form divider -->
+    <div class="divider-label">
+        <span>Complete the form below</span>
+    </div>
+
+    <!-- Jobber Commercial Request Form -->
+    <div class="jobber-embed-wrap">
+        <div id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2731508"></div>
+        <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+        <script
+            src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+            clienthub_id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2731508"
+            form_url="https://clienthub.getjobber.com/client_hubs/d5735447-27b5-428c-ac2e-5c83a2fdd2b0/public/work_request/embedded_work_request_form?form_id=2731508">
+        </script>
+    </div>
+
+    <!-- Alt contact -->
+    <div class="alt-contact">
+        <p>Prefer to discuss your project directly?</p>
+        <a href="tel:845-208-9557" class="call-btn">&#128222; Call (845) 208-9557</a>
+        <p class="hours">Monday – Friday: 8:30am – 7:00pm</p>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <img src="logo-fixed.png" alt="DSG Exterior Cleaning" class="footer-logo">
+            <p class="footer-tagline">Professional Care for Your Home</p>
+            <p class="footer-description">Serving Westchester, Putnam, and Dutchess Counties with expert exterior cleaning services.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="services.html">Residential Services</a></li>
+                <li><a href="commercial.html">Commercial Services</a></li>
+                <li><a href="bundles.html">Bundles</a></li>
+                <li><a href="plans.html">Plans</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="quote.html">Get Quote</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="veterans.html">Veterans</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="tel:+18452089557">(845) 208-9557</a></li>
+                <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
+                <li>Hopewell Junction, NY</li>
+                <li>Mon–Fri: 8:30am–7pm</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
