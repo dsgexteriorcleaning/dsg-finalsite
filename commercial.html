@@ -365,123 +365,9 @@
                 <h2>Request Commercial Service Quote</h2>
                 <p>Tell us about your property and we'll provide a detailed estimate within 24-48 hours</p>
             </div>
-            <div style="max-width: 700px; margin: 0 auto; background: white; padding: 48px 40px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
-                <form action="submit-commercial-quote.php" method="POST">
-                    <div style="display: grid; gap: 24px;">
-                        <!-- Contact Information -->
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Contact Name *</label>
-                            <input type="text" name="name" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                            <div>
-                                <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Email *</label>
-                                <input type="email" name="email" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                            </div>
-                            <div>
-                                <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Phone *</label>
-                                <input type="tel" name="phone" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                            </div>
-                        </div>
-
-                        <!-- Company/Property Info -->
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Company/Property Name *</label>
-                            <input type="text" name="company" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                        </div>
-
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Property Address *</label>
-                            <input type="text" name="address" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                        </div>
-
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Property Type *</label>
-                            <select name="property-type" required style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                                <option value="">Select property type...</option>
-                                <option value="multi-unit">Multi-Unit Residential (Apartments/Condos)</option>
-                                <option value="office">Office Building</option>
-                                <option value="retail">Retail/Shopping Center</option>
-                                <option value="restaurant">Restaurant/Food Service</option>
-                                <option value="hotel">Hotel/Hospitality</option>
-                                <option value="industrial">Industrial/Warehouse</option>
-                                <option value="church">Church/Nonprofit</option>
-                                <option value="medical">Medical Facility</option>
-                                <option value="hoa">HOA/Community</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                            <div>
-                                <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Number of Units/Buildings</label>
-                                <input type="number" name="units" style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                            </div>
-                            <div>
-                                <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Approx. Square Footage</label>
-                                <input type="text" name="sqft" placeholder="e.g., 10,000" style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                            </div>
-                        </div>
-
-                        <!-- Services Needed -->
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 12px; font-size: 15px;">Services Needed * (Select all that apply)</label>
-                            <div style="display: grid; gap: 12px;">
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                    <input type="checkbox" name="services[]" value="building-washing" style="width: 18px; height: 18px;">
-                                    <span style="color: var(--gray);">Building Exterior Soft Washing</span>
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                    <input type="checkbox" name="services[]" value="roof-cleaning" style="width: 18px; height: 18px;">
-                                    <span style="color: var(--gray);">Roof Cleaning</span>
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                    <input type="checkbox" name="services[]" value="parking-lot" style="width: 18px; height: 18px;">
-                                    <span style="color: var(--gray);">Parking Lot / Sidewalk Pressure Washing</span>
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                    <input type="checkbox" name="services[]" value="dumpster-pad" style="width: 18px; height: 18px;">
-                                    <span style="color: var(--gray);">Dumpster Pad Cleaning</span>
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                    <input type="checkbox" name="services[]" value="gutter" style="width: 18px; height: 18px;">
-                                    <span style="color: var(--gray);">Gutter Cleaning</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Service Frequency</label>
-                            <select name="frequency" style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif;">
-                                <option value="one-time">One-Time Service</option>
-                                <option value="monthly">Monthly Contract</option>
-                                <option value="quarterly">Quarterly Contract</option>
-                                <option value="semi-annual">Semi-Annual Contract</option>
-                                <option value="annual">Annual Contract</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label style="display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; font-size: 15px;">Additional Details</label>
-                            <textarea name="details" rows="4" placeholder="Tell us about specific problem areas, access requirements, preferred schedule, or any other relevant information..." style="width: 100%; padding: 14px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
-                        </div>
-
-                        <div>
-                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-                                <input type="checkbox" name="coi-needed" value="yes" style="width: 18px; height: 18px;">
-                                <span style="color: var(--gray); font-size: 15px;">I need Certificate of Insurance (COI)</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" style="background: var(--gold); color: var(--navy); padding: 18px 36px; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(212,175,55,0.3); width: 100%;">
-                            Get Commercial Quote →
-                        </button>
-
-                        <p style="text-align: center; color: var(--gray); font-size: 13px; margin-top: 8px;">We'll review your request and contact you within 24-48 hours with a detailed quote</p>
-                    </div>
-                </form>
-            </div>
+            <div id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2731508"></div>
+<link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+<script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2731508" form_url="https://clienthub.getjobber.com/client_hubs/d5735447-27b5-428c-ac2e-5c83a2fdd2b0/public/work_request/embedded_work_request_form?form_id=2731508"></script>
 
             <!-- Alternative Contact Methods -->
             <div style="text-align: center; margin-top: 48px;">
@@ -540,7 +426,7 @@
                 <h3>Contact</h3>
                 <ul>
                     <li><a href="tel:+18452089557">(845) 208-9557</a></li>
-                    <li><a href="mailto:info@dsgexterior.com">info@dsgclean.com</a></li>
+                    <li><a href="mailto:info@dsgclean.com">info@dsgclean.com</a></li>
                     <li>Hopewell Junction, NY</li>
                     <li>Mon-Fri: 8:30am-7pm</li>
                 </ul>
