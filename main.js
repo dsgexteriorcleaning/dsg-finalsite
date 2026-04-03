@@ -4,14 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
-
       console.log("Quote Request:", data);
-
       alert("Thank you! Your quote request has been received. We'll contact you within 24 hours with your personalized quote.");
-
       this.reset();
       const countyAlert = document.getElementById("countyAlert");
       if (countyAlert) countyAlert.style.display = "none";
@@ -23,24 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (veteransForm) {
     veteransForm.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
-
       console.log("Veterans Application:", data);
-
       alert("Thank you for your service! Your application has been submitted. We'll contact you within 24 hours to verify eligibility and schedule your free service.");
-
       this.reset();
     });
   }
 
-  // Smooth scroll for on-page anchors only
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
       if (!href || href === "#") return;
-
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
@@ -49,13 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Navigation
+  // ─── Navigation ───────────────────────────────────────────────
   const mobileBtn = document.querySelector(".mobile-menu-btn");
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector("#mobileOverlay");
-
-  document.querySelectorAll(".nav-dropdown").forEach(...);
-  const dropdownToggle = document.querySelector(".nav-dropdown .dropdown-toggle");
+  const navLinks  = document.querySelector(".nav-links");
+  const overlay   = document.querySelector("#mobileOverlay");
 
   const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
@@ -75,88 +63,82 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("active");
     mobileBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
-
-    if (dropdown && dropdownToggle) {
-      dropdown.classList.remove("open");
-      dropdownToggle.setAttribute("aria-expanded", "false");
-    }
+    // Close ALL dropdowns
+    document.querySelectorAll(".nav-dropdown").forEach((d) => {
+      d.classList.remove("open");
+      const toggle = d.querySelector(".dropdown-toggle");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    });
   }
 
   function toggleMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-
     if (!navLinks) return;
-
-    if (navLinks.classList.contains("active")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    navLinks.classList.contains("active") ? closeMenu() : openMenu();
   }
 
-  if (mobileBtn) {
-    mobileBtn.addEventListener("click", toggleMenu);
-  }
+  if (mobileBtn) mobileBtn.addEventListener("click", toggleMenu);
+  if (overlay)   overlay.addEventListener("click", closeMenu);
 
-  if (overlay) {
-    overlay.addEventListener("click", closeMenu);
-  }
+  // ─── ALL dropdowns — works for Services AND Commercial ────────
+  document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+    const toggle    = dropdown.querySelector(".dropdown-toggle");
+    const menuPanel = dropdown.querySelector(".dropdown-menu");
 
-  // Mobile Services dropdown
-  if (dropdown && dropdownToggle) {
-    dropdownToggle.addEventListener("click", (e) => {
+    if (!toggle) return;
+
+    toggle.addEventListener("click", (e) => {
       if (!isMobile()) return;
-
       e.preventDefault();
       e.stopPropagation();
 
-      dropdown.classList.toggle("open");
-      dropdownToggle.setAttribute(
-        "aria-expanded",
-        dropdown.classList.contains("open") ? "true" : "false"
-      );
+      const isOpen = dropdown.classList.contains("open");
+
+      // Close all other dropdowns first
+      document.querySelectorAll(".nav-dropdown").forEach((d) => {
+        if (d !== dropdown) {
+          d.classList.remove("open");
+          const t = d.querySelector(".dropdown-toggle");
+          if (t) t.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Toggle this one
+      dropdown.classList.toggle("open", !isOpen);
+      toggle.setAttribute("aria-expanded", !isOpen ? "true" : "false");
     });
 
-    // Prevent dropdown panel clicks from bubbling up
-    const menuPanel = dropdown.querySelector(".dropdown-menu");
+    // Prevent clicks inside the panel from bubbling up and closing menu
     if (menuPanel) {
       menuPanel.addEventListener("click", (e) => {
         if (!isMobile()) return;
         e.stopPropagation();
       });
     }
-  }
+  });
 
-  // Close mobile menu only when clicking a real navigation link
+  // Close menu when tapping a real nav link (not a toggle)
   if (navLinks) {
     navLinks.addEventListener("click", (e) => {
       if (!isMobile()) return;
-
       const clickedLink = e.target.closest("a");
       if (!clickedLink) return;
-
-      // Do not close menu when tapping Services toggle
       if (clickedLink.classList.contains("dropdown-toggle")) {
         e.preventDefault();
         return;
       }
-
       closeMenu();
     });
   }
 
-  // Close on Escape
+  // Escape key
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
+    if (e.key === "Escape") closeMenu();
   });
 
-  // Reset states when resizing to desktop
+  // Reset on resize to desktop
   window.addEventListener("resize", () => {
-    if (!isMobile()) {
-      closeMenu();
-    }
+    if (!isMobile()) closeMenu();
   });
 });
