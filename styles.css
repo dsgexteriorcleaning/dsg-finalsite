@@ -136,7 +136,7 @@ nav {
       .nav-dropdown .dropdown-menu {
     display: none;
     transition: opacity 0.1s ease;
-    transition-delay: 0.08s;
+    transition-delay: 0.18s;
   }
   .nav-dropdown:hover .dropdown-menu {
     display: block;
