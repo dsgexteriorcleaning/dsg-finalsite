@@ -133,14 +133,20 @@ nav {
 
 /* Desktop: open ONLY on hover (prevents Edge sticky focus) */
 @media (min-width: 768px) {
-      .nav-dropdown .dropdown-menu {
-    display: none;
-    transition: opacity 0.1s ease;
-    transition-delay: 0.18s;
-  }
-  .nav-dropdown:hover .dropdown-menu {
-    display: block;
-  }
+    .nav-dropdown .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.15s ease, visibility 0.15s ease;
+        transition-delay: 0.12s;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
 }
 
 /* Dropdown links */
