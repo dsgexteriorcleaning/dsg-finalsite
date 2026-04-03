@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const overlay = document.querySelector("#mobileOverlay");
 
-  const dropdown = document.querySelector(".nav-dropdown");
+  document.querySelectorAll(".nav-dropdown").forEach(...);
   const dropdownToggle = document.querySelector(".nav-dropdown .dropdown-toggle");
 
   const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
