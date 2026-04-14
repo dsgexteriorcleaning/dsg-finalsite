@@ -16,16 +16,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Veterans form
   const veteransForm = document.getElementById("veteransForm");
-  if (veteransForm) {
-    veteransForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      console.log("Veterans Application:", data);
+if (veteransForm) {
+  veteransForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.textContent = "Submitting…";
+    submitBtn.disabled = true;
+
+    try {
+      await fetch("https://script.google.com/a/macros/dsgclean.com/s/AKfycbyS4RrQdRpiXo0hFcOgsT_NwNaLpe2FL130N8-9f7opOGKcjZbP1alYkH1B2By8Xlxt6g/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
       alert("Thank you for your service! Your application has been submitted. We'll contact you within 24 hours to verify eligibility and schedule your free service.");
       this.reset();
-    });
-  }
+    } catch (err) {
+      alert("Something went wrong. Please call us at (845) 208-9557 to apply directly.");
+    } finally {
+      submitBtn.textContent = "Submit Application →";
+      submitBtn.disabled = false;
+    }
+  });
+}
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
