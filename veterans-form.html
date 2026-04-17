@@ -262,5 +262,50 @@
             </div>
             </footer>
 <script src="main.js" defer></script>
+<script>
+document.getElementById('veteransForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const data = {
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
+    militaryStatus: form.militaryStatus.value,
+    branch: form.branch.value,
+    address: form.address.value,
+    town: form.town.value,
+    zip: form.zip.value,
+    homeSize: form.homeSize.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    contactMethod: form.contactMethod.value,
+    notes: form.notes.value
+  };
+
+  fetch('https://script.google.com/a/macros/dsgclean.com/s/AKfycbyS4RrQdRpiXo0hFcOgsT_NwNaLpe2FL130N8-9f7opOGKcjZbP1alYkH1B2By8Xlxt6g/exec', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(result => {
+    if (result.success) {
+      form.innerHTML = '<div style="text-align:center; padding: 40px;"><h2 style="color:#1e3a8a;">🇺🇸 Application Received!</h2><p style="margin-top:16px;">Thank you for your service. We will contact you within 24 hours to verify eligibility and schedule your free service.</p></div>';
+    } else {
+      btn.textContent = 'Submit Application →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us directly.');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Submit Application →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us directly.');
+  });
+});
+</script>
 </body>
 </html>
