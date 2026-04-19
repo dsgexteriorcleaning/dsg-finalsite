@@ -78,6 +78,120 @@
         backdrop-filter: blur(10px);
         margin: 6px 6px 0 0;
       }
+      /* ── BEFORE & AFTER SECTION ── */
+.before-after-section { background: #f8fafc; padding: 80px 20px; }
+
+.ba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.ba-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(27,58,107,0.13);
+    background: white;
+}
+
+.ba-slider {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    cursor: ew-resize;
+    user-select: none;
+}
+
+.ba-after, .ba-before {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.ba-after img, .ba-before img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.ba-before {
+    width: 50%;
+    overflow: hidden;
+}
+
+.ba-label {
+    position: absolute;
+    top: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.ba-label-before {
+    left: 10px;
+    background: rgba(220,38,38,0.85);
+    color: white;
+}
+
+.ba-label-after {
+    right: 10px;
+    background: rgba(27,58,107,0.85);
+    color: white;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.ba-handle-line {
+    flex: 1;
+    width: 2px;
+    background: white;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+.ba-handle-circle {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #1B3A6B;
+    font-weight: 900;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+}
+
+.ba-caption {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B3A6B;
+    background: white;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .ba-slider { height: 220px; }
+}
     </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1">
@@ -279,7 +393,83 @@
             </div>
         </div>
     </section>
+<!-- BEFORE & AFTER -->
+<section class="before-after-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2>See the DSG Difference</h2>
+            <p>Drag the slider to reveal the transformation</p>
+        </div>
 
+        <div class="ba-grid">
+
+            <!-- Slider 1 -->
+            <div class="ba-card">
+                <div class="ba-slider" id="slider1">
+                    <div class="ba-after">
+                        <img src="after1.jpg" alt="After house wash">
+                        <span class="ba-label ba-label-after">AFTER</span>
+                    </div>
+                    <div class="ba-before" id="before1">
+                        <img src="before1.jpg" alt="Before house wash">
+                        <span class="ba-label ba-label-before">BEFORE</span>
+                    </div>
+                    <div class="ba-handle" id="handle1">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">⟺</div>
+                        <div class="ba-handle-line"></div>
+                    </div>
+                </div>
+                <div class="ba-caption">House Soft Wash — Hopewell Junction, NY</div>
+            </div>
+
+            <!-- Slider 2 -->
+            <div class="ba-card">
+                <div class="ba-slider" id="slider2">
+                    <div class="ba-after">
+                        <img src="after2.jpg" alt="After driveway cleaning">
+                        <span class="ba-label ba-label-after">AFTER</span>
+                    </div>
+                    <div class="ba-before" id="before2">
+                        <img src="before2.jpg" alt="Before driveway cleaning">
+                        <span class="ba-label ba-label-before">BEFORE</span>
+                    </div>
+                    <div class="ba-handle" id="handle2">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">⟺</div>
+                        <div class="ba-handle-line"></div>
+                    </div>
+                </div>
+                <div class="ba-caption">Driveway Cleaning — Dutchess County, NY</div>
+            </div>
+
+            <!-- Slider 3 -->
+            <div class="ba-card">
+                <div class="ba-slider" id="slider3">
+                    <div class="ba-after">
+                        <img src="after3.jpg" alt="After roof cleaning">
+                        <span class="ba-label ba-label-after">AFTER</span>
+                    </div>
+                    <div class="ba-before" id="before3">
+                        <img src="before3.jpg" alt="Before roof cleaning">
+                        <span class="ba-label ba-label-before">BEFORE</span>
+                    </div>
+                    <div class="ba-handle" id="handle3">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">⟺</div>
+                        <div class="ba-handle-line"></div>
+                    </div>
+                </div>
+                <div class="ba-caption">Roof Soft Wash — Putnam County, NY</div>
+            </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top: 40px;">
+            <a href="quote.html" class="btn-primary-large">Get Your Free Quote Today →</a>
+        </div>
+    </div>
+</section>
     <!-- BUNDLES -->
     <section class="bundles-section">
         <div class="section-container">
