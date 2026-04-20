@@ -98,16 +98,15 @@
       }
 
       .hero-form-row {
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr auto;
           gap: 10px;
-          flex-wrap: wrap;
           align-items: center;
       }
 
       .hero-form-row input,
       .hero-form-row select {
-          flex: 1 1 160px;
-          min-width: 130px;
+          width: 100%;
           padding: 12px 14px;
           border-radius: 8px;
           border: 1.5px solid rgba(255,255,255,0.25);
@@ -117,6 +116,7 @@
           font-family: inherit;
           outline: none;
           transition: border-color 0.2s;
+          box-sizing: border-box;
       }
 
       .hero-form-row input::placeholder {
@@ -140,7 +140,6 @@
       }
 
       .hero-form-row button#hqfSubmit {
-          flex: 0 0 auto;
           padding: 12px 22px;
           background: #D4AF37;
           color: #0f2444;
@@ -152,11 +151,17 @@
           font-family: inherit;
           white-space: nowrap;
           transition: background 0.2s, transform 0.15s;
+          height: 100%;
       }
 
       .hero-form-row button#hqfSubmit:hover {
           background: #f0d060;
           transform: translateY(-1px);
+      }
+
+      .hero-quick-form {
+          margin-top: 28px;
+          margin-bottom: 28px;
       }
 
       .hero-form-fine {
@@ -182,18 +187,21 @@
           color: #D4AF37;
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 768px) {
           .hero-quick-form {
               padding: 16px;
           }
           .hero-form-row {
-              flex-direction: column;
+              grid-template-columns: 1fr 1fr;
           }
-          .hero-form-row input,
-          .hero-form-row select,
           .hero-form-row button#hqfSubmit {
-              width: 100%;
-              flex: none;
+              grid-column: 1 / -1;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .hero-form-row {
+              grid-template-columns: 1fr;
           }
       }
 
