@@ -530,7 +530,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    
 
     <!-- SERVICES -->
     <section class="services-section">
@@ -927,146 +927,7 @@
     </div>
 </section>
  
-<!-- ── JAVASCRIPT: paste before </body> ── -->
-<script>
-(function() {
-    const track = document.getElementById('galleryTrack');
-    const prevBtn = document.getElementById('galleryPrev');
-    const nextBtn = document.getElementById('galleryNext');
-    const dotsContainer = document.getElementById('galleryDots');
-    const counter = document.getElementById('galleryCounter');
-    const filterBtns = document.querySelectorAll('.filter-btn');
- 
-    let currentIndex = 0;
-    let visibleCards = [];
-    let cardsPerView = getCardsPerView();
- 
-    function getCardsPerView() {
-        if (window.innerWidth <= 640) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-    }
- 
-    function getAllCards() {
-        return Array.from(track.querySelectorAll('.gallery-card'));
-    }
- 
-    function getActiveFilter() {
-        const active = document.querySelector('.filter-btn.active');
-        return active ? active.dataset.filter : 'all';
-    }
- 
-    function updateVisibleCards() {
-        const filter = getActiveFilter();
-        const all = getAllCards();
-        all.forEach(c => c.style.display = 'none');
-        visibleCards = all.filter(c => filter === 'all' || c.dataset.category === filter);
-        visibleCards.forEach(c => c.style.display = '');
-        currentIndex = 0;
-        buildDots();
-        updateCarousel();
-    }
- 
-    function buildDots() {
-        dotsContainer.innerHTML = '';
-        const total = Math.ceil(visibleCards.length / cardsPerView);
-        for (let i = 0; i < total; i++) {
-            const dot = document.createElement('button');
-            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-            dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); });
-            dotsContainer.appendChild(dot);
-        }
-    }
- 
-    function updateCarousel() {
-        cardsPerView = getCardsPerView();
-        const cardWidth = visibleCards[0] ? visibleCards[0].offsetWidth + 20 : 0;
-        const maxIndex = Math.max(0, Math.ceil(visibleCards.length / cardsPerView) - 1);
-        currentIndex = Math.min(currentIndex, maxIndex);
- 
-        const offset = currentIndex * cardWidth * cardsPerView;
-        track.style.transform = `translateX(-${offset}px)`;
- 
-        // Update dots
-        document.querySelectorAll('.carousel-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === currentIndex);
-        });
- 
-        // Update counter
-        const showing = Math.min((currentIndex + 1) * cardsPerView, visibleCards.length);
-        counter.textContent = `Showing ${showing} of ${visibleCards.length} transformations`;
- 
-        // Update arrows
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= maxIndex;
-    }
- 
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) { currentIndex--; updateCarousel(); }
-    });
- 
-    nextBtn.addEventListener('click', () => {
-        const maxIndex = Math.ceil(visibleCards.length / cardsPerView) - 1;
-        if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
-    });
- 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            updateVisibleCards();
-        });
-    });
- 
-    window.addEventListener('resize', () => {
-        cardsPerView = getCardsPerView();
-        buildDots();
-        updateCarousel();
-    });
- 
-    // ── BEFORE/AFTER SLIDER LOGIC ──
-    function initSliders() {
-        document.querySelectorAll('.ba-slider').forEach(slider => {
-            const beforeWrap = slider.querySelector('.ba-before-wrap');
-            const divider = slider.querySelector('.ba-divider');
-            const handleBtn = slider.querySelector('.ba-handle-btn');
-            let dragging = false;
- 
-            function setPos(x) {
-                const rect = slider.getBoundingClientRect();
-                let pct = ((x - rect.left) / rect.width) * 100;
-                pct = Math.min(Math.max(pct, 2), 98);
-                beforeWrap.style.width = pct + '%';
-                divider.style.left = pct + '%';
-                handleBtn.style.left = pct + '%';
-                handleBtn.style.transform = 'translate(-50%, -50%)';
-            }
- 
-            slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
-            window.addEventListener('mouseup', () => dragging = false);
-            window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-            slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-            window.addEventListener('touchend', () => dragging = false);
-            window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-        });
-    }
- 
-    // Init
-    updateVisibleCards();
-    initSliders();
- 
-    // Reinit sliders after filter change
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => setTimeout(initSliders, 50));
-    });
- 
-})();
 
-        <div style="text-align:center; margin-top: 40px;">
-            <a href="quote.html" class="btn-primary-large">Get Your Free Quote Today →</a>
-        </div>
-    </div>
-</section>
     <!-- BUNDLES -->
     <section class="bundles-section">
         <div class="section-container">
@@ -1350,5 +1211,145 @@
     </footer>
 
     <script src="main.js" defer></script>
+    <!-- ── JAVASCRIPT: paste before </body> ── -->
+<script>
+(function() {
+    const track = document.getElementById('galleryTrack');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    const dotsContainer = document.getElementById('galleryDots');
+    const counter = document.getElementById('galleryCounter');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+ 
+    let currentIndex = 0;
+    let visibleCards = [];
+    let cardsPerView = getCardsPerView();
+ 
+    function getCardsPerView() {
+        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+ 
+    function getAllCards() {
+        return Array.from(track.querySelectorAll('.gallery-card'));
+    }
+ 
+    function getActiveFilter() {
+        const active = document.querySelector('.filter-btn.active');
+        return active ? active.dataset.filter : 'all';
+    }
+ 
+    function updateVisibleCards() {
+        const filter = getActiveFilter();
+        const all = getAllCards();
+        all.forEach(c => c.style.display = 'none');
+        visibleCards = all.filter(c => filter === 'all' || c.dataset.category === filter);
+        visibleCards.forEach(c => c.style.display = '');
+        currentIndex = 0;
+        buildDots();
+        updateCarousel();
+    }
+ 
+    function buildDots() {
+        dotsContainer.innerHTML = '';
+        const total = Math.ceil(visibleCards.length / cardsPerView);
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); });
+            dotsContainer.appendChild(dot);
+        }
+    }
+ 
+    function updateCarousel() {
+        cardsPerView = getCardsPerView();
+        const cardWidth = visibleCards[0] ? visibleCards[0].offsetWidth + 20 : 0;
+        const maxIndex = Math.max(0, Math.ceil(visibleCards.length / cardsPerView) - 1);
+        currentIndex = Math.min(currentIndex, maxIndex);
+ 
+        const offset = currentIndex * cardWidth * cardsPerView;
+        track.style.transform = `translateX(-${offset}px)`;
+ 
+        // Update dots
+        document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentIndex);
+        });
+ 
+        // Update counter
+        const showing = Math.min((currentIndex + 1) * cardsPerView, visibleCards.length);
+        counter.textContent = `Showing ${showing} of ${visibleCards.length} transformations`;
+ 
+        // Update arrows
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+ 
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+    });
+ 
+    nextBtn.addEventListener('click', () => {
+        const maxIndex = Math.ceil(visibleCards.length / cardsPerView) - 1;
+        if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
+    });
+ 
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateVisibleCards();
+        });
+    });
+ 
+    window.addEventListener('resize', () => {
+        cardsPerView = getCardsPerView();
+        buildDots();
+        updateCarousel();
+    });
+ 
+    // ── BEFORE/AFTER SLIDER LOGIC ──
+    function initSliders() {
+        document.querySelectorAll('.ba-slider').forEach(slider => {
+            const beforeWrap = slider.querySelector('.ba-before-wrap');
+            const divider = slider.querySelector('.ba-divider');
+            const handleBtn = slider.querySelector('.ba-handle-btn');
+            let dragging = false;
+ 
+            function setPos(x) {
+                const rect = slider.getBoundingClientRect();
+                let pct = ((x - rect.left) / rect.width) * 100;
+                pct = Math.min(Math.max(pct, 2), 98);
+                beforeWrap.style.width = pct + '%';
+                divider.style.left = pct + '%';
+                handleBtn.style.left = pct + '%';
+                handleBtn.style.transform = 'translate(-50%, -50%)';
+            }
+ 
+            slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
+            window.addEventListener('mouseup', () => dragging = false);
+            window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+            slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchend', () => dragging = false);
+            window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+        });
+    }
+ 
+    // Init
+    updateVisibleCards();
+    initSliders();
+ 
+    // Reinit sliders after filter change
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => setTimeout(initSliders, 50));
+    });
+ 
+})();
+
+        <div style="text-align:center; margin-top: 40px;">
+            <a href="quote.html" class="btn-primary-large">Get Your Free Quote Today →</a>
+        </div>
+    </div>
+</script>
 </body>
 </html>
