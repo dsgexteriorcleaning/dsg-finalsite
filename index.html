@@ -51,9 +51,6 @@
     }
     </script>
 
-    <!-- HERO IMAGE (keeps your style intact)
-         Put your photo in / (root) and name it: hero-house-washing.webp
-         You can swap to .jpg if you prefer; just change the filename below. -->
     <style>
       .hero {
         background:
@@ -63,7 +60,6 @@
         background-position: center;
       }
 
-      /* Small conversion booster that matches your style (no layout change) */
       .hero-quickline {
         margin-top: 14px;
         font-size: 14px;
@@ -78,341 +74,443 @@
         backdrop-filter: blur(10px);
         margin: 6px 6px 0 0;
       }
-      /* ── BEFORE & AFTER SECTION ── */
-/* ── GALLERY SECTION ──────────────────────────────────────── */
-.gallery-section {
-    background: #0f2444;
-    padding: 80px 0 60px;
-    overflow: hidden;
-    position: relative;
-}
- 
-.gallery-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #D4AF37, #f0d060, #D4AF37);
-}
- 
-.gallery-header {
-    text-align: center;
-    padding: 0 20px;
-    margin-bottom: 36px;
-}
- 
-.gallery-header h2 {
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 900;
-    color: white;
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
-}
- 
-.gallery-header p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 32px;
-}
- 
-/* ── FILTER BUTTONS ───────────────────────────────────────── */
-.gallery-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0 20px;
-    margin-bottom: 36px;
-}
- 
-.filter-btn {
-    padding: 9px 20px;
-    border-radius: 50px;
-    border: 2px solid rgba(255,255,255,0.2);
-    background: transparent;
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-family: inherit;
-}
- 
-.filter-btn:hover {
-    border-color: #D4AF37;
-    color: #D4AF37;
-}
- 
-.filter-btn.active {
-    background: #D4AF37;
-    border-color: #D4AF37;
-    color: #0f2444;
-}
- 
-/* ── CAROUSEL TRACK ───────────────────────────────────────── */
-.gallery-carousel-wrap {
-    position: relative;
-    padding: 0 60px;
-}
- 
-.gallery-track-outer {
-    overflow: hidden;
-    border-radius: 0;
-}
- 
-.gallery-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-}
- 
-/* ── GALLERY CARD ─────────────────────────────────────────── */
-.gallery-card {
-    flex: 0 0 calc(33.333% - 14px);
-    min-width: calc(33.333% - 14px);
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
- 
-.gallery-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 50px rgba(0,0,0,0.45);
-}
- 
-/* ── BEFORE/AFTER SLIDER ──────────────────────────────────── */
-.ba-slider {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
-    cursor: ew-resize;
-    user-select: none;
-    touch-action: pan-y;
-}
- 
-.ba-after-img, .ba-before-wrap {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-}
- 
-.ba-after-img img,
-.ba-before-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-    loading: lazy;
-}
- 
-.ba-before-wrap {
-    width: 50%;
-    overflow: hidden;
-}
- 
-.ba-before-wrap img {
-    width: auto;
-    min-width: 100%;
-    max-width: none;
-}
- 
-.ba-label {
-    position: absolute;
-    bottom: 12px;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    z-index: 5;
-    pointer-events: none;
-}
- 
-.ba-label-before {
-    left: 10px;
-    background: rgba(220,38,38,0.9);
-    color: white;
-}
- 
-.ba-label-after {
-    right: 10px;
-    background: rgba(15,36,68,0.9);
-    color: white;
-}
- 
-.ba-divider {
-    position: absolute;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: white;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 8;
-    pointer-events: none;
-    box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
- 
-.ba-handle-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 38px;
-    height: 38px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #0f2444;
-    font-weight: 900;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.3);
-    z-index: 9;
-    pointer-events: none;
-}
- 
-/* ── CARD CAPTION ─────────────────────────────────────────── */
-.gallery-caption {
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
- 
-.gallery-caption-text {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1B3A6B;
-}
- 
-.gallery-caption-tag {
-    font-size: 11px;
-    font-weight: 700;
-    color: #0f2444;
-    background: #fef3c7;
-    border: 1px solid #D4AF37;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
-}
- 
-/* ── CAROUSEL ARROWS ──────────────────────────────────────── */
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 46px;
-    height: 46px;
-    background: #D4AF37;
-    border: none;
-    border-radius: 50%;
-    color: #0f2444;
-    font-size: 20px;
-    font-weight: 900;
-    cursor: pointer;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s, transform 0.2s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-}
- 
-.carousel-arrow:hover {
-    background: #f0d060;
-    transform: translateY(-50%) scale(1.08);
-}
- 
-.carousel-arrow.prev { left: 8px; }
-.carousel-arrow.next { right: 8px; }
-.carousel-arrow:disabled { opacity: 0.3; cursor: default; }
- 
-/* ── DOTS ─────────────────────────────────────────────────── */
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 28px;
-    padding: 0 20px;
-    flex-wrap: wrap;
-}
- 
-.carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    padding: 0;
-}
- 
-.carousel-dot.active {
-    background: #D4AF37;
-    transform: scale(1.3);
-}
- 
-/* ── COUNTER ──────────────────────────────────────────────── */
-.gallery-counter {
-    text-align: center;
-    margin-top: 16px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.5px;
-}
- 
-/* ── CTA ──────────────────────────────────────────────────── */
-.gallery-cta {
-    text-align: center;
-    margin-top: 44px;
-    padding: 0 20px;
-}
- 
-/* ── RESPONSIVE ───────────────────────────────────────────── */
-@media (max-width: 1024px) {
-    .gallery-card {
-        flex: 0 0 calc(50% - 10px);
-        min-width: calc(50% - 10px);
-    }
-}
- 
-@media (max-width: 640px) {
-    .gallery-carousel-wrap { padding: 0 44px; }
-    .gallery-card {
-        flex: 0 0 calc(100% - 0px);
-        min-width: calc(100% - 0px);
-    }
-    .ba-slider { height: 220px; }
-    .carousel-arrow { width: 36px; height: 36px; font-size: 16px; }
-}
-    </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-94B0E9VKL1');
-</script>
+      /* ── HERO QUICK QUOTE FORM ── */
+      .hero-quick-form {
+          margin-top: 28px;
+          background: rgba(255,255,255,0.10);
+          border: 1px solid rgba(212,175,55,0.45);
+          border-radius: 14px;
+          padding: 20px 24px 16px;
+          backdrop-filter: blur(12px);
+          max-width: 760px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .hero-form-label {
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 0.5px;
+          color: #D4AF37;
+          margin: 0 0 14px;
+          text-transform: uppercase;
+      }
+
+      .hero-form-row {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          align-items: center;
+      }
+
+      .hero-form-row input,
+      .hero-form-row select {
+          flex: 1 1 160px;
+          min-width: 130px;
+          padding: 12px 14px;
+          border-radius: 8px;
+          border: 1.5px solid rgba(255,255,255,0.25);
+          background: rgba(255,255,255,0.12);
+          color: #fff;
+          font-size: 14px;
+          font-family: inherit;
+          outline: none;
+          transition: border-color 0.2s;
+      }
+
+      .hero-form-row input::placeholder {
+          color: rgba(255,255,255,0.55);
+      }
+
+      .hero-form-row select {
+          color: rgba(255,255,255,0.75);
+          cursor: pointer;
+      }
+
+      .hero-form-row select option {
+          background: #1B3A6B;
+          color: #fff;
+      }
+
+      .hero-form-row input:focus,
+      .hero-form-row select:focus {
+          border-color: #D4AF37;
+          background: rgba(255,255,255,0.18);
+      }
+
+      .hero-form-row button#hqfSubmit {
+          flex: 0 0 auto;
+          padding: 12px 22px;
+          background: #D4AF37;
+          color: #0f2444;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 800;
+          cursor: pointer;
+          font-family: inherit;
+          white-space: nowrap;
+          transition: background 0.2s, transform 0.15s;
+      }
+
+      .hero-form-row button#hqfSubmit:hover {
+          background: #f0d060;
+          transform: translateY(-1px);
+      }
+
+      .hero-form-fine {
+          font-size: 11px;
+          color: rgba(255,255,255,0.45);
+          margin: 10px 0 0;
+          text-align: center;
+      }
+
+      .hero-form-success {
+          margin-top: 12px;
+          padding: 12px 16px;
+          background: rgba(34,197,94,0.15);
+          border: 1px solid rgba(34,197,94,0.4);
+          border-radius: 8px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          text-align: center;
+      }
+
+      .hero-form-success a {
+          color: #D4AF37;
+      }
+
+      @media (max-width: 600px) {
+          .hero-quick-form {
+              padding: 16px;
+          }
+          .hero-form-row {
+              flex-direction: column;
+          }
+          .hero-form-row input,
+          .hero-form-row select,
+          .hero-form-row button#hqfSubmit {
+              width: 100%;
+              flex: none;
+          }
+      }
+
+      /* ── GALLERY SECTION ── */
+      .gallery-section {
+          background: #0f2444;
+          padding: 80px 0 60px;
+          overflow: hidden;
+          position: relative;
+      }
+
+      .gallery-section::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, #D4AF37, #f0d060, #D4AF37);
+      }
+
+      .gallery-header {
+          text-align: center;
+          padding: 0 20px;
+          margin-bottom: 36px;
+      }
+
+      .gallery-header h2 {
+          font-size: clamp(28px, 4vw, 42px);
+          font-weight: 900;
+          color: white;
+          margin-bottom: 10px;
+          letter-spacing: -0.5px;
+      }
+
+      .gallery-header p {
+          font-size: 16px;
+          color: rgba(255,255,255,0.65);
+          margin-bottom: 32px;
+      }
+
+      .gallery-filters {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 0 20px;
+          margin-bottom: 36px;
+      }
+
+      .filter-btn {
+          padding: 9px 20px;
+          border-radius: 50px;
+          border: 2px solid rgba(255,255,255,0.2);
+          background: transparent;
+          color: rgba(255,255,255,0.7);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          font-family: inherit;
+      }
+
+      .filter-btn:hover {
+          border-color: #D4AF37;
+          color: #D4AF37;
+      }
+
+      .filter-btn.active {
+          background: #D4AF37;
+          border-color: #D4AF37;
+          color: #0f2444;
+      }
+
+      .gallery-carousel-wrap {
+          position: relative;
+          padding: 0 60px;
+      }
+
+      .gallery-track-outer {
+          overflow: hidden;
+          border-radius: 0;
+      }
+
+      .gallery-track {
+          display: flex;
+          gap: 20px;
+          transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          will-change: transform;
+      }
+
+      .gallery-card {
+          flex: 0 0 calc(33.333% - 14px);
+          min-width: calc(33.333% - 14px);
+          background: white;
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 50px rgba(0,0,0,0.45);
+      }
+
+      .ba-slider {
+          position: relative;
+          width: 100%;
+          height: 260px;
+          overflow: hidden;
+          cursor: ew-resize;
+          user-select: none;
+          touch-action: pan-y;
+      }
+
+      .ba-after-img, .ba-before-wrap {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+      }
+
+      .ba-after-img img,
+      .ba-before-wrap img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          pointer-events: none;
+      }
+
+      .ba-before-wrap {
+          width: 50%;
+          overflow: hidden;
+      }
+
+      .ba-before-wrap img {
+          width: auto;
+          min-width: 100%;
+          max-width: none;
+      }
+
+      .ba-label {
+          position: absolute;
+          bottom: 12px;
+          font-size: 10px;
+          font-weight: 900;
+          letter-spacing: 2px;
+          padding: 4px 10px;
+          border-radius: 4px;
+          z-index: 5;
+          pointer-events: none;
+      }
+
+      .ba-label-before {
+          left: 10px;
+          background: rgba(220,38,38,0.9);
+          color: white;
+      }
+
+      .ba-label-after {
+          right: 10px;
+          background: rgba(15,36,68,0.9);
+          color: white;
+      }
+
+      .ba-divider {
+          position: absolute;
+          top: 0;
+          width: 3px;
+          height: 100%;
+          background: white;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 8;
+          pointer-events: none;
+          box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      }
+
+      .ba-handle-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 38px;
+          height: 38px;
+          background: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          color: #0f2444;
+          font-weight: 900;
+          box-shadow: 0 2px 14px rgba(0,0,0,0.3);
+          z-index: 9;
+          pointer-events: none;
+      }
+
+      .gallery-caption {
+          padding: 14px 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+
+      .gallery-caption-text {
+          font-size: 13px;
+          font-weight: 700;
+          color: #1B3A6B;
+      }
+
+      .gallery-caption-tag {
+          font-size: 11px;
+          font-weight: 700;
+          color: #0f2444;
+          background: #fef3c7;
+          border: 1px solid #D4AF37;
+          padding: 3px 10px;
+          border-radius: 20px;
+          letter-spacing: 0.3px;
+      }
+
+      .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 46px;
+          height: 46px;
+          background: #D4AF37;
+          border: none;
+          border-radius: 50%;
+          color: #0f2444;
+          font-size: 20px;
+          font-weight: 900;
+          cursor: pointer;
+          z-index: 20;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s, transform 0.2s;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      }
+
+      .carousel-arrow:hover {
+          background: #f0d060;
+          transform: translateY(-50%) scale(1.08);
+      }
+
+      .carousel-arrow.prev { left: 8px; }
+      .carousel-arrow.next { right: 8px; }
+      .carousel-arrow:disabled { opacity: 0.3; cursor: default; }
+
+      .carousel-dots {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 28px;
+          padding: 0 20px;
+          flex-wrap: wrap;
+      }
+
+      .carousel-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.25);
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s;
+          padding: 0;
+      }
+
+      .carousel-dot.active {
+          background: #D4AF37;
+          transform: scale(1.3);
+      }
+
+      .gallery-counter {
+          text-align: center;
+          margin-top: 16px;
+          font-size: 13px;
+          color: rgba(255,255,255,0.45);
+          letter-spacing: 0.5px;
+      }
+
+      .gallery-cta {
+          text-align: center;
+          margin-top: 44px;
+          padding: 0 20px;
+      }
+
+      @media (max-width: 1024px) {
+          .gallery-card {
+              flex: 0 0 calc(50% - 10px);
+              min-width: calc(50% - 10px);
+          }
+      }
+
+      @media (max-width: 640px) {
+          .gallery-carousel-wrap { padding: 0 44px; }
+          .gallery-card {
+              flex: 0 0 calc(100% - 0px);
+              min-width: calc(100% - 0px);
+          }
+          .ba-slider { height: 220px; }
+          .carousel-arrow { width: 36px; height: 36px; font-size: 16px; }
+      }
+    </style>
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-94B0E9VKL1');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-94B0E9VKL1');
+    </script>
 </head>
 
 <body>
@@ -433,7 +531,7 @@
                     <li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>
                     <li><a href="services.html#flatwork">Driveway & Flatwork</a></li>
                     <li><a href="services.html#deck-patio-fence">Deck • Patio • Fence</a></li>
-                        <li><a href="window-cleaning.html" style="font-weight:700;color:var(--gold)">Window Cleaning ✨ New</a></li>
+                    <li><a href="window-cleaning.html" style="font-weight:700;color:var(--gold)">Window Cleaning ✨ New</a></li>
                     <li class="dropdown-divider"></li>
                     <li class="dropdown-title">Local Service Pages</li>
                     <li><a href="house-washing-dutchess-county.html">House Washing — Dutchess</a></li>
@@ -476,7 +574,6 @@
         <div class="hero-content">
             <h1>Professional Care for Your Home</h1>
 
-            <!-- Conversion tweak: clearer promise + tighter targeting (no style change) -->
             <p class="hero-subtitle">
                 Expert exterior cleaning for your properties. Licensed, insured, and built for clear communication and professional results across Dutchess, Orange, Fairfield, Putnam, and Westchester Counties.
             </p>
@@ -486,13 +583,39 @@
                 <a href="tel:+18452089557" class="btn-hero-secondary">📞 (845) 208-9557</a>
             </div>
 
-            <!-- Simple “2-line” conversion booster: speed + professionalism cues -->
-         <div class="trust-row">
-    <div class="trust-item">✓ Fast Quote Turnaround</div>
-    <div class="trust-item">✓ Safety-First, Surface-Specific Methods</div>
-    <div class="trust-item">✓ Licensed & Insured</div>
-    <div class="trust-item">✓ Satisfaction Guaranteed</div>
-</div>
+            <!-- ── INLINE QUICK QUOTE FORM ── -->
+            <div class="hero-quick-form" id="heroQuickForm">
+                <p class="hero-form-label">⚡ Get a Fast Quote — Takes 30 Seconds</p>
+                <div class="hero-form-row">
+                    <input type="text" id="hqfName" placeholder="Your Name" autocomplete="name" />
+                    <input type="tel" id="hqfPhone" placeholder="Phone Number" autocomplete="tel" />
+                    <select id="hqfService">
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="House Soft Wash">House Soft Wash</option>
+                        <option value="Roof Soft Wash">Roof Soft Wash</option>
+                        <option value="Gutter Cleaning">Gutter Cleaning</option>
+                        <option value="Window Cleaning">Window Cleaning</option>
+                        <option value="Driveway & Flatwork">Driveway &amp; Flatwork</option>
+                        <option value="Deck / Patio / Fence">Deck / Patio / Fence</option>
+                        <option value="Bundle / Multiple Services">Bundle / Multiple Services</option>
+                        <option value="Not Sure">Not Sure — Help Me Decide</option>
+                    </select>
+                    <input type="text" id="hqfZip" placeholder="ZIP Code" maxlength="10" autocomplete="postal-code" />
+                    <button type="button" id="hqfSubmit">Get My Quote →</button>
+                </div>
+                <p class="hero-form-fine">No spam. No obligation. We'll respond within a few hours.</p>
+                <div class="hero-form-success" id="hqfSuccess" style="display:none;">
+                    ✅ Got it! We'll be in touch shortly. You can also call us at <a href="tel:+18452089557">(845) 208-9557</a>.
+                </div>
+            </div>
+            <!-- ── END INLINE QUICK QUOTE FORM ── -->
+
+            <div class="trust-row">
+                <div class="trust-item">✓ Fast Quote Turnaround</div>
+                <div class="trust-item">✓ Safety-First, Surface-Specific Methods</div>
+                <div class="trust-item">✓ Licensed &amp; Insured</div>
+                <div class="trust-item">✓ Satisfaction Guaranteed</div>
+            </div>
         </div>
     </section>
 
@@ -526,11 +649,11 @@
                 <div class="feature-card">
                     <div class="feature-icon">💯</div>
                     <h3>Satisfaction Guaranteed</h3>
-                    <p>We stand behind our work. If something isn’t right, we’ll work with you to make it right.</p>
+                    <p>We stand behind our work. If something isn't right, we'll work with you to make it right.</p>
                 </div>
             </div>
         </div>
-    
+    </section>
 
     <!-- SERVICES -->
     <section class="services-section">
@@ -561,12 +684,13 @@
                     <p>Debris removal and downspout flow verification to help prevent overflow, water intrusion, and foundation issues.</p>
                     <a href="quote.html" class="service-cta">Get Quote →</a>
                 </div>
+
                 <div class="service-card">
-    <div class="service-icon">🪟</div>
-    <h3>Window Cleaning</h3>
-    <p>Streak-free interior and exterior window cleaning that restores clarity and curb appeal to your home.</p>
-    <a href="quote.html" class="service-cta">Get Quote →</a>
-</div>
+                    <div class="service-icon">🪟</div>
+                    <h3>Window Cleaning</h3>
+                    <p>Streak-free exterior window cleaning that restores clarity and curb appeal to your home.</p>
+                    <a href="quote.html" class="service-cta">Get Quote →</a>
+                </div>
 
                 <div class="service-card">
                     <div class="service-icon">🚗</div>
@@ -595,343 +719,97 @@
             </div>
         </div>
     </section>
-<!-- BEFORE & AFTER -->
-<section class="gallery-section">
-    <div class="gallery-header">
-        <h2>See the DSG Difference</h2>
-        <p>Real results from real properties — drag any slider to reveal the transformation</p>
-    </div>
- 
-    <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="hw">🏠 House Wash</button>
-        <button class="filter-btn" data-filter="dw">🚗 Driveway</button>
-        <button class="filter-btn" data-filter="st">🪨 Patio & Steps</button>
-        <button class="filter-btn" data-filter="rf">🏔️ Roof</button>
-        <button class="filter-btn" data-filter="fn">🌿 Fence</button>
-        <button class="filter-btn" data-filter="wn">🪟 Windows</button>
-    </div>
- 
-    <div class="gallery-carousel-wrap">
-        <button class="carousel-arrow prev" id="galleryPrev">&#8249;</button>
-        <div class="gallery-track-outer">
-            <div class="gallery-track" id="galleryTrack">
- 
-                <!-- ── HOUSE WASH ── -->
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-1.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-1.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+    <!-- BEFORE & AFTER -->
+    <section class="gallery-section">
+        <div class="gallery-header">
+            <h2>See the DSG Difference</h2>
+            <p>Real results from real properties — drag any slider to reveal the transformation</p>
+        </div>
+
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="hw">🏠 House Wash</button>
+            <button class="filter-btn" data-filter="dw">🚗 Driveway</button>
+            <button class="filter-btn" data-filter="st">🪨 Patio & Steps</button>
+            <button class="filter-btn" data-filter="rf">🏔️ Roof</button>
+            <button class="filter-btn" data-filter="fn">🌿 Fence</button>
+            <button class="filter-btn" data-filter="wn">🪟 Windows</button>
+        </div>
+
+        <div class="gallery-carousel-wrap">
+            <button class="carousel-arrow prev" id="galleryPrev">&#8249;</button>
+            <div class="gallery-track-outer">
+                <div class="gallery-track" id="galleryTrack">
+
+                    <!-- HOUSE WASH -->
+                    <div class="gallery-card" data-category="hw">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/hw-after-1.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/hw-before-1.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-2.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-2.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+                    <div class="gallery-card" data-category="hw">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/hw-after-2.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/hw-before-2.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-3.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-3.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+                    <div class="gallery-card" data-category="hw">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/hw-after-3.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/hw-before-3.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-4.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-4.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+                    <div class="gallery-card" data-category="hw">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/hw-after-4.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/hw-before-4.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- <!--
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-5.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-5.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+                    <!-- PATIO & STEPS -->
+                    <div class="gallery-card" data-category="st">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/st-after-1.jpg" alt="Patio after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/st-before-1.jpg" alt="Patio before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">Patio Cleaning</span><span class="gallery-caption-tag">🪨 Patio</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash — Dutchess County</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-6.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-6.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+
+                    <div class="gallery-card" data-category="st">
+                        <div class="ba-slider">
+                            <div class="ba-after-img"><img src="images/st-after-2.jpg" alt="Steps after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
+                            <div class="ba-before-wrap"><img src="images/st-before-2.jpg" alt="Steps before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
+                            <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
+                        </div>
+                        <div class="gallery-caption"><span class="gallery-caption-text">Patio Cleaning</span><span class="gallery-caption-tag">🪨 Patio</span></div>
                     </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash — Putnam County</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-7.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-7.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-8.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-8.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash — Westchester</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-9.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-9.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="hw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/hw-after-10.jpg" alt="House wash after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/hw-before-10.jpg" alt="House wash before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">House Soft Wash</span><span class="gallery-caption-tag">🏠 House Wash</span></div>
-                </div>
-            -->
-                <!-- Add hw-11 through hw-30 following the same pattern -->
- 
-                <!-- ── DRIVEWAY ── -->
-                 <!--
-                <div class="gallery-card" data-category="dw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/dw-after-1.jpg" alt="Driveway after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/dw-before-1.jpg" alt="Driveway before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Driveway Cleaning</span><span class="gallery-caption-tag">🚗 Driveway</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="dw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/dw-after-2.jpg" alt="Driveway after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/dw-before-2.jpg" alt="Driveway before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Driveway Cleaning</span><span class="gallery-caption-tag">🚗 Driveway</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="dw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/dw-after-3.jpg" alt="Driveway after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/dw-before-3.jpg" alt="Driveway before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Driveway Cleaning</span><span class="gallery-caption-tag">🚗 Driveway</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="dw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/dw-after-4.jpg" alt="Driveway after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/dw-before-4.jpg" alt="Driveway before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Driveway Cleaning — Westchester</span><span class="gallery-caption-tag">🚗 Driveway</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="dw">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/dw-after-5.jpg" alt="Driveway after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/dw-before-5.jpg" alt="Driveway before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Driveway Cleaning</span><span class="gallery-caption-tag">🚗 Driveway</span></div>
-                </div>
-            -->
-                <!-- Add dw-6 through dw-10 following same pattern -->
- 
-                <!-- ── PATIO & STEPS ── -->
-                <div class="gallery-card" data-category="st">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/st-after-1.jpg" alt="Patio after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/st-before-1.jpg" alt="Patio before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Patio Cleaning</span><span class="gallery-caption-tag">🪨 Patio</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="st">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/st-after-2.jpg" alt="Steps after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/st-before-2.jpg" alt="Steps before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Patio Cleaning</span><span class="gallery-caption-tag">🪨 Patio</span></div>
-                </div>
- <!--
-                <div class="gallery-card" data-category="st">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/st-after-3.jpg" alt="Patio after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/st-before-3.jpg" alt="Patio before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Patio & Walkway</span><span class="gallery-caption-tag">🪨 Patio</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="st">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/st-after-4.jpg" alt="Patio after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/st-before-4.jpg" alt="Patio before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Stone Patio Cleaning</span><span class="gallery-caption-tag">🪨 Patio</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="st">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/st-after-5.jpg" alt="Steps after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/st-before-5.jpg" alt="Steps before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Entry Steps & Walkway</span><span class="gallery-caption-tag">🪨 Patio</span></div>
-                </div>
-            -->
-                <!-- Add st-6 through st-30 following same pattern -->
-            
-            
-                <!-- ── ROOF ── -->
-                 <!--
-                <div class="gallery-card" data-category="rf">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/rf-after-1.jpg" alt="Roof after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/rf-before-1.jpg" alt="Roof before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Roof Soft Wash</span><span class="gallery-caption-tag">🏔️ Roof</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="rf">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/rf-after-2.jpg" alt="Roof after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/rf-before-2.jpg" alt="Roof before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Roof Soft Wash — Black Streak Removal</span><span class="gallery-caption-tag">🏔️ Roof</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="rf">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/rf-after-3.jpg" alt="Roof after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/rf-before-3.jpg" alt="Roof before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Roof Soft Wash</span><span class="gallery-caption-tag">🏔️ Roof</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="rf">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/rf-after-4.jpg" alt="Roof after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/rf-before-4.jpg" alt="Roof before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Roof Soft Wash — Moss Removal</span><span class="gallery-caption-tag">🏔️ Roof</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="rf">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/rf-after-5.jpg" alt="Roof after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/rf-before-5.jpg" alt="Roof before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Roof Soft Wash</span><span class="gallery-caption-tag">🏔️ Roof</span></div>
-                </div>
-            -->
-                <!-- Add rf-6 through rf-20 following same pattern -->
- 
-                <!-- ── FENCE ── -->
-                 <!--
-                <div class="gallery-card" data-category="fn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/fn-after-1.jpg" alt="Fence after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/fn-before-1.jpg" alt="Fence before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Fence Soft Wash</span><span class="gallery-caption-tag">🌿 Fence</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="fn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/fn-after-2.jpg" alt="Fence after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/fn-before-2.jpg" alt="Fence before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Vinyl Fence Cleaning</span><span class="gallery-caption-tag">🌿 Fence</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="fn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/fn-after-3.jpg" alt="Fence after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/fn-before-3.jpg" alt="Fence before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Wood Fence Cleaning</span><span class="gallery-caption-tag">🌿 Fence</span></div>
-                </div>
-            -->
-                <!-- Add fn-4 through fn-10 following same pattern -->
- 
-                <!-- ── WINDOWS ── -->
-                 <!--
-                <div class="gallery-card" data-category="wn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/wn-after-1.jpg" alt="Windows after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/wn-before-1.jpg" alt="Windows before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Window Cleaning</span><span class="gallery-caption-tag">🪟 Windows</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="wn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/wn-after-2.jpg" alt="Windows after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/wn-before-2.jpg" alt="Windows before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Window Cleaning — Exterior</span><span class="gallery-caption-tag">🪟 Windows</span></div>
-                </div>
- 
-                <div class="gallery-card" data-category="wn">
-                    <div class="ba-slider">
-                        <div class="ba-after-img"><img src="images/wn-after-3.jpg" alt="Windows after" loading="lazy"><span class="ba-label ba-label-after">AFTER</span></div>
-                        <div class="ba-before-wrap"><img src="images/wn-before-3.jpg" alt="Windows before" loading="lazy"><span class="ba-label ba-label-before">BEFORE</span></div>
-                        <div class="ba-divider"></div><div class="ba-handle-btn">⟺</div>
-                    </div>
-                    <div class="gallery-caption"><span class="gallery-caption-text">Window Cleaning</span><span class="gallery-caption-tag">🪟 Windows</span></div>
-                </div>
-            -->
-                <!-- Add wn-4 through wn-10 following same pattern -->
- 
-            </div><!-- end track -->
-        </div><!-- end track-outer -->
-        <button class="carousel-arrow next" id="galleryNext">&#8250;</button>
-    </div>
- 
-    <div class="carousel-dots" id="galleryDots"></div>
-    <div class="gallery-counter" id="galleryCounter"></div>
- 
-    <div class="gallery-cta">
-        <a href="quote.html" class="btn-cta-primary" style="background:#D4AF37; color:#0f2444; font-weight:800;">Get Your Free Quote Today →</a>
-    </div>
-</section>
- 
+
+                </div><!-- end track -->
+            </div><!-- end track-outer -->
+            <button class="carousel-arrow next" id="galleryNext">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots" id="galleryDots"></div>
+        <div class="gallery-counter" id="galleryCounter"></div>
+
+        <div class="gallery-cta">
+            <a href="quote.html" class="btn-cta-primary" style="background:#D4AF37; color:#0f2444; font-weight:800;">Get Your Free Quote Today →</a>
+        </div>
+    </section>
 
     <!-- BUNDLES -->
     <section class="bundles-section">
@@ -1054,7 +932,7 @@
         </div>
     </section>
 
-    <!-- VETERANS PROGRAM HIGHLIGHT -->
+    <!-- VETERANS -->
     <section class="veterans-highlight">
         <div class="section-container">
             <div class="veterans-content">
@@ -1066,7 +944,7 @@
         </div>
     </section>
 
-    <!-- SERVICE AREA (prioritize Dutchess + Putnam, Westchester last) -->
+    <!-- SERVICE AREA -->
     <section class="service-area-section">
         <div class="section-container">
             <div class="section-header">
@@ -1078,81 +956,49 @@
                 <div class="county-card">
                     <h3>Dutchess County</h3>
                     <div class="towns-list">
-                        <span>Millbrook</span>
-                        <span>Rhinebeck</span>
-                        <span>Red Hook</span>
-                        <span>Pleasant Valley</span>
-                        <span>Hopewell Junction</span>
-                        <span>Fishkill</span>
-                        <span>Beacon</span>
-                        <span>Hyde Park</span>
-                        <span>Poughkeepsie</span>
-                        <span>+ more</span>
+                        <span>Millbrook</span><span>Rhinebeck</span><span>Red Hook</span>
+                        <span>Pleasant Valley</span><span>Hopewell Junction</span><span>Fishkill</span>
+                        <span>Beacon</span><span>Hyde Park</span><span>Poughkeepsie</span><span>+ more</span>
                     </div>
                 </div>
 
                 <div class="county-card">
                     <h3>Putnam County</h3>
                     <div class="towns-list">
-                        <span>Mahopac</span>
-                        <span>Carmel</span>
-                        <span>Brewster</span>
-                        <span>Cold Spring</span>
-                        <span>Garrison</span>
-                        <span>Kent</span>
-                        <span>Patterson</span>
-                        <span>Putnam Valley</span>
-                        <span>+ more</span>
+                        <span>Mahopac</span><span>Carmel</span><span>Brewster</span>
+                        <span>Cold Spring</span><span>Garrison</span><span>Kent</span>
+                        <span>Patterson</span><span>Putnam Valley</span><span>+ more</span>
                     </div>
                 </div>
+
                 <div class="county-card">
-    <h3>Fairfield County, CT</h3>
-    <div class="towns-list">
-        <span>New Fairfield</span>
-        <span>Brookfield</span>
-        <span>Bethel</span>
-        <span>Newtown</span>
-        <span>Ridgefield</span>
-        <span>Danbury</span>
-        <span>Greenwich</span>
-        <span>Darien</span>
-        <span>New Canaan</span>
-        <span>Westport</span>
-        <span>+ more</span>
-    </div>
-</div>
+                    <h3>Fairfield County, CT</h3>
+                    <div class="towns-list">
+                        <span>New Fairfield</span><span>Brookfield</span><span>Bethel</span>
+                        <span>Newtown</span><span>Ridgefield</span><span>Danbury</span>
+                        <span>Greenwich</span><span>Darien</span><span>New Canaan</span>
+                        <span>Westport</span><span>+ more</span>
+                    </div>
+                </div>
 
                 <div class="county-card">
                     <h3>Westchester County</h3>
                     <div class="towns-list">
-                        <span>Bedford</span>
-                        <span>Pound Ridge</span>
-                        <span>Armonk</span>
-                        <span>Chappaqua</span>
-                        <span>Katonah</span>
-                        <span>Lewisboro</span>
-                        <span>Mount Kisco</span>
-                        <span>Irvington</span>
-                        <span>Dobbs Ferry</span>
-                        <span>Tarrytown</span>
-                        <span>+ more</span>
+                        <span>Bedford</span><span>Pound Ridge</span><span>Armonk</span>
+                        <span>Chappaqua</span><span>Katonah</span><span>Lewisboro</span>
+                        <span>Mount Kisco</span><span>Irvington</span><span>Dobbs Ferry</span>
+                        <span>Tarrytown</span><span>+ more</span>
                     </div>
                 </div>
+
                 <div class="county-card">
-    <h3>Orange County, NY</h3>
-    <div class="towns-list">
-        <span>Cornwall</span>
-        <span>New Windsor</span>
-        <span>Woodbury</span>
-        <span>Monroe</span>
-        <span>Harriman</span>
-        <span>Tuxedo</span>
-        <span>Warwick</span>
-        <span>Chester</span>
-        <span>Goshen</span>
-        <span>+ more</span>
-    </div>
-</div>
+                    <h3>Orange County, NY</h3>
+                    <div class="towns-list">
+                        <span>Cornwall</span><span>New Windsor</span><span>Woodbury</span>
+                        <span>Monroe</span><span>Harriman</span><span>Tuxedo</span>
+                        <span>Warwick</span><span>Chester</span><span>Goshen</span><span>+ more</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1190,7 +1036,8 @@
             <div class="footer-section">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="https://dsgclean.com/submitreview" target="_blank">Leave a Google Review ⭐</a></li><li><a href="quote.html">Get Quote</a></li>
+                    <li><a href="https://dsgclean.com/submitreview" target="_blank">Leave a Google Review ⭐</a></li>
+                    <li><a href="quote.html">Get Quote</a></li>
                     <li><a href="reviews.html">Reviews</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="veterans.html">Veterans</a></li>
@@ -1216,107 +1063,160 @@
     </footer>
 
     <script src="main.js" defer></script>
-    <!-- ── JAVASCRIPT: paste before </body> ── -->
-<script>
-(function(){
-    const track   = document.getElementById('galleryTrack');
-    const prevBtn = document.getElementById('galleryPrev');
-    const nextBtn = document.getElementById('galleryNext');
-    const dotsEl  = document.getElementById('galleryDots');
-    const cntEl   = document.getElementById('galleryCounter');
-    const filterBtns = document.querySelectorAll('.filter-btn');
 
-    let idx = 0;
-    let visible = [];
+    <!-- Gallery carousel + before/after sliders -->
+    <script>
+    (function(){
+        const track   = document.getElementById('galleryTrack');
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
+        const dotsEl  = document.getElementById('galleryDots');
+        const cntEl   = document.getElementById('galleryCounter');
+        const filterBtns = document.querySelectorAll('.filter-btn');
 
-    function cpv(){
-        if(window.innerWidth<=640) return 1;
-        if(window.innerWidth<=1024) return 2;
-        return 3;
-    }
+        let idx = 0;
+        let visible = [];
 
-    function applyFilter(){
-        const f = document.querySelector('.filter-btn.active').dataset.filter;
-        const all = Array.from(track.querySelectorAll('.gallery-card'));
-        all.forEach(c=>c.style.display='none');
-        visible = f==='all' ? all : all.filter(c=>c.dataset.category===f);
-        visible.forEach(c=>c.style.display='');
-        idx=0;
-        buildDots();
-        render();
-        initSliders();
-    }
-
-    function buildDots(){
-        dotsEl.innerHTML='';
-        const pages=Math.ceil(visible.length/cpv());
-        for(let i=0;i<pages;i++){
-            const d=document.createElement('button');
-            d.className='carousel-dot'+(i===0?' active':'');
-            d.onclick=()=>{idx=i;render();};
-            dotsEl.appendChild(d);
+        function cpv(){
+            if(window.innerWidth<=640) return 1;
+            if(window.innerWidth<=1024) return 2;
+            return 3;
         }
-    }
 
-    function render(){
-        if(!visible.length) return;
-        const perView=cpv();
-        const cardW=visible[0].offsetWidth+20;
-        const maxIdx=Math.max(0,Math.ceil(visible.length/perView)-1);
-        idx=Math.min(idx,maxIdx);
-        track.style.transform=`translateX(-${idx*cardW*perView}px)`;
-        document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
-        cntEl.textContent=`Showing ${Math.min((idx+1)*perView,visible.length)} of ${visible.length} transformations`;
-        prevBtn.disabled=idx===0;
-        nextBtn.disabled=idx>=maxIdx;
-    }
+        function applyFilter(){
+            const f = document.querySelector('.filter-btn.active').dataset.filter;
+            const all = Array.from(track.querySelectorAll('.gallery-card'));
+            all.forEach(c=>c.style.display='none');
+            visible = f==='all' ? all : all.filter(c=>c.dataset.category===f);
+            visible.forEach(c=>c.style.display='');
+            idx=0;
+            buildDots();
+            render();
+            initSliders();
+        }
 
-    prevBtn.onclick=()=>{if(idx>0){idx--;render();}};
-    nextBtn.onclick=()=>{
-        const max=Math.ceil(visible.length/cpv())-1;
-        if(idx<max){idx++;render();}
-    };
-
-    filterBtns.forEach(b=>{
-        b.onclick=()=>{
-            filterBtns.forEach(x=>x.classList.remove('active'));
-            b.classList.add('active');
-            applyFilter();
-        };
-    });
-
-    window.addEventListener('resize',()=>{buildDots();render();});
-
-    function initSliders(){
-        document.querySelectorAll('.ba-slider').forEach(sl=>{
-            const fresh=sl.cloneNode(true);
-            sl.parentNode.replaceChild(fresh,sl);
-            const bw=fresh.querySelector('.ba-before-wrap');
-            const dv=fresh.querySelector('.ba-divider');
-            const hb=fresh.querySelector('.ba-handle-btn');
-            let drag=false;
-
-            function setPos(x){
-                const r=fresh.getBoundingClientRect();
-                let p=((x-r.left)/r.width)*100;
-                p=Math.max(2,Math.min(98,p));
-                bw.style.width=p+'%';
-                dv.style.left=p+'%';
-                hb.style.left=p+'%';
-                hb.style.transform='translate(-50%,-50%)';
+        function buildDots(){
+            dotsEl.innerHTML='';
+            const pages=Math.ceil(visible.length/cpv());
+            for(let i=0;i<pages;i++){
+                const d=document.createElement('button');
+                d.className='carousel-dot'+(i===0?' active':'');
+                d.onclick=()=>{idx=i;render();};
+                dotsEl.appendChild(d);
             }
+        }
 
-            fresh.addEventListener('mousedown',e=>{drag=true;setPos(e.clientX);e.preventDefault();});
-            fresh.addEventListener('touchstart',e=>{drag=true;setPos(e.touches[0].clientX);},{passive:true});
-            window.addEventListener('mouseup',()=>drag=false);
-            window.addEventListener('touchend',()=>drag=false);
-            window.addEventListener('mousemove',e=>{if(drag)setPos(e.clientX);});
-            window.addEventListener('touchmove',e=>{if(drag)setPos(e.touches[0].clientX);},{passive:true});
+        function render(){
+            if(!visible.length) return;
+            const perView=cpv();
+            const cardW=visible[0].offsetWidth+20;
+            const maxIdx=Math.max(0,Math.ceil(visible.length/perView)-1);
+            idx=Math.min(idx,maxIdx);
+            track.style.transform=`translateX(-${idx*cardW*perView}px)`;
+            document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+            cntEl.textContent=`Showing ${Math.min((idx+1)*perView,visible.length)} of ${visible.length} transformations`;
+            prevBtn.disabled=idx===0;
+            nextBtn.disabled=idx>=maxIdx;
+        }
+
+        prevBtn.onclick=()=>{if(idx>0){idx--;render();}};
+        nextBtn.onclick=()=>{
+            const max=Math.ceil(visible.length/cpv())-1;
+            if(idx<max){idx++;render();}
+        };
+
+        filterBtns.forEach(b=>{
+            b.onclick=()=>{
+                filterBtns.forEach(x=>x.classList.remove('active'));
+                b.classList.add('active');
+                applyFilter();
+            };
         });
-    }
 
-    applyFilter();
-})();
-</script>
+        window.addEventListener('resize',()=>{buildDots();render();});
+
+        function initSliders(){
+            document.querySelectorAll('.ba-slider').forEach(sl=>{
+                const fresh=sl.cloneNode(true);
+                sl.parentNode.replaceChild(fresh,sl);
+                const bw=fresh.querySelector('.ba-before-wrap');
+                const dv=fresh.querySelector('.ba-divider');
+                const hb=fresh.querySelector('.ba-handle-btn');
+                let drag=false;
+
+                function setPos(x){
+                    const r=fresh.getBoundingClientRect();
+                    let p=((x-r.left)/r.width)*100;
+                    p=Math.max(2,Math.min(98,p));
+                    bw.style.width=p+'%';
+                    dv.style.left=p+'%';
+                    hb.style.left=p+'%';
+                    hb.style.transform='translate(-50%,-50%)';
+                }
+
+                fresh.addEventListener('mousedown',e=>{drag=true;setPos(e.clientX);e.preventDefault();});
+                fresh.addEventListener('touchstart',e=>{drag=true;setPos(e.touches[0].clientX);},{passive:true});
+                window.addEventListener('mouseup',()=>drag=false);
+                window.addEventListener('touchend',()=>drag=false);
+                window.addEventListener('mousemove',e=>{if(drag)setPos(e.clientX);});
+                window.addEventListener('touchmove',e=>{if(drag)setPos(e.touches[0].clientX);},{passive:true});
+            });
+        }
+
+        applyFilter();
+    })();
+    </script>
+
+    <!-- Hero Quick Quote Form — Formspree -->
+    <script>
+    (function () {
+        const btn     = document.getElementById('hqfSubmit');
+        const success = document.getElementById('hqfSuccess');
+
+        btn.addEventListener('click', function () {
+            const name    = document.getElementById('hqfName').value.trim();
+            const phone   = document.getElementById('hqfPhone').value.trim();
+            const service = document.getElementById('hqfService').value;
+            const zip     = document.getElementById('hqfZip').value.trim();
+
+            if (!name)    { alert('Please enter your name.'); return; }
+            if (!phone)   { alert('Please enter your phone number.'); return; }
+            if (!service) { alert('Please select a service.'); return; }
+            if (!zip)     { alert('Please enter your ZIP code.'); return; }
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            fetch('https://formspree.io/f/xvzdbrpd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, service, zip, source: 'hero-quick-form' })
+            })
+            .then(res => {
+                if (res.ok) {
+                    success.style.display = 'block';
+                    btn.textContent = 'Sent ✓';
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'submit_lead_form', {
+                            event_category: 'lead',
+                            event_label: service,
+                            value: 1
+                        });
+                    }
+                } else {
+                    alert('Something went wrong. Please call us at (845) 208-9557.');
+                    btn.disabled = false;
+                    btn.textContent = 'Get My Quote →';
+                }
+            })
+            .catch(() => {
+                alert('Something went wrong. Please call us at (845) 208-9557.');
+                btn.disabled = false;
+                btn.textContent = 'Get My Quote →';
+            });
+        });
+    })();
+    </script>
+
 </body>
 </html>
