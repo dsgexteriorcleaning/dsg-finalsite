@@ -9,7 +9,23 @@
     <style>
         .quote-hero { background: linear-gradient(135deg, var(--navy) 0%, #2d5a7b 100%); color: white; padding: 60px 20px; text-align: center; }
         .quote-hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 900; margin-bottom: 16px; }
-
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1064838422781154');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1064838422781154&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
         /* Added trust bar (keeps same aesthetic) */
         .trust-bar { margin-top: 14px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; font-weight: 600; opacity: .95; }
         .trust-bar span { white-space: nowrap; }
