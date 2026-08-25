@@ -1,0 +1,66 @@
+/* DSG conversion and mobile UX enhancements */
+:root{--dsg-navy:#1e3a5f;--dsg-gold:#d4af37;--dsg-dark:#0f172a}
+
+.dsg-seasonal-banner{background:linear-gradient(90deg,#0f2444,#173d2b);color:#fff;border-bottom:1px solid rgba(212,175,55,.55);padding:10px 16px;text-align:center;font-size:14px;font-weight:700;line-height:1.35}
+.dsg-seasonal-banner a{color:#ffe58a;text-decoration:none;font-weight:900;margin-left:8px;white-space:nowrap}
+.dsg-seasonal-banner a:hover{text-decoration:underline}
+
+.dsg-mobile-conversion-bar{display:none}
+
+.dsg-trust-strip{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px auto 0;max-width:900px;font-size:12px;font-weight:700;color:rgba(255,255,255,.94)}
+.dsg-trust-strip span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 10px}
+
+/* Make primary interactive targets easier to use on touch devices */
+a.cta-btn,.btn-hero-primary,.btn-hero-secondary,.btn-cta-primary,.btn-cta-secondary,.service-cta,.btn-bundle{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+
+/* Tighten vertical length on small screens without deleting useful proof */
+@media(max-width:767px){
+  body{padding-bottom:76px}
+  nav{position:sticky;top:0}
+  .nav-container{padding:8px 12px}
+  .logo{height:48px}
+  .nav-container>.cta-btn{padding:9px 12px;font-size:13px;white-space:nowrap}
+
+  .hero{padding:42px 14px 34px!important;background-position:center}
+  .hero h1{font-size:clamp(30px,10vw,42px);line-height:1.05;margin-bottom:14px}
+  .hero-subtitle{font-size:16px;line-height:1.45;margin-bottom:20px}
+  .hero-buttons{margin-bottom:18px;gap:10px}
+  .btn-hero-primary,.btn-hero-secondary{padding:14px 16px;font-size:16px;max-width:none}
+
+  .hero-quick-form{margin-top:16px!important;margin-bottom:16px!important;padding:14px!important;border-radius:12px!important}
+  .hero-form-label{margin-bottom:10px!important}
+  .hero-form-row{grid-template-columns:1fr!important;gap:9px!important}
+  .hero-form-row input,.hero-form-row select,.hero-form-row button#hqfSubmit{font-size:16px!important;min-height:48px!important}
+  .hero-form-row button#hqfSubmit{grid-column:auto!important}
+  .hero-form-fine{font-size:12px!important;color:rgba(255,255,255,.72)!important}
+  .trust-row{gap:7px;font-size:12px}
+  .trust-item{padding:6px 9px}
+
+  .section,.bundles-section,.service-area-section{padding:48px 16px}
+  .section-header{margin-bottom:28px}
+  .section-header p{font-size:16px}
+  .features-grid,.services-grid,.bundles-grid,.reviews-grid,.counties-grid{gap:16px}
+  .feature-card,.service-card,.bundle-card,.review-card,.county-card{padding:22px 18px}
+  .gallery-section{padding:50px 0 42px!important}
+  .gallery-header{margin-bottom:22px!important}
+  .gallery-filters{overflow-x:auto!important;justify-content:flex-start!important;flex-wrap:nowrap!important;padding:0 14px 6px!important;margin-bottom:22px!important;scrollbar-width:none}
+  .gallery-filters::-webkit-scrollbar{display:none}
+  .filter-btn{flex:0 0 auto}
+  .gallery-carousel-wrap{padding:0 40px!important}
+  .gallery-cta{margin-top:28px!important}
+
+  .dsg-mobile-conversion-bar{position:fixed;left:0;right:0;bottom:0;z-index:3000;display:grid;grid-template-columns:.82fr 1.18fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(15,23,42,.98);box-shadow:0 -8px 24px rgba(0,0,0,.18);border-top:1px solid rgba(212,175,55,.55)}
+  .dsg-mobile-conversion-bar a{min-height:48px;border-radius:9px;text-decoration:none;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;text-align:center}
+  .dsg-mobile-call{color:#fff;border:1px solid rgba(255,255,255,.45)}
+  .dsg-mobile-quote{background:var(--dsg-gold);color:var(--dsg-navy)}
+
+  .dsg-seasonal-banner{font-size:13px;padding:9px 12px}
+  .dsg-seasonal-banner a{display:inline-block;margin:3px 0 0 6px}
+}
+
+@media(max-width:380px){
+  .nav-container>.cta-btn{display:none}
+  .dsg-mobile-conversion-bar{grid-template-columns:1fr 1.25fr}
+}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
