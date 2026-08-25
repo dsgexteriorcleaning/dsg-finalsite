@@ -8,6 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(boostStyles);
   }
 
+  // Standardize tracking across every page that uses main.js.
+  // Some pages already hard-code these tags, so we initialize only when absent.
+  if (typeof window.fbq !== "function") {
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init','1064838422781154');
+    window.fbq('track','PageView');
+  }
+
+  if (typeof window.gtag !== "function") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){window.dataLayer.push(arguments);};
+    window.gtag('js', new Date());
+    const googleScript = document.createElement('script');
+    googleScript.async = true;
+    googleScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1';
+    document.head.appendChild(googleScript);
+  }
+  // Safe to configure both properties even when gtag already exists.
+  window.gtag('config','G-94B0E9VKL1');
+  window.gtag('config','AW-18025925638');
+
   const pathname = window.location.pathname.toLowerCase();
   const isHome = pathname === "/" || pathname.endsWith("/index.html");
   const isQuotePage = pathname.includes("quote");
@@ -67,6 +95,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href*="quote.html"]').forEach((link) => {
     link.addEventListener("click", () => trackLeadIntent("quote_click", link.textContent.trim().slice(0, 60)));
   });
+
+  // Emit standard lead events when the homepage quick quote reports success.
+  const quickSuccess = document.getElementById('hqfSuccess');
+  if (quickSuccess) {
+    let quickLeadTracked = false;
+    const reportQuickLead = () => {
+      if (quickLeadTracked || getComputedStyle(quickSuccess).display === 'none') return;
+      quickLeadTracked = true;
+      window.gtag('event','generate_lead',{event_category:'lead',event_label:'homepage_quick_quote'});
+      if (typeof window.fbq === 'function') {
+        window.fbq('track','Lead',{content_name:'Homepage Quick Quote'});
+      }
+    };
+    const observer = new MutationObserver(reportQuickLead);
+    observer.observe(quickSuccess,{attributes:true,attributeFilter:['style','class']});
+    reportQuickLead();
+  }
 
   // Veterans form
   const veteransForm = document.getElementById("veteransForm");
