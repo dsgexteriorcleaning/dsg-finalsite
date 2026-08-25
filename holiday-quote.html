@@ -7,6 +7,8 @@
   <meta name="description" content="Request a 2026 Christmas light installation quote from DSG Exterior Cleaning.">
   <link rel="canonical" href="https://dsgclean.com/holiday-quote">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="conversion-boost.css">
+  <link rel="stylesheet" href="premium-brand.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18025925638"></script>
   <script>
@@ -22,15 +24,34 @@
     fbq('init','1064838422781154');fbq('track','PageView');fbq('trackCustom','HolidayQuotePageView');
   </script>
   <style>
-    .holiday-quote-hero{background:linear-gradient(135deg,#0f2444,#173d2b);color:#fff;padding:58px 20px 78px;text-align:center}
-    .holiday-quote-hero h1{font-size:clamp(34px,6vw,54px);margin:0 0 12px;font-weight:900}.holiday-quote-hero p{max-width:720px;margin:auto;line-height:1.6;color:rgba(255,255,255,.85)}
-    .holiday-form-wrap{max-width:760px;margin:-42px auto 80px;background:#fff;padding:32px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.14)}
-    .holiday-instructions{background:#fff8df;border:1px solid #e3c453;border-radius:10px;padding:16px 18px;margin-bottom:22px;color:#4a3b08;line-height:1.55}
-    .holiday-instructions strong{color:#0f2444}.holiday-trust{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:20px;font-weight:700;font-size:14px}
+    body{background:#f6f8fb}
+    .holiday-quote-hero{background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.16),transparent 34%),linear-gradient(135deg,#0f2444,#173d2b);color:#fff;padding:72px 20px 94px;text-align:center}
+    .holiday-quote-hero h1{font-size:clamp(38px,6vw,60px);line-height:1.01;letter-spacing:-1.8px;margin:0 0 14px;font-weight:900}.holiday-quote-hero p{max-width:720px;margin:auto;line-height:1.6;color:rgba(255,255,255,.85);font-size:18px}
+    .holiday-form-wrap{max-width:790px;margin:-50px auto 90px;background:#fff;padding:38px;border-radius:16px;box-shadow:0 24px 65px rgba(15,36,68,.15);border:1px solid #e4eaf0}
+    .holiday-instructions{background:#fff8df;border:1px solid #e3c453;border-radius:10px;padding:17px 19px;margin-bottom:24px;color:#4a3b08;line-height:1.55}
+    .holiday-instructions strong{color:#0f2444}.holiday-trust{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px;font-weight:700;font-size:13px}.holiday-trust span{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);padding:7px 11px;border-radius:999px}
+    .holiday-nav-active{color:#9a7415!important;font-weight:900!important}
+    @media(max-width:767px){.holiday-quote-hero{padding:54px 16px 78px}.holiday-form-wrap{margin:-38px 14px 68px;padding:22px 16px}.holiday-quote-hero p{font-size:16px}}
   </style>
 </head>
 <body>
-  <nav><div class="nav-container"><a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a><a href="tel:+18452089557" class="cta-btn">Call DSG</a></div></nav>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html"><img src="logo.png" alt="DSG Exterior Cleaning" class="logo"></a>
+      <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="bundles.html">Bundles</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a class="holiday-nav-active" href="christmas-light-installation.html">Holiday Lighting</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+      <a href="tel:+18452089557" class="cta-btn">Call DSG</a>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </nav>
   <header class="holiday-quote-hero">
     <h1>Request Your 2026 Holiday Lighting Quote</h1>
     <p>Custom design, professional-grade lighting, installation, in-season service, takedown and organized storage.</p>
@@ -43,5 +64,6 @@
     <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="d5735447-27b5-428c-ac2e-5c83a2fdd2b0-2247735" form_url="https://clienthub.getjobber.com/client_hubs/d5735447-27b5-428c-ac2e-5c83a2fdd2b0/public/work_request/embedded_work_request_form?form_id=2247735"></script>
   </main>
   <footer><div class="footer-bottom"><p>&copy; 2026 DSG Exterior Cleaning LLC. All rights reserved.</p></div></footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
