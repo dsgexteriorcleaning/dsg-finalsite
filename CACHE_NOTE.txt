@@ -1,0 +1,1 @@
+2026-08-24: Added Cloudflare Pages _headers rules for main.js, photo-proof.js, and shared presentation CSS to prevent stale browser/CDN assets from persisting after site updates.
