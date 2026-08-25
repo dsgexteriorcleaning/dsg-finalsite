@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Global conversion/mobile stylesheet. Loaded here so existing pages that already
-  // include main.js receive the conversion improvements without duplicating markup.
-  if (!document.querySelector('link[href="conversion-boost.css"]')) {
-    const boostStyles = document.createElement("link");
-    boostStyles.rel = "stylesheet";
-    boostStyles.href = "conversion-boost.css";
-    document.head.appendChild(boostStyles);
-  }
+  // Shared presentation layers.
+  ["conversion-boost.css", "premium-brand.css"].forEach((href) => {
+    if (!document.querySelector(`link[href="${href}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  });
 
   // Standardize tracking across every page that uses main.js.
-  // Some pages already hard-code these tags, so we initialize only when absent.
   if (typeof window.fbq !== "function") {
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     googleScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-94B0E9VKL1';
     document.head.appendChild(googleScript);
   }
-  // Safe to configure both properties even when gtag already exists.
   window.gtag('config','G-94B0E9VKL1');
   window.gtag('config','AW-18025925638');
 
@@ -55,10 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // IMPORTANT: the previous generic #quoteForm handler prevented submission,
-  // displayed a success alert, and reset the form without transmitting the lead.
-  // It has intentionally been removed. Real quote capture is handled by Jobber
-  // embeds and the homepage Formspree quick form.
+  // Ensure Holiday Lighting has a visible place in the site navigation during season.
+  const navLinksForHoliday = document.querySelector(".nav-links");
+  if (navLinksForHoliday && !navLinksForHoliday.querySelector('a[href*="christmas-light-installation"]')) {
+    const li = document.createElement("li");
+    li.className = "holiday-nav-item";
+    li.innerHTML = '<a href="christmas-light-installation.html" style="color:#9a7415;font-weight:800">Holiday Lighting</a>';
+    const reviewsLink = Array.from(navLinksForHoliday.children).find((item) => item.querySelector('a[href*="reviews.html"]'));
+    if (reviewsLink) navLinksForHoliday.insertBefore(li, reviewsLink);
+    else navLinksForHoliday.appendChild(li);
+  }
 
   // Seasonal acquisition banner on the homepage only.
   if (isHome && !document.querySelector(".dsg-seasonal-banner")) {
@@ -72,8 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Persistent mobile CTA: visitors always have a one-tap path to call or request a quote.
-  // Quote pages are excluded so the bar does not cover the Jobber form controls.
+  // Persistent mobile CTA.
   if (!isQuotePage && !document.querySelector(".dsg-mobile-conversion-bar")) {
     const mobileBar = document.createElement("div");
     mobileBar.className = "dsg-mobile-conversion-bar";
@@ -88,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileBar.querySelector(".dsg-mobile-quote").addEventListener("click", () => trackLeadIntent("quote_click", "mobile_sticky"));
   }
 
-  // Track existing high-intent links consistently.
   document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
     link.addEventListener("click", () => trackLeadIntent("phone_click", link.getAttribute("href")));
   });
@@ -120,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
-
       const submitBtn = this.querySelector('button[type="submit"]');
       submitBtn.textContent = "Submitting…";
       submitBtn.disabled = true;
@@ -132,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
         });
-
         alert("Thank you for your service! Your application has been submitted. We'll contact you within 24 hours to verify eligibility and schedule your free service.");
         this.reset();
       } catch (err) {
@@ -144,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
