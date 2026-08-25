@@ -1,0 +1,10 @@
+/main.js
+  Cache-Control: no-cache, no-store, must-revalidate
+/photo-proof.js
+  Cache-Control: no-cache, no-store, must-revalidate
+/photo-proof-v2.js
+  Cache-Control: no-cache, no-store, must-revalidate
+/conversion-boost.css
+  Cache-Control: no-cache, must-revalidate
+/premium-brand.css
+  Cache-Control: no-cache, must-revalidate
