@@ -54,6 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Portfolio quality control: hide malformed or obviously mismatched before/after pairs.
+  if (isHome) {
+    const gallery = document.querySelector('#galleryTrack');
+    if (gallery) {
+      gallery.querySelectorAll('.gallery-card').forEach((card) => {
+        const after = card.querySelector('.ba-after-img img');
+        const before = card.querySelector('.ba-before-wrap img');
+        const mismatchedPlaceholder = before && after && /IMG_7473\.jpg$/i.test(before.getAttribute('src') || '') && /collage_export/i.test(after.getAttribute('src') || '');
+        if (!after || !before || mismatchedPlaceholder) card.remove();
+      });
+      const activeFilter = document.querySelector('.filter-btn.active');
+      if (activeFilter) setTimeout(() => activeFilter.click(), 0);
+    }
+  }
+
   // Ensure Holiday Lighting has a visible place in the site navigation during season.
   const navLinksForHoliday = document.querySelector(".nav-links");
   if (navLinksForHoliday && !navLinksForHoliday.querySelector('a[href*="christmas-light-installation"]')) {
