@@ -1,0 +1,1 @@
+Photo proof injection temporarily disabled after display regression on 2026-08-24. Re-enable only after images are added as correctly-sized native assets and tested across desktop/mobile.
