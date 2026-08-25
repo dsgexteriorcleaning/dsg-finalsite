@@ -80,6 +80,29 @@ document.addEventListener("DOMContentLoaded", () => {
     else navLinksForHoliday.appendChild(li);
   }
 
+  // Add dedicated Window Cleaning local-service pages into the Services dropdown.
+  const serviceMenus = document.querySelectorAll('.nav-dropdown .dropdown-menu');
+  serviceMenus.forEach((menu) => {
+    if (!menu.querySelector('a[href*="window-cleaning.html"]') || menu.querySelector('a[href*="window-cleaning-bronx-ny"]')) return;
+    const divider = document.createElement('li');
+    divider.className = 'dropdown-divider';
+    const title = document.createElement('li');
+    title.className = 'dropdown-title';
+    title.textContent = 'Window Cleaning Areas';
+    menu.appendChild(divider);
+    menu.appendChild(title);
+    [
+      ['window-cleaning-dutchess-county.html','Window Cleaning — Dutchess'],
+      ['window-cleaning-putnam-county.html','Window Cleaning — Putnam'],
+      ['window-cleaning-westchester-county.html','Window Cleaning — Westchester'],
+      ['window-cleaning-bronx-ny.html','Window Cleaning — Bronx']
+    ].forEach(([href,label]) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${href}">${label}</a>`;
+      menu.appendChild(li);
+    });
+  });
+
   // Seasonal acquisition banner on the homepage only.
   if (isHome && !document.querySelector(".dsg-seasonal-banner")) {
     const nav = document.querySelector("nav");
