@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if (!document.querySelector('script[src="photo-proof.js"]')) {
+    const proofScript = document.createElement('script');
+    proofScript.src = 'photo-proof.js';
+    document.body.appendChild(proofScript);
+  }
+
   // Shared presentation layers.
   ["conversion-boost.css", "premium-brand.css"].forEach((href) => {
     if (!document.querySelector(`link[href="${href}"]`)) {
