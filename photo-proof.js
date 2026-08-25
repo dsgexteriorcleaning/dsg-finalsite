@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const path=window.location.pathname.toLowerCase();
   const isHome=path==='/'||path.endsWith('/index.html');
   const isVeterans=path.endsWith('/veterans.html');
+  const isGutter=path.includes('gutter-cleaning');
   const style=document.createElement('style');
   style.textContent=`
     .dsg-proof{padding:72px 20px;background:#fff}
@@ -15,6 +16,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     .dsg-proof-meta span{font-size:12px;font-weight:800;background:#f4f7fb;border:1px solid #dbe3ee;border-radius:999px;padding:7px 10px;color:#1e3a5f}
     .dsg-proof-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:9px;background:#d4af37;color:#0f2444;text-decoration:none;font-weight:900}
     .dsg-proof.veteran-proof{background:linear-gradient(180deg,#f8fbff,#eef5ff)}
+    .dsg-proof.gutter-proof{background:#f7f9fc}
+    .dsg-proof.gutter-proof .dsg-proof-media img{max-height:620px;object-fit:cover;object-position:center}
     @media(max-width:800px){.dsg-proof{padding:52px 16px}.dsg-proof-inner{grid-template-columns:1fr;gap:26px}.dsg-proof-copy{order:1}.dsg-proof-media{order:2}}
   `;
   document.head.appendChild(style);
@@ -35,6 +38,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       const section=document.createElement('section');
       section.className='dsg-proof veteran-proof';
       section.innerHTML=`<div class="dsg-proof-inner"><div class="dsg-proof-media"><img src="images/veteran-free-house-wash.jpg" alt="Veteran homeowner after a complimentary DSG house wash" loading="lazy"></div><div class="dsg-proof-copy"><div class="dsg-proof-kicker">Program In Action</div><h2>A Real Complimentary Veterans Program House Wash.</h2><p>DSG's Veterans Program is more than website copy. This home received a complimentary house wash as part of our commitment to serve local veterans and military families.</p><div class="dsg-proof-meta"><span>Real DSG program recipient</span><span>Complimentary house wash</span><span>Local community commitment</span></div><a class="dsg-proof-cta" href="veterans-form.html">Apply for the Veterans Program →</a></div></div>`;
+      hero.insertAdjacentElement('afterend',section);
+    }
+  }
+
+  if(isGutter && !document.querySelector('.dsg-proof.gutter-proof')){
+    const hero=document.querySelector('.page-hero, .service-hero, header');
+    if(hero){
+      const section=document.createElement('section');
+      section.className='dsg-proof gutter-proof';
+      section.innerHTML=`<div class="dsg-proof-inner"><div class="dsg-proof-media"><img src="images/gutter-cleaning-real-work.jpg" alt="DSG technician gutter cleaning access on a residential roofline" loading="lazy"></div><div class="dsg-proof-copy"><div class="dsg-proof-kicker">Real Field Work</div><h2>Gutter Cleaning Done With the Right Access and Equipment.</h2><p>Real DSG work from the roofline. We remove accumulated debris and verify flow so homeowners can address the source of overflow before it becomes a drainage problem.</p><div class="dsg-proof-meta"><span>Real DSG job</span><span>Debris removal</span><span>Downspout flow check</span></div><a class="dsg-proof-cta" href="quote.html">Get a Gutter Cleaning Quote →</a></div></div>`;
       hero.insertAdjacentElement('afterend',section);
     }
   }
