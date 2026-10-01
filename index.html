@@ -1160,7 +1160,8 @@ src="https://www.facebook.com/tr?id=1064838422781154&ev=PageView&noscript=1"
             const cardW=visible[0].offsetWidth+20;
             const maxIdx=Math.max(0,Math.ceil(visible.length/perView)-1);
             idx=Math.min(idx,maxIdx);
-            track.style.transform=`translateX(-${idx*cardW*perView}px)`;
+            const startIndex=Math.min(idx*perView,Math.max(0,visible.length-perView));
+            track.style.transform=`translateX(-${startIndex*cardW}px)`;
             document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
             cntEl.textContent=`Showing ${Math.min((idx+1)*perView,visible.length)} of ${visible.length} transformations`;
             prevBtn.disabled=idx===0;
