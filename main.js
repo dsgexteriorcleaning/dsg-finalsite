@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Shared presentation layers.
-  ["conversion-boost.css", "premium-brand.css"].forEach((href) => {
-    if (!document.querySelector(`link[href="${href}"]`)) {
+  ["conversion-boost.css?v=20261001-2", "premium-brand.css?v=20261001-2"].forEach((href) => {
+    const stylesheetPath = href.split("?")[0];
+    if (!document.querySelector(`link[href^="${stylesheetPath}"]`)) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
       link.href = href;
