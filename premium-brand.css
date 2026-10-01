@@ -101,7 +101,7 @@ nav{border-bottom:1px solid rgba(212,175,55,.65);box-shadow:0 8px 28px rgba(16,4
 .veterans-hero{
   background:
     linear-gradient(135deg,rgba(14,48,105,.88),rgba(21,65,138,.82)),
-    url('images/proof/veteran-free-house-wash.jpg?v=20261001-2') center 48%/cover no-repeat!important;
+    url('images/proof/veteran-free-house-wash.jpg?v=20261001-2') center 64%/cover no-repeat!important;
 }
 .program-box::before{
   content:"DSG VETERANS PROGRAM • A REAL FREE HOUSE WASH";
@@ -114,7 +114,7 @@ nav{border-bottom:1px solid rgba(212,175,55,.65);box-shadow:0 8px 28px rgba(16,4
   box-sizing:border-box;
   background:
     linear-gradient(180deg,transparent 58%,rgba(7,22,37,.82) 100%),
-    url('images/proof/veteran-free-house-wash.jpg?v=20261001-2') center 48%/cover no-repeat;
+    url('images/proof/veteran-free-house-wash.jpg?v=20261001-2') center 70%/cover no-repeat;
   color:#fff;
   font-size:13px;
   font-weight:900;
