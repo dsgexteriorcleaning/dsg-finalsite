@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Shared presentation layers.
-  ["conversion-boost.css?v=20261001-2", "premium-brand.css?v=20261001-2"].forEach((href) => {
+  ["conversion-boost.css?v=20261001-3", "premium-brand.css?v=20261001-3"].forEach((href) => {
     const stylesheetPath = href.split("?")[0];
     if (!document.querySelector(`link[href^="${stylesheetPath}"]`)) {
       const link = document.createElement("link");
@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.querySelector('#galleryTrack');
     if (gallery) {
       gallery.querySelectorAll('.gallery-card').forEach((card) => {
+        const projectPhoto = card.querySelector('.gallery-project-photo img');
+        if (projectPhoto) {
+          const src = projectPhoto.getAttribute('src') || '';
+          if (!src || /(?:IMG_7473|logo(?:-fixed)?)\.(?:jpe?g|png)$/i.test(src)) card.remove();
+          return;
+        }
         const after = card.querySelector('.ba-after-img img');
         const before = card.querySelector('.ba-before-wrap img');
         const sources = [after, before].filter(Boolean).map((img) => img.getAttribute('src') || '');
