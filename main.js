@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (!document.querySelector('script[src="photo-proof.js"]')) {
-    const proofScript = document.createElement('script');
-    proofScript.src = 'photo-proof.js';
-    document.body.appendChild(proofScript);
-  }
-
   // Shared presentation layers.
   ["conversion-boost.css", "premium-brand.css"].forEach((href) => {
     if (!document.querySelector(`link[href="${href}"]`)) {
@@ -67,23 +61,65 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.querySelectorAll('.gallery-card').forEach((card) => {
         const after = card.querySelector('.ba-after-img img');
         const before = card.querySelector('.ba-before-wrap img');
-        const mismatchedPlaceholder = before && after && /IMG_7473\.jpg$/i.test(before.getAttribute('src') || '') && /collage_export/i.test(after.getAttribute('src') || '');
-        if (!after || !before || mismatchedPlaceholder) card.remove();
+        const sources = [after, before].filter(Boolean).map((img) => img.getAttribute('src') || '');
+        const brokenOrBrandAsset = sources.some((src) => /(?:IMG_7473|logo(?:-fixed)?|hw-5|hw-7|st-3)\.(?:jpe?g|png)$/i.test(src));
+        if (!after || !before || brokenOrBrandAsset) card.remove();
       });
+
+      const availableCategories = new Set(
+        Array.from(gallery.querySelectorAll('.gallery-card')).map((card) => card.dataset.category)
+      );
+      document.querySelectorAll('.filter-btn[data-filter]').forEach((button) => {
+        const filter = button.dataset.filter;
+        if (filter !== 'all' && !availableCategories.has(filter)) button.remove();
+      });
+
       const activeFilter = document.querySelector('.filter-btn.active');
       if (activeFilter) setTimeout(() => activeFilter.click(), 0);
     }
   }
 
-  // Ensure Holiday Lighting has a visible place in the site navigation during season.
+  // Keep Holiday Lighting inside Services on every navigation variant.
   const navLinksForHoliday = document.querySelector(".nav-links");
-  if (navLinksForHoliday && !navLinksForHoliday.querySelector('a[href*="christmas-light-installation"]')) {
-    const li = document.createElement("li");
-    li.className = "holiday-nav-item";
-    li.innerHTML = '<a href="christmas-light-installation.html" style="color:#9a7415;font-weight:800">Holiday Lighting</a>';
-    const reviewsLink = Array.from(navLinksForHoliday.children).find((item) => item.querySelector('a[href*="reviews.html"]'));
-    if (reviewsLink) navLinksForHoliday.insertBefore(li, reviewsLink);
-    else navLinksForHoliday.appendChild(li);
+  if (navLinksForHoliday) {
+    Array.from(navLinksForHoliday.children).forEach((item) => {
+      const directHolidayLink = item.querySelector(':scope > a[href*="christmas-light-installation"]');
+      if (directHolidayLink) item.remove();
+    });
+
+    let servicesItem = Array.from(navLinksForHoliday.children).find((item) =>
+      item.querySelector(':scope > a[href="services.html"]')
+    );
+
+    if (servicesItem && !servicesItem.classList.contains('nav-dropdown')) {
+      const servicesLink = servicesItem.querySelector(':scope > a');
+      servicesItem.classList.add('nav-dropdown');
+      servicesLink.classList.add('dropdown-toggle');
+      servicesLink.setAttribute('aria-haspopup', 'true');
+      servicesLink.setAttribute('aria-expanded', 'false');
+      servicesLink.innerHTML = 'Services <span class="dropdown-caret">▾</span>';
+      servicesItem.insertAdjacentHTML('beforeend', [
+        '<ul class="dropdown-menu" aria-label="Services menu">',
+        '<li class="dropdown-title">By Service</li>',
+        '<li><a href="services.html#house-soft-wash">House Soft Wash</a></li>',
+        '<li><a href="services.html#roof-soft-wash">Roof Soft Wash</a></li>',
+        '<li><a href="services.html#gutter-cleaning">Gutter Cleaning</a></li>',
+        '<li><a href="services.html#flatwork">Driveway &amp; Flatwork</a></li>',
+        '<li><a href="window-cleaning.html">Window Cleaning</a></li>',
+        '</ul>'
+      ].join(''));
+    }
+
+    const servicesMenu = servicesItem && servicesItem.querySelector('.dropdown-menu');
+    if (servicesMenu && !servicesMenu.querySelector('a[href*="christmas-light-installation"]')) {
+      const holidayItem = document.createElement('li');
+      holidayItem.innerHTML = '<a href="christmas-light-installation.html" style="color:#9a7415;font-weight:900">Christmas &amp; Holiday Lighting ✨</a>';
+      const windowItem = Array.from(servicesMenu.children).find((item) =>
+        item.querySelector('a[href="window-cleaning.html"]')
+      );
+      if (windowItem) windowItem.insertAdjacentElement('afterend', holidayItem);
+      else servicesMenu.appendChild(holidayItem);
+    }
   }
 
   // Add dedicated Window Cleaning local-service pages into the Services dropdown.
