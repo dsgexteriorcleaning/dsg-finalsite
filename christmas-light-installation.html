@@ -32,6 +32,17 @@
     .holiday-section{padding:90px 20px}.holiday-wrap{max-width:1160px;margin:auto}
     .holiday-section h2{text-align:center;color:var(--holiday-navy);font-size:clamp(34px,4vw,50px);letter-spacing:-1.4px;line-height:1.04;margin:0 0 15px;font-weight:900}
     .section-lead{text-align:center;max-width:760px;margin:0 auto 42px;color:#516071;font-size:17px;line-height:1.65}
+    .holiday-showcase{background:#f6f8fa;padding-top:72px;padding-bottom:72px}
+    .holiday-gallery{display:grid;grid-template-columns:1.45fr .8fr .8fr;grid-template-rows:repeat(2,260px);gap:14px}
+    .holiday-photo{position:relative;overflow:hidden;border-radius:16px;background:#0f2444;box-shadow:0 16px 38px rgba(15,36,68,.14)}
+    .holiday-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
+    .holiday-photo:hover img{transform:scale(1.025)}
+    .holiday-photo--result{grid-row:1/3}
+    .holiday-photo--process{grid-column:2/4}
+    .holiday-photo--process img{object-position:center 42%}
+    .holiday-photo--portrait img{object-position:center 28%}
+    .holiday-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(7,20,37,.88));color:#fff;font-size:14px;font-weight:800;letter-spacing:.2px}
+    .holiday-gallery-note{text-align:center;margin:20px auto 0;color:#687587;font-size:14px;font-weight:700}
     .holiday-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .holiday-card{background:#fff;border:1px solid #e4eaf0;border-radius:14px;padding:30px;box-shadow:0 12px 35px rgba(15,36,68,.07)}
     .holiday-card h3{color:var(--holiday-navy);margin:0 0 10px;font-size:21px}.holiday-card p{margin:0;color:#596575;line-height:1.65}
@@ -41,7 +52,8 @@
     .faq{max-width:880px;margin:auto}.faq-item{border-bottom:1px solid #e7e9ee;padding:24px 0}.faq-item h3{color:var(--holiday-navy);margin:0 0 8px}.faq-item p{margin:0;color:#596575;line-height:1.65}
     .holiday-final{background:linear-gradient(135deg,var(--holiday-navy),#173d2b);color:#fff;text-align:center}.holiday-final h2{color:#fff}.holiday-final .section-lead{color:rgba(255,255,255,.82)}
     .holiday-nav-active{color:#9a7415!important;font-weight:900!important}
-    @media(max-width:800px){.holiday-grid{grid-template-columns:1fr}.holiday-hero{padding:66px 16px 58px}.holiday-section{padding:60px 16px}.price-box{padding:30px 20px}.holiday-hero h1{letter-spacing:-1.4px}.step{padding-left:60px}}
+    @media(max-width:800px){.holiday-grid{grid-template-columns:1fr}.holiday-gallery{grid-template-columns:1fr 1fr;grid-template-rows:330px 190px 250px}.holiday-photo--result{grid-column:1/3;grid-row:auto}.holiday-photo--process{grid-column:1/3}.holiday-hero{padding:66px 16px 58px}.holiday-section{padding:60px 16px}.price-box{padding:30px 20px}.holiday-hero h1{letter-spacing:-1.4px}.step{padding-left:60px}}
+    @media(max-width:520px){.holiday-gallery{grid-template-columns:1fr;grid-template-rows:none}.holiday-photo,.holiday-photo--result,.holiday-photo--process{grid-column:auto;grid-row:auto;height:260px}.holiday-photo--portrait{height:330px}}
   </style>
 </head>
 <body>
@@ -81,6 +93,32 @@
     <div class="holiday-cta"><a class="holiday-btn primary holiday-lead" href="holiday-quote.html">Request My Holiday Lighting Quote</a><a class="holiday-btn secondary" href="tel:+18452089557">Call (845) 208-9557</a></div>
     <div class="holiday-trust"><span>✓ Fully Insured</span><span>✓ Professional-Grade LEDs</span><span>✓ Takedown Included</span><span>✓ In-Season Service</span></div>
   </header>
+
+  <section class="holiday-section holiday-showcase" aria-labelledby="holiday-work-title">
+    <div class="holiday-wrap">
+      <h2 id="holiday-work-title">Real DSG Holiday Lighting Work</h2>
+      <p class="section-lead">From careful daytime installation to a clean, custom-fit nighttime display—these are real photos of our crew and our work in Hopewell Junction.</p>
+      <div class="holiday-gallery">
+        <figure class="holiday-photo holiday-photo--result">
+          <img src="images/holiday-lighting/finished-roofline.webp" alt="Finished warm-white Christmas roofline lighting installed by DSG Exterior Cleaning" width="1400" height="1050" loading="eager" fetchpriority="high">
+          <figcaption>Finished custom-fit roofline display</figcaption>
+        </figure>
+        <figure class="holiday-photo holiday-photo--process">
+          <img src="images/holiday-lighting/crew-installing-roofline.webp" alt="DSG Exterior Cleaning crew installing custom holiday lights on a home" width="1080" height="580" loading="lazy">
+          <figcaption>Professional installation by our insured local crew</figcaption>
+        </figure>
+        <figure class="holiday-photo holiday-photo--portrait">
+          <img src="images/holiday-lighting/ladder-safety-installation.webp" alt="DSG installer using ladder safety equipment during a holiday lighting installation" width="1200" height="1600" loading="lazy">
+          <figcaption>Safety-focused installation</figcaption>
+        </figure>
+        <figure class="holiday-photo holiday-photo--portrait">
+          <img src="images/holiday-lighting/custom-fit-installation.webp" alt="DSG installer fitting Christmas lights precisely along a roofline" width="1200" height="1600" loading="lazy">
+          <figcaption>Measured and fitted to your home</figcaption>
+        </figure>
+      </div>
+      <p class="holiday-gallery-note">Real installation. Real crew. Real DSG workmanship.</p>
+    </div>
+  </section>
 
   <section class="holiday-section included"><div class="holiday-wrap"><h2>Turnkey Holiday Lighting—Without the Ladder.</h2><p class="section-lead">A managed seasonal lighting service designed to look clean, consistent and professional from the first install through January takedown.</p><div class="holiday-grid"><article class="holiday-card"><h3>Custom Design</h3><p>We design rooflines and accents around your home, architecture and preferred style.</p></article><article class="holiday-card"><h3>Professional Installation</h3><p>Commercial-grade LED lighting, purpose-built clips, discreet wiring and timer setup installed by an insured exterior-service crew.</p></article><article class="holiday-card"><h3>Season-Long Support</h3><p>If a DSG-supplied light or connection needs attention during the season, we service the display.</p></article><article class="holiday-card"><h3>January Takedown</h3><p>When the season ends, our crew removes the display so you do not have to climb a ladder in winter.</p></article><article class="holiday-card"><h3>Organized Storage</h3><p>Your DSG lighting package is labeled and stored for efficient reinstallation the following holiday season.</p></article><article class="holiday-card"><h3>Annual Renewal</h3><p>Returning clients receive priority scheduling so next year's installation becomes simpler and faster.</p></article></div></div></section>
 
